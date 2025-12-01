@@ -20,77 +20,40 @@ paginate: true
     line-height: 1.4 !important;
   }
 
+  /* 大きめ（10行程度） */
   section[data-class~="font-small"] {
-    font-size: 18px !important;
-    line-height: 1.25 !important;
-    padding: 15px 25px !important;
+    font-size: 24px !important;
+    line-height: 1.3 !important;
   }
   section[data-class~="font-small"] h2, section[data-class~="font-small"] h3 {
-    font-size: 26px !important;
-    margin-bottom: 0.2em !important;
-  }
-  section[data-class~="font-small"] li {
-    margin-bottom: 0.05em !important;
-  }
-  section[data-class~="font-small"] p {
-    margin-bottom: 0.2em !important;
+    font-size: 36px !important;
   }
 
+  /* 中程度（12-14行） */
   section[data-class~="font-xsmall"] {
-    font-size: 16px !important;
-    line-height: 1.15 !important;
-    padding: 12px 22px !important;
+    font-size: 21px !important;
+    line-height: 1.25 !important;
   }
   section[data-class~="font-xsmall"] h2, section[data-class~="font-xsmall"] h3 {
-    font-size: 22px !important;
-    margin-bottom: 0.15em !important;
-  }
-  section[data-class~="font-xsmall"] li {
-    margin-bottom: 0.02em !important;
-  }
-  section[data-class~="font-xsmall"] p {
-    margin-bottom: 0.1em !important;
+    font-size: 32px !important;
   }
 
+  /* やや小さめ（15-17行） */
   section[data-class~="font-xxsmall"] {
-    font-size: 14px !important;
-    line-height: 1.1 !important;
-    padding: 10px 20px !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
   }
   section[data-class~="font-xxsmall"] h2, section[data-class~="font-xxsmall"] h3 {
-    font-size: 20px !important;
-    margin-bottom: 0.1em !important;
-  }
-  section[data-class~="font-xxsmall"] li {
-    margin-bottom: 0 !important;
-  }
-  section[data-class~="font-xxsmall"] p {
-    margin-bottom: 0.05em !important;
-  }
-  section[data-class~="font-xxsmall"] pre {
-    margin: 0.2em 0 !important;
-    font-size: 0.85em !important;
+    font-size: 28px !important;
   }
 
-  /* 超コンパクト用 */
+  /* コンパクト（18行以上） */
   section[data-class~="font-xxxsmall"] {
-    font-size: 13px !important;
-    line-height: 1.05 !important;
-    padding: 8px 18px !important;
+    font-size: 16px !important;
+    line-height: 1.15 !important;
   }
   section[data-class~="font-xxxsmall"] h2, section[data-class~="font-xxxsmall"] h3 {
-    font-size: 18px !important;
-    margin-bottom: 0.08em !important;
-  }
-  section[data-class~="font-xxxsmall"] li {
-    margin-bottom: 0 !important;
-  }
-  section[data-class~="font-xxxsmall"] p {
-    margin-bottom: 0.02em !important;
-  }
-  section[data-class~="font-xxxsmall"] pre {
-    margin: 0.1em 0 !important;
-    font-size: 0.8em !important;
+    font-size: 24px !important;
   }
 
   /* 2カラムレイアウト */
