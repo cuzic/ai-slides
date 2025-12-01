@@ -1,0 +1,25 @@
+{
+  "name": "keiz-2026-marp-overflow-checker",
+  "version": "1.0.0",
+  "description": "Marp slide overflow detection tool",
+  "main": "check-overflow.js",
+  "scripts": {
+    "check-overflow": "node check-overflow.js",
+    "check-all": "for file in slides/topic-*.md; do echo \"\\n=== Checking $file ===\"; node check-overflow.js \"$file\" || true; done"
+  },
+  "keywords": [
+    "marp",
+    "overflow",
+    "slides"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@marp-team/marp-core": "^3.9.0",
+    "draw.io-export": "^0.3.0",
+    "playwright": "^1.48.0"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3"
+  }
+}

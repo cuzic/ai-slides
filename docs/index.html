@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI駆動開発セミナー Day 1</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .subtitle {
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .card-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .card .duration {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #666;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI駆動開発セミナー</h1>
+    <p class="subtitle">Day 1: 5-STEPワークフローで学ぶ新規開発</p>
+
+    <div class="cards">
+      <a href="01-intro.html" class="card">
+        <span class="card-number">01</span>
+        <h2>入門編</h2>
+        <p>AIとの正しい付き合い方（3つの原則）、Claude Codeの基本、AIの5つの特性、5-STEPワークフロー詳細解説</p>
+        <span class="duration">110分</span>
+      </a>
+
+      <a href="02-design.html" class="card">
+        <span class="card-number">02</span>
+        <h2>設計編</h2>
+        <p>STEP 1-2-3（要件定義・設計・タスク分解）を詳細に解説。ユーザーストーリー、受入基準、MoSCoW分析など</p>
+        <span class="duration">130分</span>
+      </a>
+
+      <a href="03-implementation-refactoring.html" class="card">
+        <span class="card-number">03</span>
+        <h2>実装・リファクタリング編</h2>
+        <p>STEP 4-5（実装・TDD・3段階レビュー・MCP Servers・品質改善）を実践的に解説</p>
+        <span class="duration">60分</span>
+      </a>
+
+      <a href="04-integration.html" class="card">
+        <span class="card-number">04</span>
+        <h2>統合ハンズオン</h2>
+        <p>STEP 1-5を通してTODO管理アプリの完了状態変更機能を実装。AI駆動開発の全工程を実践</p>
+        <span class="duration">30分</span>
+      </a>
+    </div>
+
+    <footer>
+      <p>合計: 330分（5.5時間）+ 休憩 = 360分（6時間）</p>
+    </footer>
+  </div>
+</body>
+</html>

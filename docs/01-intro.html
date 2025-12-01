@@ -1,0 +1,701 @@
+<!DOCTYPE html><html lang="en-US"><head><title>AI駆動開発セミナー Day 1</title><meta property="og:title" content="AI駆動開発セミナー Day 1"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#\:\$p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#\:\$p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div#\:\$p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p>svg>foreignObject>section{page-break-before:always;break-before:page}div#\:\$p>svg>foreignObject>section,div#\:\$p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#\:\$p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p>svg>foreignObject>:where(section){container-type:size}div#\:\$p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp default theme.
+ *
+ * @theme default
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p>svg>foreignObject>section,div#\:\$p>svg>foreignObject>section [data-theme=light]{--color-prettylights-syntax-comment:#6e7781;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-entity:#6639ba;--color-prettylights-syntax-storage-modifier-import:#24292f;--color-prettylights-syntax-entity-tag:#116329;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-variable:#953800;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-invalid-illegal-text:#f6f8fa;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-carriage-return-text:#f6f8fa;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-italic:#24292f;--color-prettylights-syntax-markup-bold:#24292f;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-ignored-text:#eaeef2;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-brackethighlighter-angle:#57606a;--color-prettylights-syntax-sublimelinter-gutter-mark:#8c959f;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-fg-default:#1f2328;--color-fg-muted:#656d76;--color-fg-subtle:#6e7781;--color-canvas-default:#fff;--color-canvas-subtle:#f6f8fa;--color-border-default:#d0d7de;--color-border-muted:#d8dee4;--color-neutral-muted:rgba(175,184,193,.2);--color-accent-fg:#0969da;--color-accent-emphasis:#0969da;--color-attention-subtle:#fff8c5;--color-danger-fg:#d1242f;color-scheme:light}div#\:\$p>svg>foreignObject>section [data-theme=dark],div#\:\$p>svg>foreignObject>section:where(.invert){--color-prettylights-syntax-comment:#8b949e;--color-prettylights-syntax-constant:#79c0ff;--color-prettylights-syntax-entity:#d2a8ff;--color-prettylights-syntax-storage-modifier-import:#c9d1d9;--color-prettylights-syntax-entity-tag:#7ee787;--color-prettylights-syntax-keyword:#ff7b72;--color-prettylights-syntax-string:#a5d6ff;--color-prettylights-syntax-variable:#ffa657;--color-prettylights-syntax-brackethighlighter-unmatched:#f85149;--color-prettylights-syntax-invalid-illegal-text:#f0f6fc;--color-prettylights-syntax-invalid-illegal-bg:#8e1519;--color-prettylights-syntax-carriage-return-text:#f0f6fc;--color-prettylights-syntax-carriage-return-bg:#b62324;--color-prettylights-syntax-string-regexp:#7ee787;--color-prettylights-syntax-markup-list:#f2cc60;--color-prettylights-syntax-markup-heading:#1f6feb;--color-prettylights-syntax-markup-italic:#c9d1d9;--color-prettylights-syntax-markup-bold:#c9d1d9;--color-prettylights-syntax-markup-deleted-text:#ffdcd7;--color-prettylights-syntax-markup-deleted-bg:#67060c;--color-prettylights-syntax-markup-inserted-text:#aff5b4;--color-prettylights-syntax-markup-inserted-bg:#033a16;--color-prettylights-syntax-markup-changed-text:#ffdfb6;--color-prettylights-syntax-markup-changed-bg:#5a1e02;--color-prettylights-syntax-markup-ignored-text:#c9d1d9;--color-prettylights-syntax-markup-ignored-bg:#1158c7;--color-prettylights-syntax-meta-diff-range:#d2a8ff;--color-prettylights-syntax-brackethighlighter-angle:#8b949e;--color-prettylights-syntax-sublimelinter-gutter-mark:#484f58;--color-prettylights-syntax-constant-other-reference-link:#a5d6ff;--color-fg-default:#e6edf3;--color-fg-muted:#7d8590;--color-fg-subtle:#6e7681;--color-canvas-default:#0d1117;--color-canvas-subtle:#161b22;--color-border-default:#30363d;--color-border-muted:#21262d;--color-neutral-muted:hsla(215,8%,47%,.4);--color-accent-fg:#2f81f7;--color-accent-emphasis:#1f6feb;--color-attention-subtle:rgba(187,128,9,.15);--color-danger-fg:#f85149;color-scheme:dark}div#\:\$p>svg>foreignObject>section{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;background-color:var(--color-canvas-default);color:var(--color-fg-default);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;line-height:1.5;margin:0}div#\:\$p>svg>foreignObject>section{--marpit-root-font-size:16px}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6):hover .anchor .octicon-link:before{background-color:currentColor;content:" ";display:inline-block;height:16px;-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>');mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>');width:16px}div#\:\$p>svg>foreignObject>section details,div#\:\$p>svg>foreignObject>section figcaption,div#\:\$p>svg>foreignObject>section figure{display:block}div#\:\$p>svg>foreignObject>section summary{display:list-item}div#\:\$p>svg>foreignObject>section [hidden]{display:none!important}div#\:\$p>svg>foreignObject>section a{background-color:transparent;color:var(--color-accent-fg);text-decoration:none}div#\:\$p>svg>foreignObject>section abbr[title]{border-bottom:none;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}div#\:\$p>svg>foreignObject>section b,div#\:\$p>svg>foreignObject>section strong{font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section dfn{font-style:italic}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1){border-bottom:1px solid var(--color-border-muted);font-size:2em;font-weight:var(--base-text-weight-semibold,600);margin:.67em 0;padding-bottom:.3em}div#\:\$p>svg>foreignObject>section mark{background-color:var(--color-attention-subtle);color:var(--color-fg-default)}div#\:\$p>svg>foreignObject>section small{font-size:90%}div#\:\$p>svg>foreignObject>section sub,div#\:\$p>svg>foreignObject>section sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}div#\:\$p>svg>foreignObject>section sub{bottom:-.25em}div#\:\$p>svg>foreignObject>section sup{top:-.5em}div#\:\$p>svg>foreignObject>section img{background-color:var(--color-canvas-default);border-style:none;box-sizing:content-box;max-width:100%}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre),div#\:\$p>svg>foreignObject>section code,div#\:\$p>svg>foreignObject>section kbd,div#\:\$p>svg>foreignObject>section samp{font-family:monospace;font-size:1em}div#\:\$p>svg>foreignObject>section figure{margin:1em 40px}div#\:\$p>svg>foreignObject>section hr{background:transparent;background-color:var(--color-border-default);border:0;box-sizing:content-box;height:.25em;margin:24px 0;overflow:hidden;padding:0}div#\:\$p>svg>foreignObject>section input{font:inherit;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible}div#\:\$p>svg>foreignObject>section [type=button],div#\:\$p>svg>foreignObject>section [type=reset],div#\:\$p>svg>foreignObject>section [type=submit]{-webkit-appearance:button}div#\:\$p>svg>foreignObject>section [type=checkbox],div#\:\$p>svg>foreignObject>section [type=radio]{box-sizing:border-box;padding:0}div#\:\$p>svg>foreignObject>section [type=number]::-webkit-inner-spin-button,div#\:\$p>svg>foreignObject>section [type=number]::-webkit-outer-spin-button{height:auto}div#\:\$p>svg>foreignObject>section [type=search]::-webkit-search-cancel-button,div#\:\$p>svg>foreignObject>section [type=search]::-webkit-search-decoration{-webkit-appearance:none}div#\:\$p>svg>foreignObject>section ::-webkit-input-placeholder{color:inherit;opacity:.54}div#\:\$p>svg>foreignObject>section ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}div#\:\$p>svg>foreignObject>section a:hover{text-decoration:underline}div#\:\$p>svg>foreignObject>section ::-moz-placeholder{color:var(--color-fg-subtle);opacity:1}div#\:\$p>svg>foreignObject>section ::placeholder{color:var(--color-fg-subtle);opacity:1}div#\:\$p>svg>foreignObject>section hr:after,div#\:\$p>svg>foreignObject>section hr:before{content:"";display:table}div#\:\$p>svg>foreignObject>section hr:after{clear:both}div#\:\$p>svg>foreignObject>section table{border-collapse:collapse;border-spacing:0;display:block;max-width:100%;overflow:auto;width:-moz-max-content;width:max-content}div#\:\$p>svg>foreignObject>section td,div#\:\$p>svg>foreignObject>section th{padding:0}div#\:\$p>svg>foreignObject>section details summary{cursor:pointer}div#\:\$p>svg>foreignObject>section details:not([open])>:not(summary){display:none!important}div#\:\$p>svg>foreignObject>section [role=button]:focus,div#\:\$p>svg>foreignObject>section a:focus,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus,div#\:\$p>svg>foreignObject>section input[type=radio]:focus{box-shadow:none;outline:2px solid var(--color-accent-fg);outline-offset:-2px}div#\:\$p>svg>foreignObject>section [role=button]:focus:not(:focus-visible),div#\:\$p>svg>foreignObject>section a:focus:not(:focus-visible),div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus:not(:focus-visible),div#\:\$p>svg>foreignObject>section input[type=radio]:focus:not(:focus-visible){outline:1px solid transparent}div#\:\$p>svg>foreignObject>section [role=button]:focus-visible,div#\:\$p>svg>foreignObject>section a:focus-visible,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus-visible,div#\:\$p>svg>foreignObject>section input[type=radio]:focus-visible{box-shadow:none;outline:2px solid var(--color-accent-fg);outline-offset:-2px}div#\:\$p>svg>foreignObject>section a:not([class]):focus,div#\:\$p>svg>foreignObject>section a:not([class]):focus-visible,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus-visible,div#\:\$p>svg>foreignObject>section input[type=radio]:focus,div#\:\$p>svg>foreignObject>section input[type=radio]:focus-visible{outline-offset:0}div#\:\$p>svg>foreignObject>section kbd{background-color:var(--color-canvas-subtle);border-bottom-color:var(--color-neutral-muted);border:1px solid var(--color-neutral-muted);border-radius:6px;box-shadow:inset 0 -1px 0 var(--color-neutral-muted);color:var(--color-fg-default);display:inline-block;font:11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section :is(h3,marp-h3),div#\:\$p>svg>foreignObject>section :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section :is(h5,marp-h5),div#\:\$p>svg>foreignObject>section :is(h6,marp-h6){font-weight:var(--base-text-weight-semibold,600);line-height:1.25;margin-bottom:16px;margin-top:24px}div#\:\$p>svg>foreignObject>section :is(h2,marp-h2){border-bottom:1px solid var(--color-border-muted);font-size:1.5em;padding-bottom:.3em}div#\:\$p>svg>foreignObject>section :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section :is(h3,marp-h3){font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section :is(h3,marp-h3){font-size:1.25em}div#\:\$p>svg>foreignObject>section :is(h4,marp-h4){font-size:1em}div#\:\$p>svg>foreignObject>section :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section :is(h5,marp-h5){font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section :is(h5,marp-h5){font-size:.875em}div#\:\$p>svg>foreignObject>section :is(h6,marp-h6){color:var(--color-fg-muted);font-size:.85em;font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section p{margin-bottom:10px;margin-top:0}div#\:\$p>svg>foreignObject>section blockquote{border-left:.25em solid var(--color-border-default);color:var(--color-fg-muted);margin:0;padding:0 1em}div#\:\$p>svg>foreignObject>section ol,div#\:\$p>svg>foreignObject>section ul{margin-bottom:0;margin-top:0;padding-left:2em}div#\:\$p>svg>foreignObject>section ol ol,div#\:\$p>svg>foreignObject>section ul ol{list-style-type:lower-roman}div#\:\$p>svg>foreignObject>section ol ol ol,div#\:\$p>svg>foreignObject>section ol ul ol,div#\:\$p>svg>foreignObject>section ul ol ol,div#\:\$p>svg>foreignObject>section ul ul ol{list-style-type:lower-alpha}div#\:\$p>svg>foreignObject>section dd{margin-left:0}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre),div#\:\$p>svg>foreignObject>section code,div#\:\$p>svg>foreignObject>section samp,div#\:\$p>svg>foreignObject>section tt{font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;font-size:12px}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre){word-wrap:normal;margin-bottom:0;margin-top:0}div#\:\$p>svg>foreignObject>section .octicon{fill:currentColor;display:inline-block;overflow:visible!important;vertical-align:text-bottom}div#\:\$p>svg>foreignObject>section input::-webkit-inner-spin-button,div#\:\$p>svg>foreignObject>section input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}div#\:\$p>svg>foreignObject>section:after,div#\:\$p>svg>foreignObject>section:before{
+  /* content:""; */display:table}div#\:\$p>svg>foreignObject>section:after{clear:both}div#\:\$p>svg>foreignObject>section>:first-child{margin-top:0!important}div#\:\$p>svg>foreignObject>section>:last-child{margin-bottom:0!important}div#\:\$p>svg>foreignObject>section a:not([href]){color:inherit;text-decoration:none}div#\:\$p>svg>foreignObject>section .absent{color:var(--color-danger-fg)}div#\:\$p>svg>foreignObject>section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}div#\:\$p>svg>foreignObject>section .anchor:focus{outline:none}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre),div#\:\$p>svg>foreignObject>section blockquote,div#\:\$p>svg>foreignObject>section details,div#\:\$p>svg>foreignObject>section dl,div#\:\$p>svg>foreignObject>section ol,div#\:\$p>svg>foreignObject>section p,div#\:\$p>svg>foreignObject>section table,div#\:\$p>svg>foreignObject>section ul{margin-bottom:16px;margin-top:0}div#\:\$p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#\:\$p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) .octicon-link{color:var(--color-fg-default);vertical-align:middle;visibility:hidden}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6):hover .anchor{text-decoration:none}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6):hover .anchor .octicon-link{visibility:visible}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) code,div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) tt,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) code,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) tt,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) code,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) tt,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) code,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) tt,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) code,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) tt,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) code,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) tt{font-size:inherit;padding:0 .2em}div#\:\$p>svg>foreignObject>section summary :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section summary :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section summary :is(h3,marp-h3),div#\:\$p>svg>foreignObject>section summary :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section summary :is(h5,marp-h5),div#\:\$p>svg>foreignObject>section summary :is(h6,marp-h6){display:inline-block}div#\:\$p>svg>foreignObject>section summary :is(h1,marp-h1) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h2,marp-h2) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h3,marp-h3) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h4,marp-h4) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h5,marp-h5) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h6,marp-h6) .anchor{margin-left:-40px}div#\:\$p>svg>foreignObject>section summary :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section summary :is(h2,marp-h2){border-bottom:0;padding-bottom:0}div#\:\$p>svg>foreignObject>section ol.no-list,div#\:\$p>svg>foreignObject>section ul.no-list{list-style-type:none;padding:0}div#\:\$p>svg>foreignObject>section ol[type="a s"]{list-style-type:lower-alpha}div#\:\$p>svg>foreignObject>section ol[type="A s"]{list-style-type:upper-alpha}div#\:\$p>svg>foreignObject>section ol[type="i s"]{list-style-type:lower-roman}div#\:\$p>svg>foreignObject>section ol[type="I s"]{list-style-type:upper-roman}div#\:\$p>svg>foreignObject>section div>ol:not([type]),div#\:\$p>svg>foreignObject>section ol[type="1"]{list-style-type:decimal}div#\:\$p>svg>foreignObject>section ol ol,div#\:\$p>svg>foreignObject>section ol ul,div#\:\$p>svg>foreignObject>section ul ol,div#\:\$p>svg>foreignObject>section ul ul{margin-bottom:0;margin-top:0}div#\:\$p>svg>foreignObject>section li>p{margin-top:16px}div#\:\$p>svg>foreignObject>section li+li{margin-top:.25em}div#\:\$p>svg>foreignObject>section dl{padding:0}div#\:\$p>svg>foreignObject>section dl dt{font-size:1em;font-style:italic;font-weight:var(--base-text-weight-semibold,600);margin-top:16px;padding:0}div#\:\$p>svg>foreignObject>section dl dd{margin-bottom:16px;padding:0 16px}div#\:\$p>svg>foreignObject>section table th{font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section table td,div#\:\$p>svg>foreignObject>section table th{border:1px solid var(--color-border-default);padding:6px 13px}div#\:\$p>svg>foreignObject>section table td>:last-child{margin-bottom:0}div#\:\$p>svg>foreignObject>section table tr{background-color:var(--color-canvas-default);border-top:1px solid var(--color-border-muted)}div#\:\$p>svg>foreignObject>section table tr:nth-child(2n){background-color:var(--color-canvas-subtle)}div#\:\$p>svg>foreignObject>section table img{background-color:transparent}div#\:\$p>svg>foreignObject>section img[align=right]{padding-left:20px}div#\:\$p>svg>foreignObject>section img[align=left]{padding-right:20px}div#\:\$p>svg>foreignObject>section .emoji{background-color:transparent;max-width:none;vertical-align:text-top}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame,div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame>:is(span,marp-span){display:block;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame>:is(span,marp-span){border:1px solid var(--color-border-default);float:left;margin:13px 0 0;padding:7px;width:auto}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame :is(span,marp-span) img{display:block;float:left}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame :is(span,marp-span) :is(span,marp-span){clear:both;color:var(--color-fg-default);display:block;padding:5px 0 0}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-center{clear:both;display:block;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-center>:is(span,marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:center}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-center :is(span,marp-span) img{margin:0 auto;text-align:center}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-right{clear:both;display:block;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-right>:is(span,marp-span){display:block;margin:13px 0 0;overflow:hidden;text-align:right}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-right :is(span,marp-span) img{margin:0;text-align:right}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-left{display:block;float:left;margin-right:13px;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-left :is(span,marp-span){margin:13px 0 0}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-right{display:block;float:right;margin-left:13px;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-right>:is(span,marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:right}div#\:\$p>svg>foreignObject>section code,div#\:\$p>svg>foreignObject>section tt{background-color:var(--color-neutral-muted);border-radius:6px;font-size:85%;margin:0;padding:.2em .4em;white-space:break-spaces}div#\:\$p>svg>foreignObject>section code br,div#\:\$p>svg>foreignObject>section tt br{display:none}div#\:\$p>svg>foreignObject>section del code{text-decoration:inherit}div#\:\$p>svg>foreignObject>section samp{font-size:85%}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) code{font-size:100%}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre)>code{background:transparent;border:0;margin:0;padding:0;white-space:pre;word-break:normal}div#\:\$p>svg>foreignObject>section .highlight{margin-bottom:16px}div#\:\$p>svg>foreignObject>section .highlight :is(pre,marp-pre){margin-bottom:0;word-break:normal}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre){background-color:var(--color-canvas-subtle);border-radius:6px;color:var(--color-fg-default);font-size:85%;line-height:1.45;overflow:auto;padding:16px}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) code,div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) tt{word-wrap:normal;background-color:transparent;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}div#\:\$p>svg>foreignObject>section .csv-data td,div#\:\$p>svg>foreignObject>section .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}div#\:\$p>svg>foreignObject>section .csv-data .blob-num{background:var(--color-canvas-default);border:0;padding:10px 8px 9px;text-align:right}div#\:\$p>svg>foreignObject>section .csv-data tr{border-top:0}div#\:\$p>svg>foreignObject>section .csv-data th{background:var(--color-canvas-subtle);border-top:0;font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section [data-footnote-ref]:before{content:"["}div#\:\$p>svg>foreignObject>section [data-footnote-ref]:after{content:"]"}div#\:\$p>svg>foreignObject>section .footnotes{border-top:1px solid var(--color-border-default);color:var(--color-fg-muted);font-size:12px}div#\:\$p>svg>foreignObject>section div#\:\$p>svg>foreignObject>section section.footnotes{--marpit-root-font-size:12px}div#\:\$p>svg>foreignObject>section .footnotes ol{padding-left:16px}div#\:\$p>svg>foreignObject>section .footnotes ol ul{display:inline-block;margin-top:16px;padding-left:16px}div#\:\$p>svg>foreignObject>section .footnotes li{position:relative}div#\:\$p>svg>foreignObject>section .footnotes li:target:before{border:2px solid var(--color-accent-emphasis);border-radius:6px;bottom:-8px;content:"";left:-24px;pointer-events:none;position:absolute;right:-8px;top:-8px}div#\:\$p>svg>foreignObject>section .footnotes li:target{color:var(--color-fg-default)}div#\:\$p>svg>foreignObject>section .footnotes .data-footnote-backref g-emoji{font-family:monospace}div#\:\$p>svg>foreignObject>section .pl-c{color:var(--color-prettylights-syntax-comment)}div#\:\$p>svg>foreignObject>section .pl-c1,div#\:\$p>svg>foreignObject>section .pl-s .pl-v{color:var(--color-prettylights-syntax-constant)}div#\:\$p>svg>foreignObject>section .pl-e,div#\:\$p>svg>foreignObject>section .pl-en{color:var(--color-prettylights-syntax-entity)}div#\:\$p>svg>foreignObject>section .pl-s .pl-s1,div#\:\$p>svg>foreignObject>section .pl-smi{color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p>svg>foreignObject>section .pl-ent{color:var(--color-prettylights-syntax-entity-tag)}div#\:\$p>svg>foreignObject>section .pl-k{color:var(--color-prettylights-syntax-keyword)}div#\:\$p>svg>foreignObject>section .pl-pds,div#\:\$p>svg>foreignObject>section .pl-s,div#\:\$p>svg>foreignObject>section .pl-s .pl-pse .pl-s1,div#\:\$p>svg>foreignObject>section .pl-sr,div#\:\$p>svg>foreignObject>section .pl-sr .pl-cce,div#\:\$p>svg>foreignObject>section .pl-sr .pl-sra,div#\:\$p>svg>foreignObject>section .pl-sr .pl-sre{color:var(--color-prettylights-syntax-string)}div#\:\$p>svg>foreignObject>section .pl-smw,div#\:\$p>svg>foreignObject>section .pl-v{color:var(--color-prettylights-syntax-variable)}div#\:\$p>svg>foreignObject>section .pl-bu{color:var(--color-prettylights-syntax-brackethighlighter-unmatched)}div#\:\$p>svg>foreignObject>section .pl-ii{background-color:var(--color-prettylights-syntax-invalid-illegal-bg);color:var(--color-prettylights-syntax-invalid-illegal-text)}div#\:\$p>svg>foreignObject>section .pl-c2{background-color:var(--color-prettylights-syntax-carriage-return-bg);color:var(--color-prettylights-syntax-carriage-return-text)}div#\:\$p>svg>foreignObject>section .pl-sr .pl-cce{color:var(--color-prettylights-syntax-string-regexp);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-ml{color:var(--color-prettylights-syntax-markup-list)}div#\:\$p>svg>foreignObject>section .pl-mh,div#\:\$p>svg>foreignObject>section .pl-mh .pl-en,div#\:\$p>svg>foreignObject>section .pl-ms{color:var(--color-prettylights-syntax-markup-heading);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-mi{color:var(--color-prettylights-syntax-markup-italic);font-style:italic}div#\:\$p>svg>foreignObject>section .pl-mb{color:var(--color-prettylights-syntax-markup-bold);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-md{background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}div#\:\$p>svg>foreignObject>section .pl-mi1{background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}div#\:\$p>svg>foreignObject>section .pl-mc{background-color:var(--color-prettylights-syntax-markup-changed-bg);color:var(--color-prettylights-syntax-markup-changed-text)}div#\:\$p>svg>foreignObject>section .pl-mi2{background-color:var(--color-prettylights-syntax-markup-ignored-bg);color:var(--color-prettylights-syntax-markup-ignored-text)}div#\:\$p>svg>foreignObject>section .pl-mdr{color:var(--color-prettylights-syntax-meta-diff-range);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-ba{color:var(--color-prettylights-syntax-brackethighlighter-angle)}div#\:\$p>svg>foreignObject>section .pl-sg{color:var(--color-prettylights-syntax-sublimelinter-gutter-mark)}div#\:\$p>svg>foreignObject>section .pl-corl{color:var(--color-prettylights-syntax-constant-other-reference-link);text-decoration:underline}div#\:\$p>svg>foreignObject>section g-emoji{display:inline-block;font-family:Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:1em;font-style:normal!important;font-weight:var(--base-text-weight-normal,400);line-height:1;min-width:1ch;vertical-align:-.075em}div#\:\$p>svg>foreignObject>section g-emoji img{height:1em;width:1em}div#\:\$p>svg>foreignObject>section .task-list-item{list-style-type:none}div#\:\$p>svg>foreignObject>section .task-list-item label{font-weight:var(--base-text-weight-normal,400)}div#\:\$p>svg>foreignObject>section .task-list-item.enabled label{cursor:pointer}div#\:\$p>svg>foreignObject>section .task-list-item+.task-list-item{margin-top:4px}div#\:\$p>svg>foreignObject>section .task-list-item .handle{display:none}div#\:\$p>svg>foreignObject>section .task-list-item-checkbox{margin:0 .2em .25em -1.4em;vertical-align:middle}div#\:\$p>svg>foreignObject>section .contains-task-list:dir(rtl) .task-list-item-checkbox{margin:0 -1.6em .25em .2em}div#\:\$p>svg>foreignObject>section .contains-task-list{position:relative}div#\:\$p>svg>foreignObject>section .contains-task-list:focus-within .task-list-item-convert-container,div#\:\$p>svg>foreignObject>section .contains-task-list:hover .task-list-item-convert-container{clip:auto;display:block;height:24px;overflow:visible;width:auto}div#\:\$p>svg>foreignObject>section ::-webkit-calendar-picker-indicator{filter:invert(50%)}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1){color:var(--h1-color);font-size:1.6em}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section :is(h2,marp-h2){border-bottom:none}div#\:\$p>svg>foreignObject>section :is(h2,marp-h2){font-size:1.3em}div#\:\$p>svg>foreignObject>section :is(h3,marp-h3){font-size:1.1em}div#\:\$p>svg>foreignObject>section :is(h4,marp-h4){font-size:1.05em}div#\:\$p>svg>foreignObject>section :is(h5,marp-h5){font-size:1em}div#\:\$p>svg>foreignObject>section :is(h6,marp-h6){font-size:.9em}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) strong,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) strong,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) strong,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) strong,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) strong,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) strong{color:var(--heading-strong-color);font-weight:inherit}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h2,marp-h2)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h3,marp-h3)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h4,marp-h4)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h5,marp-h5)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h6,marp-h6)::part(auto-scaling){max-height:563px}div#\:\$p>svg>foreignObject>section hr{height:0;padding-top:.25em}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre){border:1px solid var(--color-border-default);line-height:1.15;overflow:visible}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre)::part(auto-scaling){max-height:529px}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs){color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-doctag),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-keyword),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta .hljs-keyword),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-template-tag),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-template-variable),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-type),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-variable.language_){color:var(--color-prettylights-syntax-keyword)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.class_),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.class_.inherited__),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.function_){color:var(--color-prettylights-syntax-entity)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-attr),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-attribute),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-literal),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-number),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-operator),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-attr),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-class),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-id),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-variable){color:var(--color-prettylights-syntax-constant)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta .hljs-string),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-regexp),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-string){color:var(--color-prettylights-syntax-string)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-built_in),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-symbol){color:var(--color-prettylights-syntax-variable)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-code),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-comment),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-formula){color:var(--color-prettylights-syntax-comment)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-name),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-quote),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-pseudo),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-tag){color:var(--color-prettylights-syntax-entity-tag)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-subst){color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-section){color:var(--color-prettylights-syntax-markup-heading);font-weight:700}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-bullet){color:var(--color-prettylights-syntax-markup-list)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-emphasis){color:var(--color-prettylights-syntax-markup-italic);font-style:italic}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-strong){color:var(--color-prettylights-syntax-markup-bold);font-weight:700}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-addition){background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-deletion){background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}div#\:\$p>svg>foreignObject>section footer,div#\:\$p>svg>foreignObject>section header{color:var(--header-footer-color);font-size:18px;left:30px;margin:0;position:absolute}div#\:\$p>svg>foreignObject>section header{top:21px}div#\:\$p>svg>foreignObject>section footer{bottom:21px}div#\:\$p>svg>foreignObject>section{--h1-color:#246;--header-footer-color:hsla(0,0%,40%,.75);--heading-strong-color:#48c;--paginate-color:#777;align-items:stretch;display:flex;flex-flow:column nowrap;font-size:29px;height:720px;justify-content:center;padding:78.5px;width:1280px}div#\:\$p>svg>foreignObject>section{--marpit-root-font-size:29px}div#\:\$p>svg>foreignObject>section:where(.invert){--h1-color:#cee7ff;--header-footer-color:hsla(0,0%,60%,.75);--heading-strong-color:#7bf;--paginate-color:#999}div#\:\$p>svg>foreignObject>section>:last-child,div#\:\$p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#\:\$p>svg>foreignObject>section>:first-child,div#\:\$p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#\:\$p>svg>foreignObject>section:after{bottom:21px;color:var(--paginate-color);font-size:24px;padding:0;position:absolute;right:30px}div#\:\$p>svg>foreignObject>section:after{--marpit-root-font-size:24px}div#\:\$p>svg>foreignObject>section[data-color] :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section[data-color] :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section[data-color] :is(h3,marp-h3),div#\:\$p>svg>foreignObject>section[data-color] :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section[data-color] :is(h5,marp-h5),div#\:\$p>svg>foreignObject>section[data-color] :is(h6,marp-h6){color:currentcolor}
+/* フォントサイズバリエーション */div#\:\$p>svg>foreignObject>section[data-class~=font-large]{font-size:28px!important;line-height:1.5!important}div#\:\$p>svg>foreignObject>section[data-class~=font-large] :is(h2,marp-h2){font-size:42px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-medium]{font-size:22px!important;line-height:1.4!important}div#\:\$p>svg>foreignObject>section[data-class~=font-small]{font-size:20px!important;line-height:1.35!important;padding:35px 50px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-small] :is(h2,marp-h2){font-size:32px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-small] li{margin-bottom:0.15em!important}div#\:\$p>svg>foreignObject>section[data-class~=font-xsmall]{font-size:18px!important;line-height:1.25!important;padding:30px 50px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-xsmall] :is(h2,marp-h2){font-size:28px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-xsmall] li{margin-bottom:0.1em!important}div#\:\$p>svg>foreignObject>section[data-class~=font-xxsmall]{font-size:16px!important;line-height:1.2!important;padding:25px 45px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-xxsmall] :is(h2,marp-h2){font-size:24px!important}div#\:\$p>svg>foreignObject>section[data-class~=font-xxsmall] li{margin-bottom:0.05em!important}
+/* 2カラムレイアウト */div#\:\$p>svg>foreignObject>section .columns{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--marpit-root-font-size, 1rem) * 1.5);margin-top:0.5em}div#\:\$p>svg>foreignObject>section .columns ul{margin:0}
+/* 3カラムレイアウト */div#\:\$p>svg>foreignObject>section .columns-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(var(--marpit-root-font-size, 1rem) * 1);margin-top:0.5em}div#\:\$p>svg>foreignObject>section .columns-3 ul{margin:0;font-size:0.85em}
+/* コンパクトリスト */div#\:\$p>svg>foreignObject>section .compact-list li{margin-bottom:0.2em;font-size:0.95em}
+/* ハイライトボックス */div#\:\$p>svg>foreignObject>section .highlight-box{background:#e8f0fe;border-left:4px solid #1a73e8;padding:calc(var(--marpit-root-font-size, 1rem) * 1) calc(var(--marpit-root-font-size, 1rem) * 1.5);margin:1em 0;border-radius:4px}
+/* 警告ボックス */div#\:\$p>svg>foreignObject>section .warning-box{background:#fef7e0;border-left:4px solid #f9ab00;padding:calc(var(--marpit-root-font-size, 1rem) * 1) calc(var(--marpit-root-font-size, 1rem) * 1.5);margin:1em 0;border-radius:4px}
+/* キーメッセージ */div#\:\$p>svg>foreignObject>section .key-message{font-size:1.3em;font-weight:bold;color:#1a73e8;text-align:center;margin:1.5em 0;padding:1em;background:#f8f9fa;border-radius:8px}div#\:\$p>svg>foreignObject>section section.key-message{--marpit-root-font-size:1.3em}
+/* チェックリスト */div#\:\$p>svg>foreignObject>section .checklist ul{list-style:none;padding-left:0}div#\:\$p>svg>foreignObject>section .checklist li:before{content:"✓ ";color:#34a853;font-weight:bold}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure>figcaption{position:absolute;border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=content],div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#\:\$p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="1" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h1 id="ai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC-day-1">AI駆動開発セミナー Day 1</h1>
+<h2 id="%E5%85%A5%E9%96%80%E7%B7%A8ai%E3%81%A8%E3%81%AE%E6%AD%A3%E3%81%97%E3%81%84%E4%BB%98%E3%81%8D%E5%90%88%E3%81%84%E6%96%B9">入門編：AIとの正しい付き合い方</h2>
+<p><strong>対象者</strong>: Python開発者（AI駆動開発は初心者）<br />
+<strong>学習目標</strong>: AI駆動開発の基本的なマインドセット、Claude Code活用法、プロジェクト初期化、AI特性理解、5-STEPワークフローの完全理解</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="2" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="%E3%81%AA%E3%81%9Cai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA%E3%81%AA%E3%81%AE%E3%81%8B">なぜAI駆動開発なのか</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="font-small" data-theme="default" lang="en-US" class="font-small" data-marpit-pagination="3" style="--paginate:true;--class:font-small;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E8%A1%9D%E6%92%83%E7%9A%84%E3%81%AA%E5%8A%B9%E6%9E%9C---%E3%81%A7%E3%82%82%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4%E3%82%82%E3%81%82%E3%82%8B">衝撃的な効果 - でも落とし穴もある</h3>
+<p><strong>成功例（正しく使った場合）</strong></p>
+<ul>
+<li>Harvard研究：コンサルタント758人を対象にAI活用の効果を測定 → 品質40%↑、速度25%↑</li>
+<li>楽天（Claude Code）：7時間自律作業、99.9%精度</li>
+<li>GitHub Copilot（Microsoft Research）：タスク完了26%増加</li>
+</ul>
+<p><strong>失敗例（間違った使い方）</strong></p>
+<ul>
+<li>Uplevel社の調査：Copilot使用グループでバグが41%増加（品質検証なしの場合）</li>
+<li>GitClear社の調査：AIにコピペさせた結果 → コード重複8倍増加</li>
+<li>Google DORA 2025：レビューなしでAIコードをマージ → レビュー時間91%増、バグ9%増</li>
+<li>2024年調査（600人以上）：シニアエンジニアの65%がバーンアウトを経験</li>
+</ul>
+<p><strong>結論</strong>：正しく使えば強力（最大10倍）、間違えば逆効果（品質低下、負担増）</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="4" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="crowdstrike%E4%BA%8B%E4%BB%B6---%E6%A4%9C%E8%A8%BC%E4%B8%8D%E8%B6%B3%E3%81%8C%E6%8B%9B%E3%81%84%E3%81%9F%E5%A4%A7%E8%A6%8F%E6%A8%A1%E9%9A%9C%E5%AE%B3">CrowdStrike事件 - 検証不足が招いた大規模障害</h3>
+<p><strong>2024年7月19日の事件</strong></p>
+<ul>
+<li>全世界で約850万台のWindowsデバイスがブルースクリーン</li>
+<li>航空会社、銀行、病院など社会インフラに深刻な影響</li>
+<li>原因：ソフトウェアアップデートの検証不足</li>
+</ul>
+<p><strong>AI時代の教訓</strong></p>
+<ul>
+<li>自動化されたプロセスでも人間の検証が必要</li>
+<li>&quot;Trust but Verify&quot;（信頼しつつ検証する）の重要性</li>
+<li>テスト環境と本番環境の差異に注意</li>
+</ul>
+<p><strong>被害規模</strong></p>
+<ul>
+<li>推定損害額：数十億ドル規模</li>
+<li>復旧に数日〜数週間を要したケースも</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="font-small" data-theme="default" lang="en-US" class="font-small" data-marpit-pagination="5" style="--paginate:true;--class:font-small;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="ai%E3%81%AE5%E3%81%A4%E3%81%AE%E7%89%B9%E6%80%A7%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B">AIの5つの特性を理解する</h2>
+<p><strong>なぜ特性を理解するのか？</strong> → 前スライドの失敗例（エラー率2倍、コード重複8倍）は、AIの特性を知らずに使った結果です。特性を理解すれば、対策を打てます。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="6" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="ai%E3%81%8C%E6%8C%81%E3%81%A45%E3%81%A4%E3%81%AE%E7%89%B9%E6%80%A712">AIが持つ5つの特性（1/2）</h3>
+<p><strong>1. 暴走（Scope Creep）</strong></p>
+<ul>
+<li>Issue範囲外の機能を勝手に追加</li>
+<li>本質的対策：仕様書で機能範囲を明確化、受入基準で「完了」を定義</li>
+</ul>
+<p><strong>2. 手抜き（Test Hacking）</strong></p>
+<ul>
+<li>テストを通すだけの仮実装</li>
+<li>本質的対策：受入基準を具体的かつ厳密に記述、テストケースを事前に明記</li>
+</ul>
+<p><strong>3. 忘れっぽさ（Context Loss）</strong></p>
+<ul>
+<li>過去の指示を忘れる、コンテキスト汚染</li>
+<li>本質的対策：CLAUDE.mdに永続ルール記載、<strong>Claude Skills</strong>で再利用可能な知識を定義</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="ai%E3%81%8C%E6%8C%81%E3%81%A45%E3%81%A4%E3%81%AE%E7%89%B9%E6%80%A722">AIが持つ5つの特性（2/2）</h3>
+<p><strong>4. 凸凹知能（Jagged Intelligence）</strong></p>
+<ul>
+<li>得意分野と苦手分野の差が激しい</li>
+<li>本質的対策：人間がAIの能力限界を理解し、適切な期待値を持つ</li>
+</ul>
+<p><strong>5. 虚偽報告（Hallucination）</strong></p>
+<ul>
+<li>自信満々に誤った情報を提供</li>
+<li>本質的対策：自動テスト（pytest, ruff, pyright）、公式ドキュメント確認</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="ai%E3%81%AE%E7%89%B9%E6%80%A7%E3%81%B8%E3%81%AE%E5%AF%BE%E7%AD%96%E3%81%BE%E3%81%A8%E3%82%81">AIの特性への対策まとめ</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>問題</th>
+<th>本質的対策</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>暴走</td>
+<td>機能追加しすぎ</td>
+<td>仕様書・受入基準で範囲を明確化</td>
+</tr>
+<tr>
+<td>手抜き</td>
+<td>テストだけ通す</td>
+<td>受入基準・テストケースを事前定義</td>
+</tr>
+<tr>
+<td>忘れっぽさ</td>
+<td>指示を忘れる</td>
+<td>CLAUDE.md・Claude Skills・/clear</td>
+</tr>
+<tr>
+<td>凸凹知能</td>
+<td>得意不得意が激しい</td>
+<td>人間が期待値を適切に管理</td>
+</tr>
+<tr>
+<td>虚偽報告</td>
+<td>誤った情報</td>
+<td>pytest/ruff/pyright、公式ドキュメント</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重要</strong>: これらの特性を理解して対策すれば、AIは強力なパートナーになる</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="ai%E3%81%A8%E3%81%AE%E4%BB%98%E3%81%8D%E5%90%88%E3%81%84%E6%96%B93%E3%81%A4%E3%81%AE%E5%8E%9F%E5%89%87">AIとの付き合い方：3つの原則</h2>
+<p><strong>5つの特性への対策を、覚えやすい3つの原則に整理します。</strong> これを守れば、前述の5特性すべてに対処できます。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="10" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E5%8E%9F%E5%89%871-trust-but-verify%E4%BF%A1%E9%A0%BC%E3%81%97%E3%81%A4%E3%81%A4%E6%A4%9C%E8%A8%BC%E3%81%99%E3%82%8B">原則1: Trust but Verify（信頼しつつ検証する）</h3>
+<p><strong>AIは優秀だが完璧ではない</strong></p>
+<ul>
+<li>テストは通るが本番で動かない</li>
+<li>「完成しました！」と報告するが実際は不完全</li>
+<li>自信満々に誤った情報を提供する</li>
+</ul>
+<p><strong>対策：3段階レビュー</strong></p>
+<ol>
+<li>自動検証（pytest &amp;&amp; ruff check &amp;&amp; pyright）</li>
+<li>AI自己検証（「100点満点で評価して」）</li>
+<li>人間レビュー（git diff確認）</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="11" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="trust-but-verify-%E3%81%AE%E8%B5%B7%E6%BA%90">Trust but Verify の起源</h3>
+<p><strong>レーガン大統領と核軍縮交渉</strong></p>
+<ul>
+<li>1987年、米ソ間の中距離核戦力全廃条約（INF条約）</li>
+<li>レーガン大統領がロシアのことわざを引用</li>
+<li>「Doveryay, no proveryay」（信頼せよ、されど検証せよ）</li>
+</ul>
+<p><strong>AI開発への適用</strong></p>
+<ul>
+<li>AIは優秀なパートナーだが、盲目的な信頼は危険</li>
+<li>出力は必ず検証する</li>
+<li>検証プロセスを仕組み化する（自動テスト、レビュー）</li>
+</ul>
+<p><strong>「信頼」と「検証」のバランス</strong></p>
+<ul>
+<li>過度な不信：AIの恩恵を受けられない</li>
+<li>過度な信頼：品質低下、障害のリスク</li>
+<li>適切なバランス：効率と品質の両立</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="12" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E5%8E%9F%E5%89%872-context-is-the-new-code%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%81%8C%E5%85%A8%E3%81%A6">原則2: Context is the New Code（コンテキストが全て）</h3>
+<p><strong>AIは外部メモリが必要</strong></p>
+<ul>
+<li>Claude Codeのコンテキスト上限：200Kトークン（約13万文字）</li>
+<li><strong>設計書なしの場合</strong>
+<ul>
+<li>全ソースコード（数万行）を読む → 150Kトークン消費</li>
+<li>残り50Kトークンで思考 → 単純なCRUDしか作れない</li>
+</ul>
+</li>
+<li><strong>設計書ありの場合</strong>
+<ul>
+<li>設計書（数十ページ）を読む → 30Kトークン</li>
+<li>残り170Kトークンで思考 → 複雑なロジックも対応可能（<strong>3.4倍</strong>）</li>
+</ul>
+</li>
+</ul>
+<p><strong>コンテキストの種類</strong></p>
+<ul>
+<li>CLAUDE.md：プロジェクトルール（Claudeが最初に読む）</li>
+<li>README.md：プロジェクト概要</li>
+<li>設計書：画面、DB、API仕様</li>
+<li>Issue：タスク定義</li>
+<li>受入基準（AC）：「何ができればOKか」</li>
+</ul>
+<p><strong>研究データ</strong></p>
+<ul>
+<li>Microsoft研究：明示的仕様で改良が68%削減（初回で正しいコード生成）</li>
+<li>Stanford研究：標準化で満足度89% vs 非標準化34%（2.6倍）</li>
+<li>設計に2時間投資 → 実装10時間→3時間に短縮（ROI 3.5倍）</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="13" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="context-is-the-new-code---%E7%A0%94%E7%A9%B6%E3%83%87%E3%83%BC%E3%82%BF">Context is the New Code - 研究データ</h3>
+<p><strong>Microsoft Research 2023</strong></p>
+<ul>
+<li>明示的な仕様で改良（修正要求）が68%削減</li>
+</ul>
+<p><strong>Stanford HAI 2024</strong></p>
+<ul>
+<li>標準化されたコンテキストで満足度89%（非標準34%）</li>
+</ul>
+<p><strong>実務での効果</strong></p>
+<ul>
+<li>設計2時間投資 → 実装10時間→3時間（ROI 3.5倍）</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="14" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E5%8E%9F%E5%89%873-%E6%AE%B5%E9%9A%8E%E7%9A%84%E3%81%AB%E9%80%B2%E3%82%81%E3%82%8B">原則3: 段階的に進める</h3>
+<p><strong>なぜ段階的に進めるのか</strong></p>
+<ul>
+<li>AIの集中力には限界がある</li>
+<li>長いタスクは暴走・手抜き・忘れるリスク増大</li>
+<li>小さなステップで品質を維持</li>
+</ul>
+<p><strong>具体例：ユーザー認証機能</strong></p>
+<p><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274c.svg" data-marp-twemoji=""/> 悪い例（大きすぎる）:<br />
+「ユーザー認証機能を実装して」</p>
+<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> 良い例（段階的）:</p>
+<ol>
+<li>Userモデルを作成（10分）</li>
+<li>パスワードハッシュ化を実装（10分）</li>
+<li>ログインエンドポイントを作成（10分）</li>
+<li>JWTトークン発行を実装（10分）※JWT = JSON Web Token、認証情報を安全に伝達する標準形式</li>
+</ol>
+<p><strong>効果</strong>: 各ステップで品質確認、問題の早期発見、進捗が明確</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="15" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="claude-code%E3%81%A8%E3%81%AFai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA%E3%81%AE%E3%83%84%E3%83%BC%E3%83%AB">Claude Codeとは：AI駆動開発のツール</h2>
+<p><strong>3つの原則を実践するためのツールがClaude Codeです。</strong> CLAUDE.mdでコンテキストを与え、段階的にタスクを実行し、検証を自動化できます。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="16" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claude-code%E3%81%AE%E5%9F%BA%E6%9C%AC">Claude Codeの基本</h3>
+<p><strong>Claude Codeとは</strong></p>
+<ul>
+<li>AnthropicのCLIツール（コマンドライン上で動作）</li>
+<li>Claude AIとの対話でコード開発を行う</li>
+<li>ファイル読み書き、コマンド実行が可能</li>
+</ul>
+<p><strong>3つの重要ファイル</strong></p>
+<ul>
+<li>CLAUDE.md：プロジェクトのルール（Claudeが最初に読む）</li>
+<li>README.md：プロジェクト概要</li>
+<li>.claude/commands/：カスタムコマンド格納場所</li>
+</ul>
+<p><strong>特徴</strong></p>
+<ul>
+<li>200Kトークンのコンテキスト容量</li>
+<li>ファイル検索・編集・テスト実行を自動化</li>
+<li>チャット履歴を保持してコンテキストを維持</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-class="font-small" data-theme="default" lang="en-US" class="font-small" data-marpit-pagination="17" style="--paginate:true;--class:font-small;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claude-skills-%E3%81%A8%E3%81%AF">Claude Skills とは</h3>
+<p><strong>Skills の概念</strong></p>
+<ul>
+<li>AIの能力を拡張するための設定ファイル</li>
+<li><code>.claude/skills/</code> ディレクトリに配置</li>
+<li>特定のタスクに特化した指示を定義</li>
+</ul>
+<p><strong>Skills の種類</strong></p>
+<ul>
+<li>コード生成スキル: 言語やフレームワーク固有のルール</li>
+<li>品質管理スキル: テスト、レビューの自動化</li>
+<li>ドキュメントスキル: 仕様書、README生成</li>
+</ul>
+<p><strong>忘れっぽさへの対策</strong></p>
+<ul>
+<li>CLAUDE.mdだけでは伝えきれない詳細なルールを保存</li>
+<li>タスク種別ごとに最適な指示を再利用可能</li>
+<li>プロジェクト固有の知識を永続化</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="18" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E3%82%B3%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%81%A8%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E7%90%86%E8%A7%A3">コンテキストとトークンの理解</h3>
+<p><strong>トークンとは</strong></p>
+<ul>
+<li>テキストの単位（日本語：約1.5文字/トークン、英語：約4文字/トークン）</li>
+<li>Claude Codeの容量：200,000トークン（約13万文字の日本語）</li>
+</ul>
+<p><strong>コンテキストの使われ方</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>200K トークン
+├── 読み込んだコード: 150K
+└── 思考・生成: 50K  ← これでは単純なCRUDしか作れない
+
+200K トークン
+├── 設計書: 30K
+└── 思考・生成: 170K  ← 複雑なロジックも対応可能（3.4倍！）
+</code></pre>
+<p><strong>だから設計書が重要</strong></p>
+<ul>
+<li>設計書があればAIの思考容量が3.4倍に</li>
+<li>コード全体を読む必要がなくなる</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="19" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claude-code%E3%81%AE4%E3%81%A4%E3%81%AE%E3%83%A2%E3%83%BC%E3%83%89">Claude Codeの4つのモード</h3>
+<p><strong>Normal（通常モード）</strong></p>
+<ul>
+<li>慎重に動作、ユーザーに確認を取る</li>
+<li>ファイル変更前に許可を求める</li>
+<li>初心者向け、安全重視</li>
+</ul>
+<p><strong>Plan（プランモード）</strong></p>
+<ul>
+<li>実装前に計画を立てる</li>
+<li>タスクを分解して提示</li>
+<li>承認後に実装開始</li>
+</ul>
+<p><strong>Yolo（高速モード）</strong></p>
+<ul>
+<li>確認なしで高速実行</li>
+<li>危険な操作も即実行</li>
+<li>上級者向け、スピード重視</li>
+</ul>
+<p><strong>Bypass Permissions（権限バイパス）</strong></p>
+<ul>
+<li>ファイル操作の許可を自動承認</li>
+<li>繰り返し作業の効率化</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="20" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-tdd%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB">カスタムコマンド: TDDサイクル</h3>
+<p><strong>カスタムコマンドとは</strong></p>
+<ul>
+<li>よく使う指示を登録して再利用</li>
+<li><code>.claude/commands/</code> に保存</li>
+<li><code>/コマンド名</code> で実行</li>
+</ul>
+<p><strong>TDDサイクル用コマンド</strong></p>
+<ul>
+<li><code>/tdd-plan</code>：実装計画を立てる</li>
+<li><code>/tdd-red</code>：失敗するテストを書く</li>
+<li><code>/tdd-green</code>：テストを通す最小実装</li>
+<li><code>/tdd-refactor</code>：コードを改善</li>
+<li><code>/tdd-verify</code>：完成度を検証</li>
+</ul>
+<p><strong>使用例</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">/tdd-plan ユーザー認証機能
+/tdd-red ログイン機能のテストを書いて
+/tdd-green テストを通して
+/tdd-refactor コードを改善して
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-class="font-small" data-theme="default" lang="en-US" class="font-small" data-marpit-pagination="21" style="--paginate:true;--class:font-small;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claudemd%E3%81%A8readmemd">CLAUDE.mdとREADME.md</h3>
+<p><strong>CLAUDE.md（最重要）</strong></p>
+<ul>
+<li>Claudeが最初に読むプロジェクトルール</li>
+<li>コーディング規約、アーキテクチャ方針を記載</li>
+<li>例：「テストカバレッジ80%以上必須」「実装前に不明点があれば質問すること」</li>
+</ul>
+<p><strong>README.md</strong></p>
+<ul>
+<li>プロジェクト概要、セットアップ方法</li>
+<li>人間とAI両方が読む</li>
+<li>プロジェクトの全体像を把握</li>
+</ul>
+<p><strong>効果</strong></p>
+<ul>
+<li>CLAUDE.mdがあれば、毎回同じ指示を繰り返さなくていい</li>
+<li>プロジェクト全体で一貫した品質を保てる</li>
+<li>新しいタスクでもルールを自動適用</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="22" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claudemd-%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E5%88%A5%E9%85%8D%E7%BD%AE">CLAUDE.md のディレクトリ別配置</h3>
+<p><strong>モノレポでの活用</strong>（モノレポ = 1つのリポジトリで複数プロジェクトを管理する手法）</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>project/
+├── CLAUDE.md       ← 全体ルール
+├── frontend/CLAUDE.md  ← フロントエンド固有
+├── backend/CLAUDE.md   ← バックエンド固有
+└── tests/CLAUDE.md     ← テスト固有
+</code></pre>
+<p><strong>ディレクトリ別ルールの例</strong></p>
+<ul>
+<li>frontend/: React、biome</li>
+<li>backend/: Python、ruff/pyright</li>
+<li>tests/: pytest、80%カバレッジ</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="23" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="ai%E3%81%AB%E3%81%82%E3%81%84%E3%81%BE%E3%81%84%E3%81%AA%E7%82%B9%E3%82%92%E6%98%8E%E7%A2%BA%E5%8C%96%E3%81%95%E3%81%9B%E3%82%8B">AIにあいまいな点を明確化させる</h3>
+<p><strong>問題：AIは推測で進める</strong></p>
+<ul>
+<li>技術スタック未定義 → 勝手にライブラリを選択</li>
+<li>テスト方法不明 → ハードコードで済ませる</li>
+<li>設計方針なし → 独自の判断で実装</li>
+</ul>
+<p><strong>CLAUDE.mdに記載する指示</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-markdown">実装前に、以下について不明・あいまいな点があれば必ず質問してください：
+<span class="hljs-bullet">-</span> 使用する技術スタック・ライブラリ
+<span class="hljs-bullet">-</span> テスト方法とカバレッジ目標
+<span class="hljs-bullet">-</span> エラーハンドリングの方針
+</code></pre>
+<p><strong>AIからの質問例</strong></p>
+<ul>
+<li>「Webフレームワークは？（FastAPI / Django / Flask）」</li>
+<li>「DBは？（PostgreSQL / SQLite / MySQL）」</li>
+<li>「テストカバレッジ目標は何%ですか？」</li>
+</ul>
+<p><strong>効果</strong>: 技術選定のミスマッチ防止、一貫性、手戻り削減</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="24" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3">プロジェクトの初期化（ハンズオン）</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="25" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%81%AE%E6%BA%96%E5%82%99">開発環境の準備</h3>
+<p><strong>必要なツール</strong></p>
+<ul>
+<li>Python 3.12以上</li>
+<li>Git</li>
+<li>mise（複数言語のバージョン管理ツール、pyenv/nodenvの統合版）</li>
+<li>IDE（VS Code + Python拡張）</li>
+</ul>
+<p><strong>Claude Code CLIインストール</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">npm install -g @anthropic-ai/claude-code
+</code></pre>
+<p><strong>APIキー設定</strong></p>
+<ul>
+<li>Claude.aiでAPIキーを取得</li>
+<li>環境変数に設定またはCLIで設定</li>
+<li>初回起動時に認証</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="26" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AApython%E9%96%8B%E7%99%BA%E3%83%84%E3%83%BC%E3%83%AB">モダンなPython開発ツール</h3>
+<p><strong>mise</strong>: pyenv + nodenv + rbenvを1つに統合したツール。プロジェクトごとに言語バージョンを自動切り替え</p>
+<p><strong>ruff</strong>: Pythonの高速リンター・フォーマッター（Rust製、10-100倍高速）</p>
+<p><strong>pyright</strong>: 静的型解析でバグを早期発見</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="python%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90">Pythonプロジェクトの作成</h3>
+<p><strong>ステップ1: プロジェクト作成</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-built_in">mkdir</span> todo-app &amp;&amp; <span class="hljs-built_in">cd</span> todo-app
+python -m venv .venv
+<span class="hljs-built_in">source</span> .venv/bin/activate
+pip install fastapi uvicorn sqlalchemy pytest ruff pyright
+</code></pre>
+<p><strong>ステップ2: git初期化</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">git init
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;.venv/\n__pycache__/\n.pytest_cache/&quot;</span> &gt;&gt; .gitignore
+git add .
+git commit -m <span class="hljs-string">&quot;chore: initial commit&quot;</span>
+</code></pre>
+<p><strong>重要</strong>: <code>.gitignore</code>に仮想環境、キャッシュを追加</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claudemd%E4%BD%9C%E6%88%90%E6%9C%80%E9%87%8D%E8%A6%81">CLAUDE.md作成（最重要）</h3>
+<p><strong>ステップ3: CLAUDE.md作成</strong></p>
+<p>プロジェクトルートに<code>CLAUDE.md</code>を作成：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-markdown"><span class="hljs-section"># TODO管理アプリ</span>
+
+<span class="hljs-section">## プロジェクト概要</span>
+FastAPIによるTODO管理Web API
+
+<span class="hljs-section">## 技術スタック</span>
+<span class="hljs-bullet">-</span> Python 3.12
+<span class="hljs-bullet">-</span> FastAPI
+<span class="hljs-bullet">-</span> SQLAlchemy
+<span class="hljs-bullet">-</span> SQLite（開発用）
+<span class="hljs-bullet">-</span> pytest
+
+<span class="hljs-section">## ディレクトリ構造</span>
+<span class="hljs-bullet">-</span> app/
+<span class="hljs-bullet">  -</span> main.py - エントリーポイント
+<span class="hljs-bullet">  -</span> models.py - SQLAlchemyモデル
+<span class="hljs-bullet">  -</span> schemas.py - Pydanticスキーマ
+<span class="hljs-bullet">  -</span> crud.py - データアクセス
+<span class="hljs-bullet">  -</span> routers/ - APIルーター
+
+<span class="hljs-section">## コーディング規約</span>
+<span class="hljs-bullet">-</span> ruff でフォーマット・リント
+<span class="hljs-bullet">-</span> pyright で型チェック
+<span class="hljs-bullet">-</span> テストカバレッジ80%以上必須
+<span class="hljs-bullet">-</span> 実装前に不明点があれば必ず質問すること
+</code></pre>
+<p><strong>効果</strong>: Claudeが毎回このルールに従う</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="readmemd%E4%BD%9C%E6%88%90">README.md作成</h3>
+<p><strong>ステップ4: README.md作成</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-markdown"><span class="hljs-section"># TODO管理アプリ</span>
+
+<span class="hljs-section">## セットアップ</span>
+\<span class="hljs-code">`\`</span>\`bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+\<span class="hljs-code">`\`</span>\`
+
+<span class="hljs-section">## テスト実行</span>
+\<span class="hljs-code">`\`</span>\`bash
+pytest
+\<span class="hljs-code">`\`</span>\`
+</code></pre>
+<p><strong>AIがREADMEを読む</strong>: プロジェクト全体を理解</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-class="font-small" data-theme="default" lang="en-US" class="font-small" data-marpit-pagination="30" style="--paginate:true;--class:font-small;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E6%BA%96%E5%82%99">カスタムコマンドの準備</h3>
+<p><strong>ステップ5: カスタムコマンド作成（オプション）</strong></p>
+<p><code>.claude/commands/plan.md</code>を作成：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-markdown">実装前に計画を立ててください：
+
+<span class="hljs-bullet">1.</span> 実装する機能リスト
+<span class="hljs-bullet">2.</span> 変更するファイルリスト
+<span class="hljs-bullet">3.</span> 新規作成するファイルリスト
+<span class="hljs-bullet">4.</span> テスト戦略
+<span class="hljs-bullet">5.</span> 所要時間見積もり
+
+計画を承認してから実装を開始してください。
+</code></pre>
+<p><strong>使用方法</strong>: <code>/plan ユーザー作成機能</code></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="31" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E7%A2%BA%E8%AA%8D">成果物の確認</h3>
+<p><strong>ステップ6: 成果物確認</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">git status
+</code></pre>
+<p><strong>確認項目</strong>: <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> CLAUDE.md、<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> README.md、<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> .gitignore、<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> pytest実行可能</p>
+<p><strong>これで準備完了</strong>: 02以降で使い続ける</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="32" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="claude-code%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9%E3%81%AE%E3%82%B3%E3%83%84">Claude Codeの使い方のコツ</h3>
+<p><strong>モード切り替え（Shift+Tab）</strong></p>
+<ul>
+<li><strong>Normalモード</strong>：標準、確認しながら進める</li>
+<li><strong>Planモード</strong>：実装前に計画を立てる</li>
+<li><strong>Yolomode</strong>：高速・自律的（上級者向け）</li>
+<li><strong>Bypass permission</strong>：権限チェックをスキップ</li>
+</ul>
+<p><strong><code>/clear</code>コマンドの重要性</strong></p>
+<ul>
+<li>タスク完了ごとに<code>/clear</code>でコンテキストをクリア</li>
+<li>コンテキスト汚染を防ぐ（前のタスクの誤りが次に伝播するのを防止）</li>
+<li>間違いに気づいたら訂正ではなく<code>/clear</code>して再開</li>
+</ul>
+<p><strong>AIに質問させる</strong></p>
+<ul>
+<li>「実装前に不明点があれば必ず質問してください」を習慣化</li>
+<li>CLAUDE.mdに記載しておくと毎回有効</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="33" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="ai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA%E3%81%AE5-step%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC">AI駆動開発の5-STEPワークフロー</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="34" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="5-step%E3%81%AE%E5%85%A8%E4%BD%93%E5%83%8F%E3%81%A8%E5%8A%B9%E6%9E%9C">5-STEPの全体像と効果</h3>
+<p><strong>5つのステップ</strong></p>
+<ol>
+<li><strong>要件定義</strong>（STEP 1）：誰が、何を、なぜ（ユーザーストーリー、MoSCoW分析）</li>
+<li><strong>設計</strong>（STEP 2）：AIの外部メモリ構築（画面、DB、AC、API仕様）</li>
+<li><strong>タスク分解</strong>（STEP 3）：10分サイズに分割（GitHub Issues、BDD = 振る舞い駆動開発、ユーザー視点でテストを書く手法）</li>
+<li><strong>実装</strong>（STEP 4）：TDD + 3段階レビュー（Red-Green-Refactor + 検証）</li>
+<li><strong>品質改善</strong>（STEP 5）：AIに任せる（リファクタリング、ドキュメント、8つの質問）</li>
+</ol>
+<p><strong>目的</strong></p>
+<ul>
+<li>AIの5つの特性（暴走、手抜き、忘れっぽさ、凸凹知能、虚偽報告）を制御</li>
+<li>高品質なコードを効率的に生成</li>
+<li>人間とAIの役割分担を明確化</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="35" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="5-step%E3%81%A8%E4%BA%BA%E9%96%93%E3%83%BBai%E3%81%AE%E5%BD%B9%E5%89%B2%E5%88%86%E6%8B%85">5-STEPと人間・AIの役割分担</h3>
+<table>
+<thead>
+<tr>
+<th>STEP</th>
+<th>人間の役割</th>
+<th>AIの役割</th>
+<th>防ぐAI特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 要件定義</td>
+<td>ユーザーストーリー作成</td>
+<td>妥当性検証</td>
+<td>暴走</td>
+</tr>
+<tr>
+<td>2. 設計</td>
+<td>画面・DB・AC定義</td>
+<td>設計レビュー</td>
+<td>忘れっぽさ、凸凹知能</td>
+</tr>
+<tr>
+<td>3. タスク分解</td>
+<td>10分タスクに分割</td>
+<td>BDDシナリオ作成</td>
+<td>暴走、忘れっぽさ</td>
+</tr>
+<tr>
+<td>4. 実装</td>
+<td>人間レビュー</td>
+<td>TDD実装</td>
+<td>手抜き、虚偽報告</td>
+</tr>
+<tr>
+<td>5. 品質改善</td>
+<td>最終確認</td>
+<td>リファクタリング</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>効果</strong></p>
+<ul>
+<li>エラー伝播41%削減、改良68%削減、満足度2.6倍向上</li>
+<li>設計への投資で実装時間70%削減（10時間→3時間）</li>
+<li>5-STEPで、AIの特性を制御し、高品質なコードを効率的に生成</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="36" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="%E4%BB%8A%E6%97%A5%E3%81%AE%E5%AD%A6%E7%BF%92%E5%86%85%E5%AE%B9">今日の学習内容</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="font-xxsmall" data-theme="default" lang="en-US" class="font-xxsmall" data-marpit-pagination="37" style="--paginate:true;--class:font-xxsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="3%E3%81%A4%E3%81%AE%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">3つのセッション</h3>
+<p><strong>02: STEP 1-2-3</strong></p>
+<ul>
+<li>要件定義・設計・タスク分解</li>
+<li>ユーザーストーリー、画面設計、受入基準</li>
+<li>Planモード、AIに質問させる手法</li>
+</ul>
+<p><strong>03: STEP 4-5</strong></p>
+<ul>
+<li>TDD実装・3段階レビュー</li>
+<li>Test Hacking対策、/clearでコンテキスト管理</li>
+<li>MCP Servers活用、品質改善</li>
+</ul>
+<p><strong>04: 統合ハンズオン</strong></p>
+<ul>
+<li>STEP 1-5の完全実践</li>
+<li>TODO管理アプリ実装</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="38" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="ai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA%E3%81%A7%E5%A4%A7%E5%88%87%E3%81%AA%E3%81%93%E3%81%A812">AI駆動開発で大切なこと（1/2）</h3>
+<p><strong>マインドセット</strong></p>
+<ol>
+<li>AIを信頼しつつ検証する（3段階レビュー）</li>
+<li>コンテキスト（設計書）に投資する（3.4倍の効果）</li>
+<li>段階的に進める（10分ルール）</li>
+</ol>
+<p><strong>覚えておくこと</strong></p>
+<ul>
+<li>AIは優秀だが完璧ではない（エラー率2倍のリスク）</li>
+<li>設計書があればAIは3倍賢くなる</li>
+<li>Planモードで早期軌道修正（手戻り54%削減）</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="39" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="40">
+<h3 id="ai%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA%E3%81%A7%E5%A4%A7%E5%88%87%E3%81%AA%E3%81%93%E3%81%A822">AI駆動開発で大切なこと（2/2）</h3>
+<p><strong>覚えておくこと（続き）</strong></p>
+<ul>
+<li><code>/clear</code>でコンテキスト汚染を防ぐ</li>
+<li>AIに質問させる（暴走・手抜き・忘れっぽさを防ぐ）</li>
+</ul>
+<p><strong>成功の条件</strong></p>
+<ul>
+<li>正しく使えば最大10倍の生産性向上</li>
+<li>間違えるとコード重複8倍、レビュー負担91%増加</li>
+<li>5-STEPワークフローで品質と速度の両立</li>
+</ul>
+<p><strong>これから</strong></p>
+<ul>
+<li>02で実際に設計書を作成します</li>
+<li>03でTDD実装を体験します</li>
+<li>04で全体を通して実践します</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="40" style="--paginate:true;--theme:default;" data-marpit-pagination-total="40">
+<h2 id="%E8%B3%AA%E5%95%8F%E3%82%BF%E3%82%A4%E3%83%A0">質問タイム</h2>
+<p>準備ができたら、02に進みましょう！</p>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.2.3/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),a={},i=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){a[e]=(a[e]||[]).filter(function(e){return e!==t})},c=function(e,t){return(a[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},l=function(e,t){o[e]&&(n&&c("deactivate",i(n,t)),n=o[e],c("activate",i(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;c(e>0?"next":"prev",i(n,t))&&l(r,t)},u={off:s,on:function(e,t){return(a[e]||(a[e]=[])).push(t),s.bind(null,e,t)},fire:c,slide:function(e,t){if(!arguments.length)return o.indexOf(n);c("slide",i(o[e],t))&&l(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){c("destroy",i(n,e)),a={}}};return(t||[]).forEach(function(e){e(u)}),n||l(0),u}}),t),o=e(r);const a=document.body,i=(...e)=>history.replaceState(...e),s="",c="presenter",l="next",d=["",c,l],u="bespoke-marp-",f=`data-${u}`,m=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},g=()=>a.dataset.bespokeView,p=e=>new URLSearchParams(location.search).get(e),v=(e,t={})=>{const n={location,setter:i,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",m(r,n.location))}catch(e){console.error(e)}},h=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},w=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},k=e=>{e.parent.classList.add(`${u}parent`),e.slides.forEach(e=>e.classList.add(`${u}slide`)),e.on("activate",t=>{const n=`${u}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const a=t<r||t===r&&n<=o;e.setAttribute(`${f}fragment`,(a?"":"in")+"active");const i=`${f}current-fragment`;t===r&&n===o?e.setAttribute(i,"current"):e.removeAttribute(i)})}),e.fragmentIndex=o;const a={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",a)};e.on("next",({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}}),e.on("prev",({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},E=document,L=()=>!(!E.fullscreenEnabled&&!E.webkitFullscreenEnabled),S=()=>!(!E.fullscreenElement&&!E.webkitFullscreenElement),P=e=>{e.fullscreen=()=>{L()&&(async()=>{S()?(E.exitFullscreen||E.webkitExitFullscreen)?.call(E):((e=E.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!L()||(e.fullscreen(),t.preventDefault())})},_=`${u}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout(()=>{r.add(_),o()},e),r.contains(_)&&(r.remove(_),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},O=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${f}load`,e?"":"hideable")}})},A=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const c=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const l=Date.now()-o<e,d=c<=n;if(n=c,l||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},C=(e=`.${u}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${f}osc=${JSON.stringify(e)}]`).forEach(n)};return L()||n("fullscreen",e=>e.style.display="none"),h||n("presenter",e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."}),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n&&e.openPresenterView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),L()&&(e=>{for(const t of["","webkit"])E.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",L()&&S())))}},D=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}})};var N,B,q,K,F,j,V,U={exports:{}},X=(N||(N=1,U.exports=(B=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],q=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+K[e]+";"})},K={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},F="dangerouslySetInnerHTML",j={className:"class",htmlFor:"for"},V={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==F&&(r+=" "+(j[a]?j[a]:q(a))+'="'+q(t[a])+'"');r+=">"}if(-1===B.indexOf(e)){if(t[F])r+=t[F].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===V[i]?i:q(i)}r+=e?"</"+e+">":""}return V[r]=!0,r})),U.exports),H=e(X);const R=({children:e})=>H(null,null,...e),W=`${u}presenter-`,J={container:`${W}container`,dragbar:`${W}dragbar-container`,next:`${W}next`,nextContainer:`${W}next-container`,noteContainer:`${W}note-container`,noteWrapper:`${W}note-wrapper`,noteButtons:`${W}note-buttons`,infoContainer:`${W}info-container`,infoPage:`${W}info-page`,infoPageText:`${W}info-page-text`,infoPagePrev:`${W}info-page-prev`,infoPageNext:`${W}info-page-next`,noteButtonsBigger:`${W}note-bigger`,noteButtonsSmaller:`${W}note-smaller`,infoTime:`${W}info-time`,infoTimer:`${W}info-timer`},Y=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=J.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",H(R,null,H("div",{class:J.nextContainer},H("iframe",{class:J.next,src:"?view=next"})),H("div",{class:J.dragbar}),H("div",{class:J.noteContainer},H("div",{class:J.noteWrapper}),H("div",{class:J.noteButtons},H("button",{class:J.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),H("button",{class:J.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),H("div",{class:J.infoContainer},H("div",{class:J.infoPage},H("button",{class:J.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),H("span",{class:J.infoPageText}),H("button",{class:J.infoPageNext,tabindex:"-1",title:"Next"},"Next")),H("time",{class:J.infoTime,title:"Current time"}),H("time",{class:J.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(J.dragbar).addEventListener("mousedown",()=>{t=!0,r(J.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(J.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(J.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(J.nextContainer).addEventListener("click",()=>e.next());const n=r(J.next),o=(a=n,(e,t)=>a.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var a;n.addEventListener("load",()=>{r(J.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const i=document.querySelectorAll(".bespoke-marp-note");i.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(J.noteWrapper).appendChild(e)}),e.on("activate",()=>i.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const c=e=>{s=Math.max(-5,s+e),r(J.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},l=()=>c(1),d=()=>c(-1),u=r(J.noteButtonsBigger),f=r(J.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),l()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&l(),"-"===e.key&&d()},!0),e.on("activate",({index:t})=>{r(J.infoPageText).textContent=`${t+1} / ${e.slides.length}`});const m=r(J.infoPagePrev),g=r(J.infoPageNext);m.addEventListener("click",t=>{m.blur(),e.prev({fragment:!t.shiftKey})}),g.addEventListener("click",t=>{g.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1});let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(J.infoTime).textContent=e.toLocaleTimeString(),r(J.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(J.infoTimer).addEventListener("click",()=>{p=new Date})})(e)},z=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:G},presenterUrl:{enumerable:!0,get:Q}}),h&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function G(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,W+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function Q(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}const Z=e=>{const t=g();return t===l&&e.appendChild(document.createElement("span")),{[s]:z,[c]:Y,[l]:D}[t]},ee=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},te=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},ne=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?te(p("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),c=o(0,r(n||0,a[s].length-1));s===e.slide()&&c===e.fragmentIndex||e.slide(s,{fragment:c})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(te(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],a=r.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||v({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),v({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},re=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},v({},{setter:(e,...t)=>i({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),a(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&a(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const i=()=>{const{reference:e}=o();void 0===e||e<=1?w(n):a(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),i()}),e.on("destroy",i)}},{PI:oe,abs:ae,sqrt:ie,atan2:se}=Math,ce={passive:!0},le=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?a(e[0]):void 0},ce),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ie(ae(n)**2+ae(o)**2),r.radian=se(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+oe)%(2*oe)-oe;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},ce)},de=new Map;de.clear(),de.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ue={both:"",outgoing:"outgoing-",incoming:"incoming-"},fe={forward:"",backward:"-backward"},me=e=>`--marp-bespoke-transition-animation-${e}`,ge=e=>`--marp-transition-${e}`,pe=me("name"),ve=me("duration"),he=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ge("duration"));a&&Number.parseFloat(a)>=0&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),ye=async e=>de.has(e)?de.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ue))for(const[a,i]of Object.entries(fe)){const s=`marp-${o}transition${i}-${e}`;n.push(he(s).then(e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(de.set(e,t),t)),be=e=>Object.values(e).flatMap(Object.values).every(e=>!e),we=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[pe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[me("direction")]="reverse"),e}})();return!o&&n?we(e,{type:t,backward:!1}):o||{[pe]:"__bespoke_marp_transition_no_animation__"}},xe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ke="_tSId",$e="_tA",Ee="bespoke-marp-transition-warming-up",Le=window.matchMedia("(prefers-reduced-motion: reduce)"),Se="__bespoke_marp_transition_reduced_outgoing__",Pe="__bespoke_marp_transition_reduced_incoming__",_e={forward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}},backward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}}},Te=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ge("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>ye(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=xe(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>a=>{const i=t();if(i)return!!a[$e]||!("object"!=typeof i||(i.skipTransition(),!a.forSync));if(!o(a))return!0;const s=e.slides[e.slide()],c=()=>a.back??r,l="data-transition"+(c()?"-back":""),d=s.querySelector(`section[${l}]`);if(!d)return!0;const u=xe(d.getAttribute(l)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await ye(e);if(be(n)){if(!t)return;return n=await ye(`__builtin__${e}`),be(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(a)}finally{t(!1)}return}let r=e;Le.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=_e);const o=document.getElementById(ke);o&&o.remove();const i=document.createElement("style");i.id=ke,document.head.appendChild(i),((e,t)=>{const n=[`:root{${ge("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${ve}:${o};}`);const a=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${a(we(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${a(we(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:u.duration}).forEach(e=>i.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ee);let l=!1;const d=()=>{l||(n(a),l=!0,s.remove(Ee))},f=()=>{t(!1),i.remove(),s.remove(Ee)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[$e]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[$e]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[$e]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Ie;const Me=()=>(void 0===Ie&&(Ie="wakeLock"in navigator&&navigator.wakeLock),Ie),Oe=async()=>{const e=Me();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ae=async()=>{if(!Me())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Oe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Oe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=p("view");a.dataset.bespokeView=e===l||e===c?e:""})();const t=(e=>{const t=p(e);return v({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=d.findIndex(e=>g()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,0],re({key:t})],[[1,1,1],Z(e)],[[1,1,0],M],[[1,1,1],k],[[1,0,0],T()],[[1,1,1],O],[[1,1,1],ne({history:!1})],[[1,1,0],A()],[[1,1,0],P],[[1,0,0],ee],[[1,1,0],le()],[[1,0,0],C()],[[1,0,0],Te],[[1,1,1],$],[[1,1,0],Ae]))})()}();</script></body></html>
