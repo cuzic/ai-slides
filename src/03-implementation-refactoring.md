@@ -325,7 +325,7 @@ paginate: true
   - Green: 最小限のコードで通す
   - Refactor: コード改善
 - AI駆動TDD（7段階）の独自の工夫
-  - **Plan（追加）**: 受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画
+  - **Plan（追加）**: 受入条件の詳細計画、docs/設計書参照、APIライブラリのWEB検索
   - Red → Green → Refactor
   - **静的解析（追加）**: Refactorの後で機械的チェック
   - **AI自己レビュー（追加）**: Test Hacking検出、完成度100点評価
@@ -342,6 +342,8 @@ paginate: true
 ### 7段階TDD詳細 - 各段階で何をチェックするのか
 - Plan
   - 受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画
+  - docs/内の設計書を参照してゴールを明確化
+  - 利用するAPIライブラリの詳細をWEB検索して事前に知識を得る
   - AIに質問させる「実装前に曖昧な点があれば質問してください」
 - Red
   - 受入条件→pytestでテストファースト
