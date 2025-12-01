@@ -1,0 +1,908 @@
+[
+  {
+    "name": "01-intro",
+    "title": "入門編",
+    "slides": [
+      {
+        "index": 1,
+        "title": "AI駆動開発セミナー Day 1",
+        "image": "images/01-intro/slide_001.png",
+        "is_section": false
+      },
+      {
+        "index": 2,
+        "title": "なぜAI駆動開発なのか",
+        "image": "images/01-intro/slide_002.png",
+        "is_section": true
+      },
+      {
+        "index": 3,
+        "title": "成功例① Harvard/BCG研究（2023年）",
+        "image": "images/01-intro/slide_003.png",
+        "is_section": false
+      },
+      {
+        "index": 4,
+        "title": "成功例② 楽天のClaude Code活用事例（2025年）",
+        "image": "images/01-intro/slide_004.png",
+        "is_section": false
+      },
+      {
+        "index": 5,
+        "title": "失敗例① Uplevel社調査（2024年）- バグ41%増加",
+        "image": "images/01-intro/slide_005.png",
+        "is_section": false
+      },
+      {
+        "index": 6,
+        "title": "失敗例① Uplevel社調査（続き）- 自己申告との乖離",
+        "image": "images/01-intro/slide_006.png",
+        "is_section": false
+      },
+      {
+        "index": 7,
+        "title": "失敗例② GitClear社調査（2025年）- コード品質の劣化",
+        "image": "images/01-intro/slide_007.png",
+        "is_section": false
+      },
+      {
+        "index": 8,
+        "title": "失敗例② GitClear社調査（続き）- 衝撃のデータ",
+        "image": "images/01-intro/slide_008.png",
+        "is_section": false
+      },
+      {
+        "index": 9,
+        "title": "失敗例③ Google DORA 2025 - AIは組織を増幅する",
+        "image": "images/01-intro/slide_009.png",
+        "is_section": false
+      },
+      {
+        "index": 10,
+        "title": "失敗例③ Google DORA 2025（続き）- 増幅効果の罠",
+        "image": "images/01-intro/slide_010.png",
+        "is_section": false
+      },
+      {
+        "index": 11,
+        "title": "失敗例④ エンジニアのバーンアウト（2024年調査）",
+        "image": "images/01-intro/slide_011.png",
+        "is_section": false
+      },
+      {
+        "index": 12,
+        "title": "AIの5つの特性を理解する",
+        "image": "images/01-intro/slide_012.png",
+        "is_section": true
+      },
+      {
+        "index": 13,
+        "title": "AIが持つ5つの特性（1/2）",
+        "image": "images/01-intro/slide_013.png",
+        "is_section": false
+      },
+      {
+        "index": 14,
+        "title": "AIが持つ5つの特性（2/2）",
+        "image": "images/01-intro/slide_014.png",
+        "is_section": false
+      },
+      {
+        "index": 15,
+        "title": "AIの特性への対策まとめ",
+        "image": "images/01-intro/slide_015.png",
+        "is_section": false
+      },
+      {
+        "index": 16,
+        "title": "AIとの付き合い方：3つの原則",
+        "image": "images/01-intro/slide_016.png",
+        "is_section": true
+      },
+      {
+        "index": 17,
+        "title": "原則1: Trust but Verify（信頼しつつ検証する）",
+        "image": "images/01-intro/slide_017.png",
+        "is_section": false
+      },
+      {
+        "index": 18,
+        "title": "Trust but Verify の起源",
+        "image": "images/01-intro/slide_018.png",
+        "is_section": false
+      },
+      {
+        "index": 19,
+        "title": "原則2: Context is the New Code（コンテキストが全て）",
+        "image": "images/01-intro/slide_019.png",
+        "is_section": false
+      },
+      {
+        "index": 20,
+        "title": "Context is the New Code - 研究データ①",
+        "image": "images/01-intro/slide_020.png",
+        "is_section": false
+      },
+      {
+        "index": 21,
+        "title": "Context is the New Code - 研究データ②",
+        "image": "images/01-intro/slide_021.png",
+        "is_section": false
+      },
+      {
+        "index": 22,
+        "title": "原則3: 段階的に進める",
+        "image": "images/01-intro/slide_022.png",
+        "is_section": false
+      },
+      {
+        "index": 23,
+        "title": "Claude Codeとは：AI駆動開発のツール",
+        "image": "images/01-intro/slide_023.png",
+        "is_section": true
+      },
+      {
+        "index": 24,
+        "title": "Claude Codeの基本",
+        "image": "images/01-intro/slide_024.png",
+        "is_section": false
+      },
+      {
+        "index": 25,
+        "title": "Claude Skills とは",
+        "image": "images/01-intro/slide_025.png",
+        "is_section": false
+      },
+      {
+        "index": 26,
+        "title": "コンテキストとトークンの理解",
+        "image": "images/01-intro/slide_026.png",
+        "is_section": false
+      },
+      {
+        "index": 27,
+        "title": "Claude Codeの4つのモード",
+        "image": "images/01-intro/slide_027.png",
+        "is_section": false
+      },
+      {
+        "index": 28,
+        "title": "カスタムコマンド: TDDサイクル",
+        "image": "images/01-intro/slide_028.png",
+        "is_section": false
+      },
+      {
+        "index": 29,
+        "title": "CLAUDE.mdとREADME.md",
+        "image": "images/01-intro/slide_029.png",
+        "is_section": false
+      },
+      {
+        "index": 30,
+        "title": "CLAUDE.md のディレクトリ別配置",
+        "image": "images/01-intro/slide_030.png",
+        "is_section": false
+      },
+      {
+        "index": 31,
+        "title": "AIにあいまいな点を明確化させる",
+        "image": "images/01-intro/slide_031.png",
+        "is_section": false
+      },
+      {
+        "index": 32,
+        "title": "AI駆動開発の5-STEPワークフロー",
+        "image": "images/01-intro/slide_032.png",
+        "is_section": true
+      },
+      {
+        "index": 33,
+        "title": "5-STEPの全体像と効果",
+        "image": "images/01-intro/slide_033.png",
+        "is_section": false
+      },
+      {
+        "index": 34,
+        "title": "5-STEPと人間・AIの役割分担",
+        "image": "images/01-intro/slide_034.png",
+        "is_section": false
+      },
+      {
+        "index": 35,
+        "title": "今日の学習内容",
+        "image": "images/01-intro/slide_035.png",
+        "is_section": true
+      },
+      {
+        "index": 36,
+        "title": "3つのセッション",
+        "image": "images/01-intro/slide_036.png",
+        "is_section": false
+      },
+      {
+        "index": 37,
+        "title": "AI駆動開発で大切なこと（1/2）",
+        "image": "images/01-intro/slide_037.png",
+        "is_section": false
+      },
+      {
+        "index": 38,
+        "title": "AI駆動開発で大切なこと（2/2）",
+        "image": "images/01-intro/slide_038.png",
+        "is_section": false
+      },
+      {
+        "index": 39,
+        "title": "質問タイム",
+        "image": "images/01-intro/slide_039.png",
+        "is_section": true
+      }
+    ]
+  },
+  {
+    "name": "02-design",
+    "title": "設計編",
+    "slides": [
+      {
+        "index": 1,
+        "title": "Day 1 - 02 STEP 1-2-3: 要件定義・設計・タスク分解",
+        "image": "images/02-design/slide_001.png",
+        "is_section": false
+      },
+      {
+        "index": 2,
+        "title": "イントロダクション: STEP 1-2-3の全体像",
+        "image": "images/02-design/slide_002.png",
+        "is_section": true
+      },
+      {
+        "index": 3,
+        "title": "STEP 1-2-3とは - 実装前の準備3ステップ",
+        "image": "images/02-design/slide_003.png",
+        "is_section": false
+      },
+      {
+        "index": 4,
+        "title": "設計書がなぜ必要か - 人間もAIも同じ",
+        "image": "images/02-design/slide_004.png",
+        "is_section": false
+      },
+      {
+        "index": 5,
+        "title": "トークン効率の観点 - 設計書で思考リソース3倍",
+        "image": "images/02-design/slide_005.png",
+        "is_section": false
+      },
+      {
+        "index": 6,
+        "title": "実践準備: AIツール選択戦略",
+        "image": "images/02-design/slide_006.png",
+        "is_section": true
+      },
+      {
+        "index": 7,
+        "title": "Claude WebとClaude Codeの使い分け戦略",
+        "image": "images/02-design/slide_007.png",
+        "is_section": false
+      },
+      {
+        "index": 8,
+        "title": "Claude WEB/Code使い分けの実践 - コンテキスト汚染を防ぐ",
+        "image": "images/02-design/slide_008.png",
+        "is_section": false
+      },
+      {
+        "index": 9,
+        "title": "セクション1: 要件定義フェーズ - ユーザーストーリー",
+        "image": "images/02-design/slide_009.png",
+        "is_section": true
+      },
+      {
+        "index": 10,
+        "title": "AIを活用したユーザーストーリー生成",
+        "image": "images/02-design/slide_010.png",
+        "is_section": false
+      },
+      {
+        "index": 11,
+        "title": "要件定義フェーズの目的",
+        "image": "images/02-design/slide_011.png",
+        "is_section": false
+      },
+      {
+        "index": 12,
+        "title": "ユーザーストーリーとは",
+        "image": "images/02-design/slide_012.png",
+        "is_section": false
+      },
+      {
+        "index": 13,
+        "title": "なぜユーザーストーリー形式を使うか",
+        "image": "images/02-design/slide_013.png",
+        "is_section": false
+      },
+      {
+        "index": 14,
+        "title": "INVEST原則",
+        "image": "images/02-design/slide_014.png",
+        "is_section": false
+      },
+      {
+        "index": 15,
+        "title": "MoSCoW分析 - AIに優先順位を付けてもらう",
+        "image": "images/02-design/slide_015.png",
+        "is_section": false
+      },
+      {
+        "index": 16,
+        "title": "ペルソナを活用した多角的MoSCoW分析",
+        "image": "images/02-design/slide_016.png",
+        "is_section": false
+      },
+      {
+        "index": 17,
+        "title": "要件定義フェーズの成果物",
+        "image": "images/02-design/slide_017.png",
+        "is_section": false
+      },
+      {
+        "index": 18,
+        "title": "モックアップで早期フィードバックを得る",
+        "image": "images/02-design/slide_018.png",
+        "is_section": false
+      },
+      {
+        "index": 19,
+        "title": "Claudeアーティファクト機能でモックアップ作成",
+        "image": "images/02-design/slide_019.png",
+        "is_section": false
+      },
+      {
+        "index": 21,
+        "title": "セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD）",
+        "image": "images/02-design/slide_021.png",
+        "is_section": true
+      },
+      {
+        "index": 22,
+        "title": "STEP 2の目的と成果物 - AIの外部メモリを構築",
+        "image": "images/02-design/slide_022.png",
+        "is_section": false
+      },
+      {
+        "index": 23,
+        "title": "設計書のROI - 研究が証明する劇的な効果",
+        "image": "images/02-design/slide_023.png",
+        "is_section": false
+      },
+      {
+        "index": 24,
+        "title": "STEP 1-2-3の詳細化プロセス - 各ステップの成果物の関係",
+        "image": "images/02-design/slide_024.png",
+        "is_section": false
+      },
+      {
+        "index": 25,
+        "title": "画面設計の3要素",
+        "image": "images/02-design/slide_025.png",
+        "is_section": false
+      },
+      {
+        "index": 26,
+        "title": "画面一覧の作成方法",
+        "image": "images/02-design/slide_026.png",
+        "is_section": false
+      },
+      {
+        "index": 27,
+        "title": "画面遷移図（Mermaid記法）",
+        "image": "images/02-design/slide_027.png",
+        "is_section": false
+      },
+      {
+        "index": 28,
+        "title": "画面部品一覧（UI Component Inventory）",
+        "image": "images/02-design/slide_028.png",
+        "is_section": false
+      },
+      {
+        "index": 29,
+        "title": "データベース設計の基本 - ER図とschema.sql",
+        "image": "images/02-design/slide_029.png",
+        "is_section": false
+      },
+      {
+        "index": 30,
+        "title": "データベース設計の重要性",
+        "image": "images/02-design/slide_030.png",
+        "is_section": false
+      },
+      {
+        "index": 31,
+        "title": "Mermaid記法の活用",
+        "image": "images/02-design/slide_031.png",
+        "is_section": false
+      },
+      {
+        "index": 32,
+        "title": "データフロー図の基本",
+        "image": "images/02-design/slide_032.png",
+        "is_section": false
+      },
+      {
+        "index": 33,
+        "title": "AIに複数案を提案させる",
+        "image": "images/02-design/slide_033.png",
+        "is_section": false
+      },
+      {
+        "index": 34,
+        "title": "ガードレールの4層構造（復習）",
+        "image": "images/02-design/slide_034.png",
+        "is_section": false
+      },
+      {
+        "index": 35,
+        "title": "受入基準（AC）を作成 - チェックリスト形式で検収基準を明確化",
+        "image": "images/02-design/slide_035.png",
+        "is_section": false
+      },
+      {
+        "index": 36,
+        "title": "受入基準（AC）の例 - ユーザー視点のチェックリスト",
+        "image": "images/02-design/slide_036.png",
+        "is_section": false
+      },
+      {
+        "index": 37,
+        "title": "受入条件の段階的詳細化",
+        "image": "images/02-design/slide_037.png",
+        "is_section": false
+      },
+      {
+        "index": 38,
+        "title": "受入基準（AC）が手抜きを防ぐ仕組み",
+        "image": "images/02-design/slide_038.png",
+        "is_section": false
+      },
+      {
+        "index": 39,
+        "title": "大きな技術選定は人間が判断する",
+        "image": "images/02-design/slide_039.png",
+        "is_section": false
+      },
+      {
+        "index": 40,
+        "title": "人間が明示的に指定すべき技術選定",
+        "image": "images/02-design/slide_040.png",
+        "is_section": false
+      },
+      {
+        "index": 41,
+        "title": "AIに技術的決定事項を質問させる",
+        "image": "images/02-design/slide_041.png",
+        "is_section": false
+      },
+      {
+        "index": 42,
+        "title": "attrsによる高機能クラス定義",
+        "image": "images/02-design/slide_042.png",
+        "is_section": false
+      },
+      {
+        "index": 43,
+        "title": "Definition of Done (DoD)とは",
+        "image": "images/02-design/slide_043.png",
+        "is_section": false
+      },
+      {
+        "index": 44,
+        "title": "設計フェーズの成果物まとめ - タスク分解の土台",
+        "image": "images/02-design/slide_044.png",
+        "is_section": false
+      },
+      {
+        "index": 45,
+        "title": "セクション3: STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール）",
+        "image": "images/02-design/slide_045.png",
+        "is_section": true
+      },
+      {
+        "index": 46,
+        "title": "STEP 3の目的と成果物 - 10分サイズに分割",
+        "image": "images/02-design/slide_046.png",
+        "is_section": false
+      },
+      {
+        "index": 47,
+        "title": "階層的タスク分解（Epic → User Story → Task → Subtask）",
+        "image": "images/02-design/slide_047.png",
+        "is_section": false
+      },
+      {
+        "index": 48,
+        "title": "GIVEN WHEN THEN形式のBDDテストシナリオ - 開発者視点への変換",
+        "image": "images/02-design/slide_048.png",
+        "is_section": false
+      },
+      {
+        "index": 49,
+        "title": "受入基準（AC）→ BDDテストシナリオ → pytestの変換",
+        "image": "images/02-design/slide_049.png",
+        "is_section": false
+      },
+      {
+        "index": 50,
+        "title": "タスク分解の実例 - TODO作成機能",
+        "image": "images/02-design/slide_050.png",
+        "is_section": false
+      },
+      {
+        "index": 51,
+        "title": "GitHub Issuesでタスク管理",
+        "image": "images/02-design/slide_051.png",
+        "is_section": false
+      },
+      {
+        "index": 52,
+        "title": "Issueテンプレートの構造",
+        "image": "images/02-design/slide_052.png",
+        "is_section": false
+      },
+      {
+        "index": 53,
+        "title": "10分ルール",
+        "image": "images/02-design/slide_053.png",
+        "is_section": false
+      },
+      {
+        "index": 54,
+        "title": "セクション4: まとめとQ&A",
+        "image": "images/02-design/slide_054.png",
+        "is_section": true
+      },
+      {
+        "index": 55,
+        "title": "STEP 1-2-3の復習 - 4段階の詳細化プロセス",
+        "image": "images/02-design/slide_055.png",
+        "is_section": false
+      },
+      {
+        "index": 56,
+        "title": "STEP 1-2-3でClaude Codeが自動化できること",
+        "image": "images/02-design/slide_056.png",
+        "is_section": false
+      },
+      {
+        "index": 57,
+        "title": "次のステップ - STEP 4（実装）へ",
+        "image": "images/02-design/slide_057.png",
+        "is_section": false
+      },
+      {
+        "index": 58,
+        "title": "コンテキストエンジニアリング - STEP 2がSTEP 4の品質を決める",
+        "image": "images/02-design/slide_058.png",
+        "is_section": false
+      },
+      {
+        "index": 59,
+        "title": "Q&A",
+        "image": "images/02-design/slide_059.png",
+        "is_section": false
+      }
+    ]
+  },
+  {
+    "name": "03-implementation",
+    "title": "実装編",
+    "slides": [
+      {
+        "index": 1,
+        "title": "Day 1 - 03 STEP 4-5: 実装・TDD・品質改善",
+        "image": "images/03-implementation/slide_001.png",
+        "is_section": true
+      },
+      {
+        "index": 2,
+        "title": "イントロダクション",
+        "image": "images/03-implementation/slide_002.png",
+        "is_section": true
+      },
+      {
+        "index": 3,
+        "title": "【復習】01で学んだAIの5つの特性",
+        "image": "images/03-implementation/slide_003.png",
+        "is_section": false
+      },
+      {
+        "index": 4,
+        "title": "対策なしだと何が起きるか？",
+        "image": "images/03-implementation/slide_004.png",
+        "is_section": false
+      },
+      {
+        "index": 5,
+        "title": "AI駆動開発の5つの対策手段",
+        "image": "images/03-implementation/slide_005.png",
+        "is_section": false
+      },
+      {
+        "index": 6,
+        "title": "対策一覧表 - AI特性と本資料の対応",
+        "image": "images/03-implementation/slide_006.png",
+        "is_section": false
+      },
+      {
+        "index": 7,
+        "title": "03 実装・品質改善編の全体像",
+        "image": "images/03-implementation/slide_007.png",
+        "is_section": false
+      },
+      {
+        "index": 8,
+        "title": "セクション1: 実装準備",
+        "image": "images/03-implementation/slide_008.png",
+        "is_section": true
+      },
+      {
+        "index": 9,
+        "title": "このセクションで学ぶこと",
+        "image": "images/03-implementation/slide_009.png",
+        "is_section": false
+      },
+      {
+        "index": 10,
+        "title": "カスタムコマンドの重要性 - プロジェクト固有のワークフロー",
+        "image": "images/03-implementation/slide_010.png",
+        "is_section": false
+      },
+      {
+        "index": 11,
+        "title": "Claude Skills - 再利用可能な知識ベース",
+        "image": "images/03-implementation/slide_011.png",
+        "is_section": false
+      },
+      {
+        "index": 12,
+        "title": "ハルシネーション対策 - 外部API仕様の事前調査【重要】",
+        "image": "images/03-implementation/slide_012.png",
+        "is_section": false
+      },
+      {
+        "index": 13,
+        "title": "セクション2: Test Hacking",
+        "image": "images/03-implementation/slide_013.png",
+        "is_section": true
+      },
+      {
+        "index": 14,
+        "title": "このセクションで学ぶこと",
+        "image": "images/03-implementation/slide_014.png",
+        "is_section": false
+      },
+      {
+        "index": 15,
+        "title": "Test Hackingとは - テストを通すための不正な手法",
+        "image": "images/03-implementation/slide_015.png",
+        "is_section": false
+      },
+      {
+        "index": 16,
+        "title": "Shallow Testing - Test Hackingの3つの手法",
+        "image": "images/03-implementation/slide_016.png",
+        "is_section": false
+      },
+      {
+        "index": 17,
+        "title": "Test Hacking実コード例 - 悪い例vs良い例",
+        "image": "images/03-implementation/slide_017.png",
+        "is_section": false
+      },
+      {
+        "index": 18,
+        "title": "セクション3: AI駆動TDDサイクル",
+        "image": "images/03-implementation/slide_018.png",
+        "is_section": true
+      },
+      {
+        "index": 19,
+        "title": "このセクションで学ぶこと",
+        "image": "images/03-implementation/slide_019.png",
+        "is_section": false
+      },
+      {
+        "index": 20,
+        "title": "一般のTDDとAI駆動TDDの違い",
+        "image": "images/03-implementation/slide_020.png",
+        "is_section": false
+      },
+      {
+        "index": 21,
+        "title": "7段階TDD詳細 - 各段階で何をチェックするのか",
+        "image": "images/03-implementation/slide_021.png",
+        "is_section": false
+      },
+      {
+        "index": 22,
+        "title": "Plan - 実装方針の確認",
+        "image": "images/03-implementation/slide_022.png",
+        "is_section": false
+      },
+      {
+        "index": 23,
+        "title": "Red - テストファースト",
+        "image": "images/03-implementation/slide_023.png",
+        "is_section": false
+      },
+      {
+        "index": 24,
+        "title": "Green - 最小実装",
+        "image": "images/03-implementation/slide_024.png",
+        "is_section": false
+      },
+      {
+        "index": 25,
+        "title": "Refactor - コード品質改善",
+        "image": "images/03-implementation/slide_025.png",
+        "is_section": false
+      },
+      {
+        "index": 26,
+        "title": "System Review - 自動検証ツールによる機械的チェック",
+        "image": "images/03-implementation/slide_026.png",
+        "is_section": false
+      },
+      {
+        "index": 27,
+        "title": "AI Self Review - Test Hacking検出の要",
+        "image": "images/03-implementation/slide_027.png",
+        "is_section": false
+      },
+      {
+        "index": 28,
+        "title": "Human Review - ビジネスロジックの最終確認",
+        "image": "images/03-implementation/slide_028.png",
+        "is_section": false
+      },
+      {
+        "index": 29,
+        "title": "TDD実装サイクルの全体像 - 実践時の自動化",
+        "image": "images/03-implementation/slide_029.png",
+        "is_section": false
+      },
+      {
+        "index": 30,
+        "title": "TDD無しの悪夢 - AI特性5つが同時多発",
+        "image": "images/03-implementation/slide_030.png",
+        "is_section": false
+      },
+      {
+        "index": 31,
+        "title": "よくある失敗パターン",
+        "image": "images/03-implementation/slide_031.png",
+        "is_section": false
+      },
+      {
+        "index": 32,
+        "title": "セクション4: MCP Servers",
+        "image": "images/03-implementation/slide_032.png",
+        "is_section": true
+      },
+      {
+        "index": 33,
+        "title": "このセクションで学ぶこと",
+        "image": "images/03-implementation/slide_033.png",
+        "is_section": false
+      },
+      {
+        "index": 34,
+        "title": "MCP Serversとは - TDD実装の支援ツール",
+        "image": "images/03-implementation/slide_034.png",
+        "is_section": false
+      },
+      {
+        "index": 35,
+        "title": "Context7 MCP Server - 最新APIドキュメント",
+        "image": "images/03-implementation/slide_035.png",
+        "is_section": false
+      },
+      {
+        "index": 36,
+        "title": "Serena MCP Server - トークン最適化",
+        "image": "images/03-implementation/slide_036.png",
+        "is_section": false
+      },
+      {
+        "index": 37,
+        "title": "Playwright / Chrome DevTools MCP Server",
+        "image": "images/03-implementation/slide_037.png",
+        "is_section": false
+      },
+      {
+        "index": 38,
+        "title": "MCPサーバーのインストール",
+        "image": "images/03-implementation/slide_038.png",
+        "is_section": false
+      },
+      {
+        "index": 39,
+        "title": "セクション5: STEP 5 - 品質改善",
+        "image": "images/03-implementation/slide_039.png",
+        "is_section": true
+      },
+      {
+        "index": 40,
+        "title": "このセクションで学ぶこと",
+        "image": "images/03-implementation/slide_040.png",
+        "is_section": false
+      },
+      {
+        "index": 41,
+        "title": "STEP 5 - AIに任せる8つの質問と指示",
+        "image": "images/03-implementation/slide_041.png",
+        "is_section": false
+      },
+      {
+        "index": 42,
+        "title": "①②技術的負債の発見と冗長コード削除",
+        "image": "images/03-implementation/slide_042.png",
+        "is_section": false
+      },
+      {
+        "index": 43,
+        "title": "③循環的複雑度を減らして",
+        "image": "images/03-implementation/slide_043.png",
+        "is_section": false
+      },
+      {
+        "index": 44,
+        "title": "④⑤ライブラリとデザインパターンの活用",
+        "image": "images/03-implementation/slide_044.png",
+        "is_section": false
+      },
+      {
+        "index": 45,
+        "title": "⑥docstring を書いて",
+        "image": "images/03-implementation/slide_045.png",
+        "is_section": false
+      },
+      {
+        "index": 46,
+        "title": "⑦arc42 と C4 Model を採用した ADR を書いて",
+        "image": "images/03-implementation/slide_046.png",
+        "is_section": false
+      },
+      {
+        "index": 47,
+        "title": "⑧実装で得られた知見のドキュメント化",
+        "image": "images/03-implementation/slide_047.png",
+        "is_section": false
+      },
+      {
+        "index": 48,
+        "title": "【補足】後方互換性の問題 - AIの過剰な配慮",
+        "image": "images/03-implementation/slide_048.png",
+        "is_section": false
+      },
+      {
+        "index": 49,
+        "title": "まとめとQ&A",
+        "image": "images/03-implementation/slide_049.png",
+        "is_section": true
+      },
+      {
+        "index": 50,
+        "title": "実装・品質改善編のまとめ",
+        "image": "images/03-implementation/slide_050.png",
+        "is_section": false
+      },
+      {
+        "index": 51,
+        "title": "Q&A",
+        "image": "images/03-implementation/slide_051.png",
+        "is_section": false
+      }
+    ]
+  }
+]
