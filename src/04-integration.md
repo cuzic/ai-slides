@@ -170,26 +170,6 @@ paginate: true
   - 次のタスクへ移行
 
 ---
-<!-- _class: font-xsmall -->
-
-## 【総合復習クイズ】Day 1の理解度確認
-
-### 問題：次の文章が正しければ〇、間違っていれば×をつけてください
-
-1. **「5-STEPワークフローは、要件定義→タスク分解→設計→実装→品質改善の順である」**
-2. **「AIの5特性は、暴走、手抜き、忘れっぽさ、凸凹知能、虚偽報告である」**
-3. **「7段階TDDは、Plan→Red→Green→Refactor→System→AI→Humanの順である」**
-4. **「/clearコマンドは、タスク完了後にコンテキスト汚染を防ぐために実行する」**
-5. **「MoSCoW分析では、Must haveに全機能の50-60%を含めるべきである」**
-
-### 答え
-1. **×** - 正しくは「要件定義→**設計**→**タスク分解**→実装→品質改善」
-2. **〇** - AIの5特性を理解して対策すれば、AIは強力なパートナーになる
-3. **〇** - 従来の3段階TDD（Red-Green-Refactor）にPlanと3段階レビューを追加
-4. **〇** - /clearでコンテキストをリセットし、次のタスクを新鮮な状態で開始
-5. **×** - Must haveは20-30%。スコープを絞ることで品質を確保
-
----
 <!-- _class: font-xxsmall -->
 
 ### まとめと振り返り
@@ -212,30 +192,3 @@ paginate: true
 - 今後の学習
   - Day 2: 保守開発（リバースエンジニアリング + テスト + 保守開発）
 
----
-
-## 参考資料
-
-### 5-STEPワークフロー全体
-- knowledges/30-ai-context-guardrails-verify.md - 5-STEPワークフロー全体像
-
-### AI特性と対処法
-- knowledges/34-ai-driven-development-problems.md - AI特性5つ
-- knowledges/19-guardrails.md - ガードレール
-- knowledges/18-trust-but-verify.md - 3段階レビュー
-
-### 各ステップの詳細
-- knowledges/23-user-story-writing.md - ユーザーストーリー作成
-- knowledges/24-acceptance-criteria.md - 受入基準定義
-- knowledges/25-task-decomposition.md - タスク分解
-- knowledges/01-given-when-then-bdd.md - BDDテストシナリオ
-- knowledges/02-test-driven-development-tdd.md - TDD
-
-### ツールと戦略
-- knowledges/36-ai-tools-separation-strategy.md - AIツール分離戦略
-- knowledges/33-ai-context-documentation-importance.md - コンテキストの重要性
-
-### ドキュメント
-- knowledges/26-arc42-c4-adr.md - ADR（アーキテクチャ決定記録）
-- knowledges/11-living-documentation.md - リビングドキュメント
-- knowledges/40-optimal-documentation-for-ai-driven-development.md - 最適なドキュメント
