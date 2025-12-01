@@ -686,11 +686,10 @@ paginate: true
 
 ### ④⑤ライブラリとデザインパターンの活用
 - ④効果的にライブラリを活用できる箇所は
-  - AIが提案
+  - AIが提案しないので自分から積極的に指定・質問する必要がある有用ライブラリの例
+    - attrs（ボイラープレート削減、dataclassesより高機能）
     - more-itertools（イテレータ拡張）
-    - toolz/cytoolz（関数型プログラミング）
-    - attrs/dataclasses（ボイラープレート削減）
-    - Python標準ライブラリ（itertools、functools、typing）
+    - toolz（関数型プログラミング）
 - ⑤効果的にデザインパターンを活用できる箇所は
   - AIが提案
     - Strategy（戦略パターン）
