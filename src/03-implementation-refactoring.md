@@ -337,7 +337,7 @@ paginate: true
   - AI自己レビュー無しだとTest Hackingを見逃す
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### 7段階TDD詳細 - 各段階で何をチェックするのか
 - Plan

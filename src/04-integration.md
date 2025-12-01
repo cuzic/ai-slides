@@ -169,7 +169,7 @@ paginate: true
   - 次のタスクへ移行
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xxxsmall -->
 
 ### まとめと振り返り
 - 完成した成果物

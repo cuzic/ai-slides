@@ -301,7 +301,7 @@ paginate: true
   - 認識のズレを防ぐ
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xxxsmall -->
 
 ### INVEST原則
 
@@ -727,7 +727,7 @@ paginate: true
   - ユーザビリティが向上
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ### 大きな技術選定は人間が判断する
 
@@ -971,7 +971,7 @@ paginate: true
   - 静的解析エラーなし
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xxxsmall -->
 
 ### Issueテンプレートの構造
 
