@@ -4,16 +4,81 @@ theme: default
 paginate: true
 ---
 
+<style>
+  /* フォントサイズバリエーション */
+  section[data-class~="font-small"] {
+    font-size: 19px !important;
+    line-height: 1.3 !important;
+    padding: 30px 45px !important;
+  }
+  section[data-class~="font-small"] h2, section[data-class~="font-small"] h3 {
+    font-size: 28px !important;
+    margin-bottom: 0.3em !important;
+  }
+  section[data-class~="font-small"] li {
+    margin-bottom: 0.1em !important;
+  }
+
+  section[data-class~="font-xsmall"] {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+    padding: 25px 40px !important;
+  }
+  section[data-class~="font-xsmall"] h2, section[data-class~="font-xsmall"] h3 {
+    font-size: 24px !important;
+    margin-bottom: 0.25em !important;
+  }
+  section[data-class~="font-xsmall"] li {
+    margin-bottom: 0.05em !important;
+  }
+
+  section[data-class~="font-xxsmall"] {
+    font-size: 15px !important;
+    line-height: 1.15 !important;
+    padding: 20px 35px !important;
+  }
+  section[data-class~="font-xxsmall"] h2, section[data-class~="font-xxsmall"] h3 {
+    font-size: 22px !important;
+    margin-bottom: 0.2em !important;
+  }
+  section[data-class~="font-xxsmall"] li {
+    margin-bottom: 0.02em !important;
+  }
+  section[data-class~="font-xxsmall"] pre {
+    margin: 0.3em 0 !important;
+    font-size: 0.85em !important;
+  }
+
+  section[data-class~="font-xxxsmall"] {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+    padding: 15px 30px !important;
+  }
+  section[data-class~="font-xxxsmall"] h2, section[data-class~="font-xxxsmall"] h3 {
+    font-size: 20px !important;
+    margin-bottom: 0.15em !important;
+  }
+  section[data-class~="font-xxxsmall"] li {
+    margin-bottom: 0 !important;
+  }
+  section[data-class~="font-xxxsmall"] pre {
+    margin: 0.2em 0 !important;
+    font-size: 0.8em !important;
+  }
+</style>
+
 # Day 1 - 03 STEP 4-5: 実装・TDD・品質改善
 
 **対象者**: Python/FastAPI経験者（AI駆動開発は初心者）
 **学習目標**: STEP 4（実装・TDD）とSTEP 5（品質改善）の習得
 
 ---
+<!-- _class: font-small -->
 
 ## イントロダクション
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 【復習】01で学んだAIの5つの特性
 - 01「入門編」で学んだ内容の復習
@@ -30,6 +95,7 @@ paginate: true
   - 本資料の各セクションとの対応を把握
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 対策なしだと何が起きるか？
 - **①暴走**: 10分タスクが2時間に膨張
@@ -46,6 +112,7 @@ paginate: true
   - 実行時に `AttributeError` で延々とデバッグ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### AI駆動開発の5つの対策手段
 - **①ガードレール（ドキュメント）** - 01で学習
@@ -64,6 +131,7 @@ paginate: true
   - 手抜きを自己検証で発見
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 対策一覧表 - AI特性と本資料の対応
 | AI特性 | 問題 | 対策 | 本資料の該当箇所 |
@@ -81,6 +149,7 @@ paginate: true
   - System Review → AI Self Review → Human Review
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 03 実装・品質改善編の全体像
 - **セクション1: 実装準備**
@@ -100,10 +169,12 @@ paginate: true
   - 対応: ②手抜き、③忘れっぽさ
 
 ---
+<!-- _class: font-xsmall -->
 
 ## セクション1: 実装準備
 
 ---
+<!-- _class: font-xsmall -->
 
 ### このセクションで学ぶこと
 - **対応するAI特性**
@@ -118,6 +189,7 @@ paginate: true
   - 外部ライブラリのAPIドキュメントをdocs/に保存できる
 
 ---
+<!-- _class: font-xsmall -->
 
 ### カスタムコマンドの重要性 - プロジェクト固有のワークフロー
 - カスタムコマンドとは
@@ -135,6 +207,7 @@ paginate: true
   - プロジェクトの静的解析ツール（flake8, mypy, ruff）を呼び出し
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Claude Skills - 再利用可能な知識ベース
 - Claude Skillsとは
@@ -152,6 +225,7 @@ paginate: true
   - 組み合わせてプロジェクト固有のAI駆動開発を実現
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ハルシネーション対策 - 外部API仕様の事前調査【重要】
 - **問題: ⑤虚偽報告（Hallucination）への対策**
@@ -172,12 +246,14 @@ paginate: true
   - System Reviewで存在しないAPI呼び出しを検出
 
 ---
+<!-- _class: font-xsmall -->
 
 ## セクション2: Test Hacking
 
 **なぜTDDの前にTest Hackingを学ぶのか？** → TDDは「テストを先に書く」手法ですが、AIは「テストさえ通ればOK」と解釈して不正な実装をすることがあります。敵（Test Hacking）を知ってからTDDに進むことで、検出ポイントが分かります。
 
 ---
+<!-- _class: font-xsmall -->
 
 ### このセクションで学ぶこと
 - **対応するAI特性**
@@ -191,6 +267,7 @@ paginate: true
   - AI Self Reviewで検出すべきポイントを理解
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Test Hackingとは - テストを通すための不正な手法
 - Test Hackingの定義
@@ -209,6 +286,7 @@ paginate: true
   - 人間が想定しない「抜け穴」を見つける能力が高い
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Shallow Testing - Test Hackingの3つの手法
 - ①Mock Abuse（モック乱用）
@@ -228,6 +306,7 @@ paginate: true
   - 完成度0-100点評価で100点になるまで繰り返す
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Test Hacking実コード例 - 悪い例vs良い例
 - ①ハードコード実装（Test Hacking）
@@ -244,10 +323,12 @@ paginate: true
   - ✅ 良い例: 外部サービスのみモック、内部は実際のコード使用
 
 ---
+<!-- _class: font-xsmall -->
 
 ## セクション3: AI駆動TDDサイクル
 
 ---
+<!-- _class: font-xsmall -->
 
 ### このセクションで学ぶこと
 - **対応するAI特性**
@@ -263,6 +344,7 @@ paginate: true
   - **テストがガードレール**であることを体感
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 一般のTDDとAI駆動TDDの違い
 - 一般のTDD（3段階）
@@ -284,6 +366,7 @@ paginate: true
   - AI自己レビュー無しだとTest Hackingを見逃す
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 7段階TDD詳細 - 各段階で何をチェックするのか
 - Plan
@@ -306,6 +389,7 @@ paginate: true
   - git diff、ビジネスロジック確認
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Plan - 実装方針の確認
 - Issueの内容確認
@@ -320,6 +404,7 @@ paginate: true
   - AIが勝手に推測しないよう、質問を促す
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Red - テストファースト
 - **受入条件をpytestに変換**
@@ -334,6 +419,7 @@ paginate: true
   - シンプルなテストから始める
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Green - 最小実装
 - **テストを通すための最小限の実装**
@@ -348,6 +434,7 @@ paginate: true
 - **pytestが成功（緑）したら次のRefactorフェーズへ**
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Refactor - コード品質改善
 - **テストは変えずに実装の品質を改善**
@@ -365,6 +452,7 @@ paginate: true
 - **Refactor後もpytestは通り続けること**
 
 ---
+<!-- _class: font-xsmall -->
 
 ### System Review - 自動検証ツールによる機械的チェック
 - AI Hallucination、構文エラー、静的解析エラーを機械的に検出
@@ -382,6 +470,7 @@ paginate: true
 | ruff | 高速なlint、フォーマット | リファクタリング前 |
 
 ---
+<!-- _class: font-xsmall -->
 
 ### AI Self Review - Test Hacking検出の要
 - Test Hackingを検出
@@ -399,6 +488,7 @@ paginate: true
   - 80点で妥協しない（残り20%に重大な欠陥が隠れている）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Human Review - ビジネスロジックの最終確認
 - ビジネスロジックとアーキテクチャの妥当性を人間が判断
@@ -413,6 +503,7 @@ paginate: true
   - 対象: 認証、決済、セキュリティクリティカルな機能
 
 ---
+<!-- _class: font-xsmall -->
 
 ### TDD実装サイクルの全体像 - 実践時の自動化
 - **1つのIssue（10分タスク）の流れ**
@@ -427,6 +518,7 @@ paginate: true
   - 虚偽報告（Hallucination）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### TDD無しの悪夢 - AI特性5つが同時多発
 - TDD無しの場合（人間がAIの奴隷）
@@ -443,6 +535,7 @@ paginate: true
   - **効果: 210分 → 35分（83%削減）**
 
 ---
+<!-- _class: font-xsmall -->
 
 ### よくある失敗パターン
 - **失敗1: テストを後回し**
@@ -455,6 +548,7 @@ paginate: true
   - 対策: AI Self Reviewを必ず実施、100点になるまで繰り返す
 
 ---
+<!-- _class: font-xsmall -->
 
 ## 【3択クイズ】7段階TDDの理解確認
 
@@ -470,12 +564,14 @@ C. コードスタイルとフォーマット
 - System Reviewでは検出できない問題を発見
 
 ---
+<!-- _class: font-xsmall -->
 
 ## セクション4: MCP Servers
 
 **7段階TDDをさらに強化するツールがMCP Serversです。** セクション3で学んだTDDサイクルの「⑤虚偽報告対策」「③忘れっぽさ対策」を、MCPサーバーが自動化・効率化してくれます。
 
 ---
+<!-- _class: font-xsmall -->
 
 ### このセクションで学ぶこと
 - **対応するAI特性**
@@ -490,6 +586,7 @@ C. コードスタイルとフォーマット
   - TDDを支援するMCPサーバーを導入できる
 
 ---
+<!-- _class: font-xsmall -->
 
 ### MCP Serversとは - TDD実装の支援ツール
 - Model Context Protocol（MCP）
@@ -503,6 +600,7 @@ C. コードスタイルとフォーマット
   - Chrome DevTools（UIデバッグ）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Context7 MCP Server - 最新APIドキュメント
 - 目的
@@ -516,6 +614,7 @@ C. コードスタイルとフォーマット
   - 正確なコード生成
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Serena MCP Server - トークン最適化
 - 目的
@@ -531,6 +630,7 @@ C. コードスタイルとフォーマット
   - 思考に使えるトークンが増える
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Playwright / Chrome DevTools MCP Server
 - **Playwright MCP Server - E2Eテスト自動生成**
@@ -545,6 +645,7 @@ C. コードスタイルとフォーマット
   - 従来5-10分かかる作業が1分に短縮
 
 ---
+<!-- _class: font-xsmall -->
 
 ### MCPサーバーのインストール
 - CLAUDE.mdに「推奨MCPサーバー」セクションを追加
@@ -558,10 +659,12 @@ C. コードスタイルとフォーマット
   - Playwright: npx @playwright/mcp@latest
 
 ---
+<!-- _class: font-xsmall -->
 
 ## セクション5: STEP 5 - 品質改善
 
 ---
+<!-- _class: font-xsmall -->
 
 ### このセクションで学ぶこと
 - **対応するAI特性**
@@ -577,6 +680,7 @@ C. コードスタイルとフォーマット
   - 100点になるまで繰り返す習慣を身につける
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 5 - AIに任せる8つの質問と指示
 - STEP 5をAIに任せる
@@ -590,6 +694,7 @@ C. コードスタイルとフォーマット
   - 次のタスクで前のタスクの情報が混入しない
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ①②技術的負債の発見と冗長コード削除
 - **AIは冗長・重複・dead codeを生成しがち**
@@ -606,6 +711,7 @@ C. コードスタイルとフォーマット
   - タスク完了ごとに②を実行
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ③循環的複雑度を減らして
 - **推奨される閾値**（NIST SP 500-235 = 米国標準技術研究所のソフトウェア品質ガイドライン）
@@ -622,6 +728,7 @@ C. コードスタイルとフォーマット
 - **Claude Codeへの指示**: 「循環的複雑度を10以下に減らして」
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ④⑤ライブラリとデザインパターンの活用
 - ④効果的にライブラリを活用できる箇所は
@@ -640,6 +747,7 @@ C. コードスタイルとフォーマット
   - 注意: 過剰なパターン適用は避ける
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ⑥docstring を書いて
 - Claude Codeへの指示
@@ -653,6 +761,7 @@ C. コードスタイルとフォーマット
   - pdoc または Sphinx で自動生成
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ⑦arc42 と C4 Model を採用した ADR を書いて
 - **用語解説**
@@ -670,6 +779,7 @@ C. コードスタイルとフォーマット
   - 「なぜこの技術を選んだか」を将来の自分やチームに残せる
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ⑧実装で得られた知見のドキュメント化
 - なぜ知見を保存するのか
@@ -683,6 +793,7 @@ C. コードスタイルとフォーマット
   - コンテキスト汚染を防ぐ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 【補足】後方互換性の問題 - AIの過剰な配慮
 - **AIは後方互換性を過剰に維持しようとする**
@@ -701,10 +812,12 @@ C. コードスタイルとフォーマット
   - AIに「後方互換性は不要。古いコードは削除して」と明示
 
 ---
+<!-- _class: font-xsmall -->
 
 ## ハンズオン: TDD実装と品質改善
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ハンズオン全体の流れ
 - 前提
@@ -720,6 +833,7 @@ C. コードスタイルとフォーマット
   - 2 commits
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 【ステップ1】Claudeカスタムコマンド作成
 - カスタムコマンドの復習（01で学習）
@@ -732,6 +846,7 @@ C. コードスタイルとフォーマット
   - Plan → Red → Green → Refactor → System Review → AI Self Review
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 【ステップ2】TDD実装
 - カスタムコマンドを使った実装
@@ -747,6 +862,7 @@ C. コードスタイルとフォーマット
   - 1 Issue = 1 Commit
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 【ステップ3】8つの質問と指示による改善
 - Claude Codeに8つの質問・指示を順に投げる
@@ -764,6 +880,7 @@ C. コードスタイルとフォーマット
 - ⑧実行後に`/clear`でコンテキストをクリア
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ハンズオン成果物の確認
 - 成果物一覧
@@ -779,10 +896,12 @@ C. コードスタイルとフォーマット
   - 静的解析エラーなし（ruff, mypy）
 
 ---
+<!-- _class: font-xsmall -->
 
 ## まとめとQ&A
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 実装・品質改善編のまとめ
 - STEP 4（7段階TDDサイクル + MCP Servers）
@@ -797,6 +916,7 @@ C. コードスタイルとフォーマット
   - 人間は結果をレビューするだけで作業時間80%削減
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Q&A
 - Q1: 7段階TDD必須か?
@@ -815,6 +935,7 @@ C. コードスタイルとフォーマット
   - 重要な機能（認証、決済、セキュリティクリティカル）でのみ実施
 
 ---
+<!-- _class: font-xsmall -->
 
 ## 参考資料
 

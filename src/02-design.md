@@ -21,39 +21,76 @@ paginate: true
   }
 
   section[data-class~="font-small"] {
-    font-size: 20px !important;
-    line-height: 1.35 !important;
-    padding: 35px 50px !important;
+    font-size: 19px !important;
+    line-height: 1.3 !important;
+    padding: 30px 45px !important;
   }
-  section[data-class~="font-small"] h2 {
-    font-size: 32px !important;
+  section[data-class~="font-small"] h2, section[data-class~="font-small"] h3 {
+    font-size: 28px !important;
+    margin-bottom: 0.3em !important;
   }
   section[data-class~="font-small"] li {
-    margin-bottom: 0.15em !important;
+    margin-bottom: 0.1em !important;
+  }
+  section[data-class~="font-small"] p {
+    margin-bottom: 0.3em !important;
   }
 
   section[data-class~="font-xsmall"] {
-    font-size: 18px !important;
-    line-height: 1.25 !important;
-    padding: 30px 50px !important;
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+    padding: 25px 40px !important;
   }
-  section[data-class~="font-xsmall"] h2 {
-    font-size: 28px !important;
+  section[data-class~="font-xsmall"] h2, section[data-class~="font-xsmall"] h3 {
+    font-size: 24px !important;
+    margin-bottom: 0.25em !important;
   }
   section[data-class~="font-xsmall"] li {
-    margin-bottom: 0.1em !important;
+    margin-bottom: 0.05em !important;
+  }
+  section[data-class~="font-xsmall"] p {
+    margin-bottom: 0.2em !important;
   }
 
   section[data-class~="font-xxsmall"] {
-    font-size: 16px !important;
-    line-height: 1.2 !important;
-    padding: 25px 45px !important;
+    font-size: 15px !important;
+    line-height: 1.15 !important;
+    padding: 20px 35px !important;
   }
-  section[data-class~="font-xxsmall"] h2 {
-    font-size: 24px !important;
+  section[data-class~="font-xxsmall"] h2, section[data-class~="font-xxsmall"] h3 {
+    font-size: 22px !important;
+    margin-bottom: 0.2em !important;
   }
   section[data-class~="font-xxsmall"] li {
-    margin-bottom: 0.05em !important;
+    margin-bottom: 0.02em !important;
+  }
+  section[data-class~="font-xxsmall"] p {
+    margin-bottom: 0.15em !important;
+  }
+  section[data-class~="font-xxsmall"] pre {
+    margin: 0.3em 0 !important;
+    font-size: 0.85em !important;
+  }
+
+  /* 超コンパクト用 */
+  section[data-class~="font-xxxsmall"] {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+    padding: 15px 30px !important;
+  }
+  section[data-class~="font-xxxsmall"] h2, section[data-class~="font-xxxsmall"] h3 {
+    font-size: 20px !important;
+    margin-bottom: 0.15em !important;
+  }
+  section[data-class~="font-xxxsmall"] li {
+    margin-bottom: 0 !important;
+  }
+  section[data-class~="font-xxxsmall"] p {
+    margin-bottom: 0.1em !important;
+  }
+  section[data-class~="font-xxxsmall"] pre {
+    margin: 0.2em 0 !important;
+    font-size: 0.8em !important;
   }
 
   /* 2カラムレイアウト */
@@ -169,6 +206,7 @@ paginate: true
   - 人間同士・AIへのコミュニケーションツール
 
 ---
+<!-- _class: font-xsmall -->
 
 ### トークン効率の観点 - 設計書で思考リソース3倍
 
@@ -206,6 +244,7 @@ paginate: true
   - コンテキスト汚染を防ぐ、トークン効率最大化
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Claude WEB/Code使い分けの実践 - コンテキスト汚染を防ぐ
 
@@ -245,6 +284,7 @@ paginate: true
   - AIは要件を作りすぎるので、MoSCoW分析で優先順位付け
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 要件定義フェーズの目的
 
@@ -343,6 +383,7 @@ paginate: true
   - 最終判断は人間が行う
 
 ---
+<!-- _class: font-xsmall -->
 
 ### ペルソナを活用した多角的MoSCoW分析
 
@@ -360,6 +401,7 @@ paginate: true
   - ターゲットユーザーの明確化
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 要件定義フェーズの成果物
 
@@ -375,6 +417,7 @@ paginate: true
   - STEP 2（設計）で具体的な設計に落とし込む
 
 ---
+<!-- _class: font-xsmall -->
 
 ### モックアップで早期フィードバックを得る
 
@@ -423,6 +466,7 @@ paginate: true
   - 「ダークモード対応して」
 
 ---
+<!-- _class: font-small -->
 
 ## セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD）
 
@@ -694,6 +738,7 @@ paginate: true
   - THEN: 「タイトルは255文字以内で入力してください」というエラーメッセージが表示される
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 受入条件の段階的詳細化
 
@@ -805,6 +850,7 @@ paginate: true
   - 将来の開発者への引き継ぎ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 設計フェーズの成果物まとめ - タスク分解の土台
 
@@ -975,6 +1021,7 @@ paginate: true
 - **テンプレートをClaude Codeに作成させる**
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 10分ルール
 
@@ -992,6 +1039,7 @@ paginate: true
   - デバッグしやすい
 
 ---
+<!-- _class: font-small -->
 
 ## セクション4: まとめとQ&A
 
@@ -1047,6 +1095,7 @@ paginate: true
   - 静的解析エラーなし
 
 ---
+<!-- _class: font-xsmall -->
 
 ### コンテキストエンジニアリング - STEP 2がSTEP 4の品質を決める
 
@@ -1063,6 +1112,7 @@ paginate: true
   - 高品質なコード生成
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Q&A
 
@@ -1099,6 +1149,7 @@ paginate: true
   - knowledges/35-ai-context-contamination-quality-degradation.md - コンテキスト汚染
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 次回までの課題
 

@@ -4,16 +4,81 @@ theme: default
 paginate: true
 ---
 
+<style>
+  /* フォントサイズバリエーション */
+  section[data-class~="font-small"] {
+    font-size: 19px !important;
+    line-height: 1.3 !important;
+    padding: 30px 45px !important;
+  }
+  section[data-class~="font-small"] h2, section[data-class~="font-small"] h3 {
+    font-size: 28px !important;
+    margin-bottom: 0.3em !important;
+  }
+  section[data-class~="font-small"] li {
+    margin-bottom: 0.1em !important;
+  }
+
+  section[data-class~="font-xsmall"] {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+    padding: 25px 40px !important;
+  }
+  section[data-class~="font-xsmall"] h2, section[data-class~="font-xsmall"] h3 {
+    font-size: 24px !important;
+    margin-bottom: 0.25em !important;
+  }
+  section[data-class~="font-xsmall"] li {
+    margin-bottom: 0.05em !important;
+  }
+
+  section[data-class~="font-xxsmall"] {
+    font-size: 15px !important;
+    line-height: 1.15 !important;
+    padding: 20px 35px !important;
+  }
+  section[data-class~="font-xxsmall"] h2, section[data-class~="font-xxsmall"] h3 {
+    font-size: 22px !important;
+    margin-bottom: 0.2em !important;
+  }
+  section[data-class~="font-xxsmall"] li {
+    margin-bottom: 0.02em !important;
+  }
+  section[data-class~="font-xxsmall"] pre {
+    margin: 0.3em 0 !important;
+    font-size: 0.85em !important;
+  }
+
+  section[data-class~="font-xxxsmall"] {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+    padding: 15px 30px !important;
+  }
+  section[data-class~="font-xxxsmall"] h2, section[data-class~="font-xxxsmall"] h3 {
+    font-size: 20px !important;
+    margin-bottom: 0.15em !important;
+  }
+  section[data-class~="font-xxxsmall"] li {
+    margin-bottom: 0 !important;
+  }
+  section[data-class~="font-xxxsmall"] pre {
+    margin: 0.2em 0 !important;
+    font-size: 0.8em !important;
+  }
+</style>
+
 # Day 1 - 04 統合ハンズオン: STEP 1-5 完全実践
 
 **対象者**: Java/Spring Boot経験者（AI駆動開発は初心者）
 **学習目標**: STEP 1-5を通してTODO管理アプリを完成させ、AI駆動開発の全工程を実践する
 
 ---
+<!-- _class: font-small -->
 
 ## 統合ハンズオン
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 統合ハンズオンの目的と進め方
 - 目的
@@ -31,6 +96,7 @@ paginate: true
   - ユーザーが完了したタスクをチェックし、やるべきことを管理できるようにする
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 1: 要件定義
 - ユーザーストーリーの作成
@@ -47,6 +113,7 @@ paginate: true
   - 受入基準の確認
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 2: 設計
 - 画面設計
@@ -68,6 +135,7 @@ paginate: true
   - ドキュメント更新完了
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 3: タスク分解
 - GitHub Issue作成
@@ -87,6 +155,7 @@ paginate: true
   - Scope Creep防止
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 4: TDD実装
 - TDDサイクルの実践
@@ -105,6 +174,7 @@ paginate: true
   - completed カラム追加 → テスト → 完了状態変更メソッド → テスト → API → テスト → UI
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 5: リファクタリング
 - 8つの質問と指示でAIに任せる
@@ -125,6 +195,7 @@ paginate: true
   - 次のタスクへ移行
 
 ---
+<!-- _class: font-small -->
 
 ## 【総合復習クイズ】Day 1の理解度確認
 
@@ -144,6 +215,7 @@ paginate: true
 5. **×** - Must haveは20-30%。スコープを絞ることで品質を確保
 
 ---
+<!-- _class: font-xsmall -->
 
 ### まとめと振り返り
 - 完成した成果物
@@ -166,6 +238,7 @@ paginate: true
   - Day 2: 保守開発（リバースエンジニアリング + テスト + 保守開発）
 
 ---
+<!-- _class: font-xsmall -->
 
 ## 参考資料
 
