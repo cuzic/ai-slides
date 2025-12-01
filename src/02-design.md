@@ -729,6 +729,21 @@ paginate: true
 ---
 <!-- _class: font-xsmall -->
 
+### 大きな技術選定は人間が判断する
+
+- **言語・フレームワークの選定**
+  - Python vs TypeScript（チームのスキル、エコシステム）
+  - React最新版 vs 安定版（新機能 vs API安定性）
+- **データベース・インフラの選定**
+  - PostgreSQL vs Supabase（自前運用 vs マネージド）
+  - サーバー環境 vs サーバーレス（Netlify, Vercel, Cloudflare）
+- **AIに任せると学習量の多い選択肢に偏る**
+  - 軽いプロトタイプにNetlify Functionsで十分でも、本格サーバーを推奨しがち
+  - 適材適所の使い分けは人間が判断する
+
+---
+<!-- _class: font-xsmall -->
+
 ### 人間が明示的に指定すべき技術選定
 
 - **AIから提案されにくいモダンなツール**
