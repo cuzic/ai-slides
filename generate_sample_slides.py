@@ -16,7 +16,7 @@ if not API_KEY:
     raise ValueError("GOOGLE_API_KEY または GEMINI_API_KEY を設定してください")
 
 client = genai.Client(api_key=API_KEY)
-MODEL_NAME = "imagen-4.0-generate-001"
+MODEL_NAME = "gemini-3-pro-image-preview"
 
 # 生成するスライド
 SLIDES = [
@@ -137,22 +137,22 @@ SLIDES = [
 
 
 def generate_image(prompt: str, output_path: Path) -> bool:
-    """画像を生成して保存"""
+    """画像を生成して保存（Gemini 3 Pro Image / Nano Banana Pro）"""
     try:
-        response = client.models.generate_images(
+        response = client.models.generate_content(
             model=MODEL_NAME,
-            prompt=prompt,
-            config=types.GenerateImagesConfig(
-                number_of_images=1,
-                aspect_ratio="16:9",
+            contents=[prompt],
+            config=types.GenerateContentConfig(
+                response_modalities=["IMAGE"],
             )
         )
 
-        for image in response.generated_images:
-            pil_image = Image.open(io.BytesIO(image.image.image_bytes))
-            pil_image.save(output_path)
-            print(f"✓ 生成完了: {output_path}")
-            return True
+        for part in response.candidates[0].content.parts:
+            if part.inline_data is not None:
+                pil_image = Image.open(io.BytesIO(part.inline_data.data))
+                pil_image.save(output_path)
+                print(f"✓ 生成完了: {output_path}")
+                return True
 
         print(f"✗ 画像なし: {output_path}")
         return False
