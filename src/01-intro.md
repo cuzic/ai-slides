@@ -173,12 +173,12 @@ paginate: true
 **学習目標**: AI駆動開発の基本的なマインドセット、Claude Code活用法、プロジェクト初期化、AI特性理解、5-STEPワークフローの完全理解
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ## なぜAI駆動開発なのか
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### 成功例① Harvard/BCG研究（2023年）
 
@@ -363,7 +363,7 @@ paginate: true
 - 本質的対策：CLAUDE.mdに永続ルール記載、**Claude Skills**で再利用可能な知識を定義
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ### AIが持つ5つの特性（2/2）
 
@@ -376,7 +376,7 @@ paginate: true
 - 本質的対策：自動テスト（pytest, ruff, pyright）、公式ドキュメント確認
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ### AIの特性への対策まとめ
 
@@ -488,7 +488,7 @@ paginate: true
 - 設計2時間投資 → 実装時間70%削減
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### 原則3: 段階的に進める
 
@@ -510,7 +510,7 @@ paginate: true
 **効果**: 各ステップで品質確認、問題の早期発見、進捗が明確
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ## Claude Codeとは：AI駆動開発のツール
 
@@ -581,7 +581,7 @@ paginate: true
 - コード全体を読む必要がなくなる
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### Claude Codeの4つのモード
 
@@ -605,7 +605,7 @@ paginate: true
 - 繰り返し作業の効率化
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### カスタムコマンド: TDDサイクル
 
@@ -630,7 +630,7 @@ paginate: true
 ```
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### CLAUDE.mdとREADME.md
 
@@ -650,7 +650,7 @@ paginate: true
 - 新しいタスクでもルールを自動適用
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### CLAUDE.md のディレクトリ別配置
 
@@ -691,7 +691,7 @@ project/
 **効果**: 技術選定のミスマッチ防止、一貫性、手戻り削減
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ## プロジェクトの初期化（ハンズオン）
 
@@ -717,7 +717,7 @@ npm install -g @anthropic-ai/claude-code
 - 初回起動時に認証
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-small -->
 
 ### モダンなPython開発ツール
 
@@ -728,7 +728,7 @@ npm install -g @anthropic-ai/claude-code
 **pyright**: 静的型解析でバグを早期発見
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### Pythonプロジェクトの作成
 
@@ -813,7 +813,7 @@ pytest
 **使用方法**: `/plan ユーザー作成機能`
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-small -->
 
 ### 成果物の確認
 
@@ -846,7 +846,7 @@ git status
 - 「実装前に不明点があれば必ず質問してください」を習慣化
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-small -->
 
 ## AI駆動開発の5-STEPワークフロー
 
@@ -884,12 +884,12 @@ git status
 - 5-STEPで、AIの特性を制御し、高品質なコードを効率的に生成
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-small -->
 
 ## 今日の学習内容
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### 3つのセッション
 

@@ -113,7 +113,7 @@ paginate: true
   - 受入基準の確認
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### STEP 2: 設計
 - 画面設計
@@ -135,7 +135,7 @@ paginate: true
   - ドキュメント更新完了
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### STEP 3: タスク分解
 - GitHub Issue作成
@@ -174,7 +174,7 @@ paginate: true
   - completed カラム追加 → テスト → 完了状態変更メソッド → テスト → API → テスト → UI
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### STEP 5: リファクタリング
 - 8つの質問と指示でAIに任せる
@@ -215,7 +215,7 @@ paginate: true
 5. **×** - Must haveは20-30%。スコープを絞ることで品質を確保
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### まとめと振り返り
 - 完成した成果物
@@ -238,7 +238,7 @@ paginate: true
   - Day 2: 保守開発（リバースエンジニアリング + テスト + 保守開発）
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ## 参考資料
 

@@ -173,11 +173,12 @@ paginate: true
 **学習目標**: STEP 1（要件定義）、STEP 2（設計）、STEP 3（タスク分解）を習得し、STEP 4（実装）の準備を整える
 
 ---
+<!-- _class: font-small -->
 
 ## イントロダクション: STEP 1-2-3の全体像
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### STEP 1-2-3とは - 実装前の準備3ステップ
 
@@ -192,7 +193,7 @@ paginate: true
   - コンテキスト不足による暴走を防ぐ
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### 設計書がなぜ必要か - 人間もAIも同じ
 
@@ -224,14 +225,14 @@ paginate: true
   - 実装速度の向上
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ## 実践準備: AIツール選択戦略
 
 **STEP 1-2-3を実践する前に、どのAIツールを使うか決めておきましょう。** ツール選択を間違えると、せっかくの設計書作成がコンテキスト汚染で台無しになります。
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### Claude WebとClaude Codeの使い分け戦略
 
@@ -271,7 +272,7 @@ paginate: true
 ## セクション1: 要件定義フェーズ - ユーザーストーリー
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### AIを活用したユーザーストーリー生成
 
@@ -303,7 +304,7 @@ paginate: true
   - 過剰実装を防止
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### ユーザーストーリーとは
 
@@ -471,7 +472,7 @@ paginate: true
 ## セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD）
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### STEP 2の目的と成果物 - AIの外部メモリを構築
 
@@ -1044,7 +1045,7 @@ paginate: true
 ## セクション4: まとめとQ&A
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### STEP 1-2-3の復習 - 4段階の詳細化プロセス
 
@@ -1124,12 +1125,12 @@ paginate: true
   - A: 目安として有効。10-30分なら許容範囲。30分以上は分割を検討。
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-small -->
 
 ## 付録
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### 参考資料
 
