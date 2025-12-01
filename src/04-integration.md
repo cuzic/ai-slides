@@ -71,6 +71,7 @@ paginate: true
   - ユーザーが完了したタスクをチェックし、やるべきことを管理できるようにする
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 1: 要件定義
 - ユーザーストーリーの作成
@@ -129,6 +130,7 @@ paginate: true
   - Scope Creep防止
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 4: TDD実装
 - TDDサイクルの実践

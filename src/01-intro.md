@@ -159,6 +159,7 @@ paginate: true
 - AIの得意・不得意を見極めることが成功の鍵
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 成功例② 楽天のClaude Code活用事例（2025年）
 
@@ -245,6 +246,7 @@ paginate: true
 **2025年予測**：リファクタリングは全変更の**3%以下**に、技術的負債の「臨界点」に到達する恐れ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 失敗例③ Google DORA 2025 - AIは組織を増幅する
 
@@ -322,6 +324,7 @@ paginate: true
 - 本質的対策：CLAUDE.mdに永続ルール記載、**Claude Skills**で再利用可能な知識を定義
 
 ---
+<!-- _class: font-small -->
 
 ### AIが持つ5つの特性（2/2）
 
@@ -493,6 +496,7 @@ paginate: true
 - チャット履歴を保持してコンテキストを維持
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Claude Skills とは
 
@@ -671,6 +675,7 @@ npm install -g @anthropic-ai/claude-code
 - 初回起動時に認証
 
 ---
+<!-- _class: font-small -->
 
 ### モダンなPython開発ツール
 
@@ -743,6 +748,7 @@ pytest
 **AIがREADMEを読む**: プロジェクト全体を理解
 
 ---
+<!-- _class: font-xsmall -->
 
 ### カスタムコマンドの準備
 
@@ -765,6 +771,7 @@ pytest
 **使用方法**: `/plan ユーザー作成機能`
 
 ---
+<!-- _class: font-small -->
 
 ### 成果物の確認
 
@@ -857,6 +864,7 @@ git status
 - TODO管理アプリ実装
 
 ---
+<!-- _class: font-small -->
 
 ### AI駆動開発で大切なこと（1/2）
 

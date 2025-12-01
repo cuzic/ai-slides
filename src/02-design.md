@@ -394,6 +394,7 @@ paginate: true
   - フィードバックを反映 → ユーザーストーリーを確定
 
 ---
+<!-- _class: font-small -->
 
 ### Claudeアーティファクト機能でモックアップ作成
 
@@ -407,6 +408,7 @@ paginate: true
   - 手戻りを防ぐ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### モックアップ生成の実例とチェックポイント
 
@@ -442,6 +444,7 @@ paginate: true
   - AIが必要な情報をいつでも取得可能
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 設計書のROI - 研究が証明する劇的な効果
 
@@ -492,6 +495,7 @@ paginate: true
   - バリデーションルール、イベントハンドラ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 画面一覧の作成方法
 
@@ -509,6 +513,7 @@ paginate: true
   - アクセス権限が適切か
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 画面遷移図（Mermaid記法）
 
@@ -528,6 +533,7 @@ paginate: true
   - バリデーションエラー → 同じ画面（エラーメッセージ表示）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 画面部品一覧（UI Component Inventory）
 
@@ -566,6 +572,7 @@ paginate: true
   - リレーションシップ（1対多、多対多）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### データベース設計の重要性
 
@@ -582,6 +589,7 @@ paginate: true
   - 「インデックス設計も含めて」
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Mermaid記法の活用
 
@@ -598,6 +606,7 @@ paginate: true
   - Git管理が容易（差分が見やすい）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### データフロー図の基本
 
@@ -705,6 +714,7 @@ paginate: true
   - 各階層で詳細化
 
 ---
+<!-- _class: font-small -->
 
 ### 受入基準（AC）が手抜きを防ぐ仕組み
 
@@ -719,6 +729,7 @@ paginate: true
   - ユーザビリティが向上
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 人間が明示的に指定すべき技術選定
 
@@ -861,6 +872,7 @@ paginate: true
   - 1 Issue = 1 Subtask
 
 ---
+<!-- _class: font-xsmall -->
 
 ### GIVEN WHEN THEN形式のBDDテストシナリオ - 開発者視点への変換
 
@@ -1004,6 +1016,7 @@ paginate: true
   - 明示的仕様で修正要求68%削減（Microsoft研究）
 
 ---
+<!-- _class: font-xsmall -->
 
 ### STEP 1-2-3でClaude Codeが自動化できること
 
