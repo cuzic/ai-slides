@@ -921,24 +921,19 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="38" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="51">
 <h3 id="mcp%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">MCPサーバーのインストール</h3>
 <ul>
-<li>CLAUDE.mdに「推奨MCPサーバー」セクションを追加
+<li>Claude CLIの <code>claude mcp add</code> コマンドでインストール
 <ul>
-<li>Claude Codeがセットアップを自動案内</li>
+<li><code>-s user</code> または <code>--scope user</code> でユーザー全体に適用</li>
 </ul>
 </li>
-<li>初回起動時
+<li>インストールコマンド
 <ul>
-<li>Claude Codeが「MCPサーバーをインストールしますか?」と提案</li>
-<li><code>npx</code>で自動インストール</li>
+<li>Context7: <code>claude mcp add context7 -s user -- npx -y @upstash/context7-mcp</code></li>
+<li>Serena: <code>claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server</code></li>
+<li>Playwright: <code>claude mcp add playwright -s user -- npx -y @executeautomation/playwright-mcp-server</code></li>
 </ul>
 </li>
-<li>インストール方法
-<ul>
-<li>Context7: npx @upstash/context7-mcp@latest</li>
-<li>Serena: git clone <a href="https://github.com/oraios/serena.git">https://github.com/oraios/serena.git</a></li>
-<li>Playwright: npx @playwright/mcp@latest</li>
-</ul>
-</li>
+<li>一度インストールすれば全セッションで利用可能</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-theme="default" lang="en-US" data-marpit-pagination="39" style="--paginate:true;--theme:default;" data-marpit-pagination-total="51">

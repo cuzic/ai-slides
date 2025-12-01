@@ -604,15 +604,13 @@ paginate: true
 <!-- _class: font-xsmall -->
 
 ### MCPサーバーのインストール
-- CLAUDE.mdに「推奨MCPサーバー」セクションを追加
-  - Claude Codeがセットアップを自動案内
-- 初回起動時
-  - Claude Codeが「MCPサーバーをインストールしますか?」と提案
-  - `npx`で自動インストール
-- インストール方法
-  - Context7: npx @upstash/context7-mcp@latest
-  - Serena: git clone https://github.com/oraios/serena.git
-  - Playwright: npx @playwright/mcp@latest
+- Claude CLIの `claude mcp add` コマンドでインストール
+  - `-s user` または `--scope user` でユーザー全体に適用
+- インストールコマンド
+  - Context7: `claude mcp add context7 -s user -- npx -y @upstash/context7-mcp`
+  - Serena: `claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server`
+  - Playwright: `claude mcp add playwright -s user -- npx -y @executeautomation/playwright-mcp-server`
+- 一度インストールすれば全セッションで利用可能
 
 ---
 
