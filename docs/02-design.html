@@ -503,26 +503,24 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="24" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="58">
-<h3 id="%E8%A6%81%E4%BB%B6%E3%81%8B%E3%82%89%E5%AE%9F%E8%A3%85%E3%81%BE%E3%81%A7%E3%81%AE%E4%B8%80%E9%80%A3%E3%81%AE%E6%B5%81%E3%82%8C---4%E6%AE%B5%E9%9A%8E%E3%81%AE%E8%A9%B3%E7%B4%B0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9">要件から実装までの一連の流れ - 4段階の詳細化プロセス</h3>
+<h3 id="step-1-2-3%E3%81%AE%E8%A9%B3%E7%B4%B0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9---%E5%90%84%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E3%81%AE%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E9%96%A2%E4%BF%82">STEP 1-2-3の詳細化プロセス - 各ステップの成果物の関係</h3>
 <ul>
-<li><strong>ユーザーストーリー → 画面設計</strong>
+<li><strong>STEP 1（要件定義）→ STEP 2（設計）への橋渡し</strong>
 <ul>
-<li>誰が何をなぜ → どう見えるか</li>
-<li>画面一覧、画面遷移図、画面部品一覧</li>
+<li>ユーザーストーリー（誰が何をなぜ）→ 画面設計（どう見えるか）</li>
+<li>STEP 1の成果物がSTEP 2のインプットになる</li>
 </ul>
 </li>
-<li><strong>画面設計 → 受入基準</strong>
+<li><strong>STEP 2 内での詳細化</strong>
 <ul>
-<li>どう見えるか → 何ができればOKか</li>
-<li>チェックリスト形式（正常系1 + 異常系2-3）</li>
-<li>GIVEN-WHEN-THEN形式</li>
+<li>画面設計 → 受入基準（何ができればOKか）</li>
+<li>チェックリスト形式、GIVEN-WHEN-THEN形式で定義</li>
 </ul>
 </li>
-<li><strong>受入基準 → BDDテストシナリオ</strong>
+<li><strong>STEP 2（設計）→ STEP 3（タスク分解）への橋渡し</strong>
 <ul>
-<li>ユーザー視点 → 開発者視点</li>
-<li>GIVEN（前提）、WHEN（操作）、THEN（期待結果）</li>
-<li>pytestに直接変換可能</li>
+<li>受入基準 → BDDテストシナリオ（pytestに変換可能）</li>
+<li>STEP 2の受入基準がSTEP 3のテスト設計の基盤になる</li>
 </ul>
 </li>
 </ul>
