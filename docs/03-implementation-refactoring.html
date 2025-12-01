@@ -470,16 +470,15 @@
 <ul>
 <li>一般のTDD（3段階）
 <ul>
-<li>Red → Green → Refactor → Verify</li>
+<li>Red → Green → Refactor</li>
 <li>Red: テストを書いて失敗させる</li>
 <li>Green: 最小限のコードで通す</li>
 <li>Refactor: コード改善</li>
-<li>Verify: テストが通ることを確認</li>
 </ul>
 </li>
 <li>AI駆動TDD（7段階）の独自の工夫
 <ul>
-<li><strong>Plan（追加）</strong>: Redの前に設計書参照でゴールを明確化</li>
+<li><strong>Plan（追加）</strong>: 受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画</li>
 <li>Red → Green → Refactor</li>
 <li><strong>静的解析（追加）</strong>: Refactorの後で機械的チェック</li>
 <li><strong>AI自己レビュー（追加）</strong>: Test Hacking検出、完成度100点評価</li>
@@ -501,7 +500,7 @@
 <ul>
 <li>Plan
 <ul>
-<li>Issue内容・実装方針・設計書参照でゴールを明確化</li>
+<li>受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画</li>
 <li>AIに質問させる「実装前に曖昧な点があれば質問してください」</li>
 </ul>
 </li>

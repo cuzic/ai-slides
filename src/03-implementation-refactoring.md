@@ -320,13 +320,12 @@ paginate: true
 
 ### 一般のTDDとAI駆動TDDの違い
 - 一般のTDD（3段階）
-  - Red → Green → Refactor → Verify
+  - Red → Green → Refactor
   - Red: テストを書いて失敗させる
   - Green: 最小限のコードで通す
   - Refactor: コード改善
-  - Verify: テストが通ることを確認
 - AI駆動TDD（7段階）の独自の工夫
-  - **Plan（追加）**: Redの前に設計書参照でゴールを明確化
+  - **Plan（追加）**: 受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画
   - Red → Green → Refactor
   - **静的解析（追加）**: Refactorの後で機械的チェック
   - **AI自己レビュー（追加）**: Test Hacking検出、完成度100点評価
@@ -342,7 +341,7 @@ paginate: true
 
 ### 7段階TDD詳細 - 各段階で何をチェックするのか
 - Plan
-  - Issue内容・実装方針・設計書参照でゴールを明確化
+  - 受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画
   - AIに質問させる「実装前に曖昧な点があれば質問してください」
 - Red
   - 受入条件→pytestでテストファースト
