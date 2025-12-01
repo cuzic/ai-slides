@@ -136,7 +136,6 @@ paginate: true
 **学習目標**: AI駆動開発の基本的なマインドセット、Claude Code活用法、プロジェクト初期化、AI特性理解、5-STEPワークフローの完全理解
 
 ---
-<!-- _class: font-small -->
 
 ## なぜAI駆動開発なのか
 
@@ -160,7 +159,6 @@ paginate: true
 - AIの得意・不得意を見極めることが成功の鍵
 
 ---
-<!-- _class: font-small -->
 
 ### 成功例② 楽天のClaude Code活用事例（2025年）
 
@@ -247,7 +245,6 @@ paginate: true
 **2025年予測**：リファクタリングは全変更の**3%以下**に、技術的負債の「臨界点」に到達する恐れ
 
 ---
-<!-- _class: font-small -->
 
 ### 失敗例③ Google DORA 2025 - AIは組織を増幅する
 
@@ -302,7 +299,6 @@ paginate: true
 **結論**：AIは銀の弾丸ではない。正しい使い方を学ばないと逆効果
 
 ---
-<!-- _class: font-small -->
 
 ## AIの5つの特性を理解する
 
@@ -326,7 +322,6 @@ paginate: true
 - 本質的対策：CLAUDE.mdに永続ルール記載、**Claude Skills**で再利用可能な知識を定義
 
 ---
-<!-- _class: font-small -->
 
 ### AIが持つ5つの特性（2/2）
 
@@ -354,7 +349,6 @@ paginate: true
 **重要**: これらの特性を理解して対策すれば、AIは強力なパートナーになる
 
 ---
-<!-- _class: font-small -->
 
 ## AIとの付き合い方：3つの原則
 
@@ -415,7 +409,7 @@ paginate: true
 - PMI調査：プロジェクト失敗の**47%**は要件定義の問題が原因
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### Context is the New Code - 研究データ①
 
@@ -473,7 +467,6 @@ paginate: true
 **効果**: 各ステップで品質確認、問題の早期発見、進捗が明確
 
 ---
-<!-- _class: font-small -->
 
 ## Claude Codeとは：AI駆動開発のツール
 
@@ -500,7 +493,6 @@ paginate: true
 - チャット履歴を保持してコンテキストを維持
 
 ---
-<!-- _class: font-small -->
 
 ### Claude Skills とは
 
@@ -632,7 +624,7 @@ project/
 - tests/: pytest、80%カバレッジ
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### AIにあいまいな点を明確化させる
 
@@ -654,7 +646,6 @@ project/
 **効果**: 技術選定のミスマッチ防止、一貫性、手戻り削減
 
 ---
-<!-- _class: font-small -->
 
 ## プロジェクトの初期化（ハンズオン）
 
@@ -680,7 +671,6 @@ npm install -g @anthropic-ai/claude-code
 - 初回起動時に認証
 
 ---
-<!-- _class: font-small -->
 
 ### モダンなPython開発ツール
 
@@ -712,7 +702,7 @@ git add . && git commit -m "chore: initial commit"
 **重要**: `.gitignore`に仮想環境、キャッシュを追加
 
 ---
-<!-- _class: font-xxxsmall -->
+<!-- _class: font-xxsmall -->
 
 ### CLAUDE.md作成（最重要）
 
@@ -735,7 +725,7 @@ FastAPIによるTODO管理Web API
 **効果**: Claudeが毎回このルールに従う
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### README.md作成
 
@@ -753,7 +743,6 @@ pytest
 **AIがREADMEを読む**: プロジェクト全体を理解
 
 ---
-<!-- _class: font-small -->
 
 ### カスタムコマンドの準備
 
@@ -776,7 +765,6 @@ pytest
 **使用方法**: `/plan ユーザー作成機能`
 
 ---
-<!-- _class: font-small -->
 
 ### 成果物の確認
 
@@ -809,7 +797,6 @@ git status
 - 「実装前に不明点があれば必ず質問してください」を習慣化
 
 ---
-<!-- _class: font-small -->
 
 ## AI駆動開発の5-STEPワークフロー
 
@@ -847,7 +834,6 @@ git status
 - 5-STEPで、AIの特性を制御し、高品質なコードを効率的に生成
 
 ---
-<!-- _class: font-small -->
 
 ## 今日の学習内容
 
@@ -871,7 +857,6 @@ git status
 - TODO管理アプリ実装
 
 ---
-<!-- _class: font-xsmall -->
 
 ### AI駆動開発で大切なこと（1/2）
 
@@ -905,7 +890,6 @@ git status
 - 04で全体を通して実践します
 
 ---
-<!-- _class: font-small -->
 
 ## 質問タイム
 

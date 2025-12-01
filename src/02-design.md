@@ -136,7 +136,6 @@ paginate: true
 **学習目標**: STEP 1（要件定義）、STEP 2（設計）、STEP 3（タスク分解）を習得し、STEP 4（実装）の準備を整える
 
 ---
-<!-- _class: font-small -->
 
 ## イントロダクション: STEP 1-2-3の全体像
 
@@ -155,6 +154,7 @@ paginate: true
   - コンテキスト不足による暴走を防ぐ
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 設計書がなぜ必要か - 人間もAIも同じ
 
@@ -168,6 +168,7 @@ paginate: true
   - 人間同士・AIへのコミュニケーションツール
 
 ---
+<!-- _class: font-xsmall -->
 
 ### トークン効率の観点 - 設計書で思考リソース3倍
 
@@ -185,7 +186,6 @@ paginate: true
   - 実装速度の向上
 
 ---
-<!-- _class: font-small -->
 
 ## 実践準備: AIツール選択戦略
 
@@ -227,7 +227,6 @@ paginate: true
   - Claude Code新セッション: タスク分解・実装
 
 ---
-<!-- _class: font-small -->
 
 ## セクション1: 要件定義フェーズ - ユーザーストーリー
 
@@ -395,7 +394,6 @@ paginate: true
   - フィードバックを反映 → ユーザーストーリーを確定
 
 ---
-<!-- _class: font-small -->
 
 ### Claudeアーティファクト機能でモックアップ作成
 
@@ -409,7 +407,6 @@ paginate: true
   - 手戻りを防ぐ
 
 ---
-<!-- _class: font-small -->
 
 ### モックアップ生成の実例とチェックポイント
 
@@ -427,7 +424,6 @@ paginate: true
   - 「ダークモード対応して」
 
 ---
-<!-- _class: font-small -->
 
 ## セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD）
 
@@ -446,7 +442,6 @@ paginate: true
   - AIが必要な情報をいつでも取得可能
 
 ---
-<!-- _class: font-small -->
 
 ### 設計書のROI - 研究が証明する劇的な効果
 
@@ -497,7 +492,6 @@ paginate: true
   - バリデーションルール、イベントハンドラ
 
 ---
-<!-- _class: font-small -->
 
 ### 画面一覧の作成方法
 
@@ -515,7 +509,6 @@ paginate: true
   - アクセス権限が適切か
 
 ---
-<!-- _class: font-small -->
 
 ### 画面遷移図（Mermaid記法）
 
@@ -535,7 +528,6 @@ paginate: true
   - バリデーションエラー → 同じ画面（エラーメッセージ表示）
 
 ---
-<!-- _class: font-small -->
 
 ### 画面部品一覧（UI Component Inventory）
 
@@ -552,7 +544,7 @@ paginate: true
   - onChangeイベント（例: 入力フォーム → バリデーション）
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### データベース設計の基本 - ER図とschema.sql
 
@@ -574,7 +566,6 @@ paginate: true
   - リレーションシップ（1対多、多対多）
 
 ---
-<!-- _class: font-small -->
 
 ### データベース設計の重要性
 
@@ -591,7 +582,6 @@ paginate: true
   - 「インデックス設計も含めて」
 
 ---
-<!-- _class: font-small -->
 
 ### Mermaid記法の活用
 
@@ -608,7 +598,6 @@ paginate: true
   - Git管理が容易（差分が見やすい）
 
 ---
-<!-- _class: font-small -->
 
 ### データフロー図の基本
 
@@ -716,7 +705,6 @@ paginate: true
   - 各階層で詳細化
 
 ---
-<!-- _class: font-small -->
 
 ### 受入基準（AC）が手抜きを防ぐ仕組み
 
@@ -731,7 +719,6 @@ paginate: true
   - ユーザビリティが向上
 
 ---
-<!-- _class: font-small -->
 
 ### 人間が明示的に指定すべき技術選定
 
@@ -833,7 +820,6 @@ paginate: true
   - GIVEN-WHEN-THENをBDDテストシナリオに変換
 
 ---
-<!-- _class: font-small -->
 
 ## セクション3: STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール）
 
@@ -875,7 +861,6 @@ paginate: true
   - 1 Issue = 1 Subtask
 
 ---
-<!-- _class: font-small -->
 
 ### GIVEN WHEN THEN形式のBDDテストシナリオ - 開発者視点への変換
 
@@ -1000,7 +985,6 @@ paginate: true
   - デバッグしやすい
 
 ---
-<!-- _class: font-small -->
 
 ## セクション4: まとめとQ&A
 
@@ -1020,7 +1004,6 @@ paginate: true
   - 明示的仕様で修正要求68%削減（Microsoft研究）
 
 ---
-<!-- _class: font-small -->
 
 ### STEP 1-2-3でClaude Codeが自動化できること
 
@@ -1085,7 +1068,6 @@ paginate: true
   - A: 目安として有効。10-30分なら許容範囲。30分以上は分割を検討。
 
 ---
-<!-- _class: font-small -->
 
 ## 付録
 

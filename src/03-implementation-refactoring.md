@@ -49,7 +49,6 @@ paginate: true
 **学習目標**: STEP 4（実装・TDD）とSTEP 5（品質改善）の習得
 
 ---
-<!-- _class: font-small -->
 
 ## イントロダクション
 
@@ -145,7 +144,6 @@ paginate: true
   - 対応: ②手抜き、③忘れっぽさ
 
 ---
-<!-- _class: font-small -->
 
 ## セクション1: 実装準備
 
@@ -222,7 +220,6 @@ paginate: true
   - System Reviewで存在しないAPI呼び出しを検出
 
 ---
-<!-- _class: font-small -->
 
 ## セクション2: Test Hacking
 
@@ -299,7 +296,6 @@ paginate: true
   - ✅ 良い例: 外部サービスのみモック、内部は実際のコード使用
 
 ---
-<!-- _class: font-small -->
 
 ## セクション3: AI駆動TDDサイクル
 
@@ -524,7 +520,7 @@ paginate: true
   - 対策: AI Self Reviewを必ず実施、100点になるまで繰り返す
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ## 【3択クイズ】7段階TDDの理解確認
 
@@ -540,7 +536,6 @@ C. コードスタイルとフォーマット
 - System Reviewでは検出できない問題を発見
 
 ---
-<!-- _class: font-small -->
 
 ## セクション4: MCP Servers
 
@@ -635,7 +630,6 @@ C. コードスタイルとフォーマット
   - Playwright: npx @playwright/mcp@latest
 
 ---
-<!-- _class: font-small -->
 
 ## セクション5: STEP 5 - 品質改善
 
@@ -788,7 +782,6 @@ C. コードスタイルとフォーマット
   - AIに「後方互換性は不要。古いコードは削除して」と明示
 
 ---
-<!-- _class: font-small -->
 
 ## ハンズオン: TDD実装と品質改善
 
@@ -872,7 +865,6 @@ C. コードスタイルとフォーマット
   - 静的解析エラーなし（ruff, mypy）
 
 ---
-<!-- _class: font-small -->
 
 ## まとめとQ&A
 
@@ -911,7 +903,6 @@ C. コードスタイルとフォーマット
   - 重要な機能（認証、決済、セキュリティクリティカル）でのみ実施
 
 ---
-<!-- _class: font-small -->
 
 ## 参考資料
 

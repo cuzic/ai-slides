@@ -49,7 +49,6 @@ paginate: true
 **学習目標**: STEP 1-5を通してTODO管理アプリを完成させ、AI駆動開発の全工程を実践する
 
 ---
-<!-- _class: font-small -->
 
 ## 統合ハンズオン
 
@@ -72,7 +71,6 @@ paginate: true
   - ユーザーが完了したタスクをチェックし、やるべきことを管理できるようにする
 
 ---
-<!-- _class: font-xsmall -->
 
 ### STEP 1: 要件定義
 - ユーザーストーリーの作成
@@ -131,7 +129,6 @@ paginate: true
   - Scope Creep防止
 
 ---
-<!-- _class: font-xsmall -->
 
 ### STEP 4: TDD実装
 - TDDサイクルの実践
@@ -171,7 +168,7 @@ paginate: true
   - 次のタスクへ移行
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ## 【総合復習クイズ】Day 1の理解度確認
 
@@ -214,7 +211,6 @@ paginate: true
   - Day 2: 保守開発（リバースエンジニアリング + テスト + 保守開発）
 
 ---
-<!-- _class: font-small -->
 
 ## 参考資料
 
