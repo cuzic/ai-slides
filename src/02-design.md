@@ -735,9 +735,10 @@ paginate: true
   - パッケージマネージャ：pip → uv
   - フォーマッター：black/flake8 → ruff
   - 型チェック：mypy → pyright
-- **AIから提案されにくい設計パターン**
-  - エラーハンドリング：dry-python/returnsのResult型
-  - テスト戦略（TDD、Property-based testing）
+- **AIから提案されにくい有用ライブラリ**
+  - attrs（dataclassesより高機能なクラス定義）
+  - toolz（関数型プログラミングユーティリティ）
+  - more-itertools（イテレータ拡張）
 - **人間の役割**
   - 最新のベストプラクティスを知っておく
   - CLAUDE.mdに記載して共有
@@ -754,28 +755,29 @@ paginate: true
 - **質問を欠かさずすることが重要**
   - 「モダンなベストプラクティスは？」と聞けば出てくることも多い
   - uv、ruffなどのツール系は提案されやすい
-- **ただし設計パターン系は自分でキャッチアップ**
-  - dry-python/returnsなどは設計段階では出てきにくい
+- **ただし有用ライブラリは自分でキャッチアップ**
+  - attrs、toolz、more-itertoolsなどは提案されにくい
   - 技術ブログ、カンファレンス、書籍で情報収集
 
 ---
 <!-- _class: font-xsmall -->
 
-### dry-python/returnsによるResult型
+### attrsによる高機能クラス定義
 
-- **従来の例外処理の問題**
-  - `try-except`を書き忘れても、コンパイル時にエラーにならない
-  - どの関数が例外を投げるか、コードを読まないと分からない
-  - 「例外を握りつぶす」バグが発生しやすい
-- **Result型とは** - 成功/失敗を返り値で明示する設計パターン
-  - `Success(value)`: 成功時の値を包む
-  - `Failure(error)`: 失敗時のエラーを包む
-  - 呼び出し側は必ず両方を処理しないとpyrightエラー
-- **dry-python/returnsの利点**
-  - 型チェックで「エラー処理漏れ」をコンパイル時に検出
-  - コードを読まなくても「この関数は失敗する可能性がある」と分かる
+- **dataclassesの限界**
+  - バリデーション機能がない
+  - 型変換（コンバーター）がない
+  - イミュータブル設定が限定的
+- **attrsの主要機能**
+  - `@attrs.define`: クラス定義のボイラープレート削減
+  - `validators`: フィールドの値を自動検証
+  - `converters`: 入力値を自動変換（str→int等）
+  - `frozen=True`: 完全なイミュータブルオブジェクト
+- **attrsの利点**
+  - dataclassesより高機能で堅牢なコード
+  - 型ヒントとの相性が良い（pyrightと連携）
 - **AIへの指示例**
-  - 「dry-python/returnsを使ってResult型でエラー処理して」
+  - 「attrsを使ってバリデーション付きのデータクラスを作成して」
 
 ---
 <!-- _class: font-xxsmall -->

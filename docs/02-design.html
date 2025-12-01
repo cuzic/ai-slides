@@ -899,10 +899,11 @@
 <li>型チェック：mypy → pyright</li>
 </ul>
 </li>
-<li><strong>AIから提案されにくい設計パターン</strong>
+<li><strong>AIから提案されにくい有用ライブラリ</strong>
 <ul>
-<li>エラーハンドリング：dry-python/returnsのResult型</li>
-<li>テスト戦略（TDD、Property-based testing）</li>
+<li>attrs（dataclassesより高機能なクラス定義）</li>
+<li>toolz（関数型プログラミングユーティリティ）</li>
+<li>more-itertools（イテレータ拡張）</li>
 </ul>
 </li>
 <li><strong>人間の役割</strong>
@@ -929,40 +930,41 @@
 <li>uv、ruffなどのツール系は提案されやすい</li>
 </ul>
 </li>
-<li><strong>ただし設計パターン系は自分でキャッチアップ</strong>
+<li><strong>ただし有用ライブラリは自分でキャッチアップ</strong>
 <ul>
-<li>dry-python/returnsなどは設計段階では出てきにくい</li>
+<li>attrs、toolz、more-itertoolsなどは提案されにくい</li>
 <li>技術ブログ、カンファレンス、書籍で情報収集</li>
 </ul>
 </li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-class="font-xsmall" data-theme="default" lang="en-US" class="font-xsmall" data-marpit-pagination="41" style="--paginate:true;--class:font-xsmall;--theme:default;" data-marpit-pagination-total="58">
-<h3 id="dry-pythonreturns%E3%81%AB%E3%82%88%E3%82%8Bresult%E5%9E%8B">dry-python/returnsによるResult型</h3>
+<h3 id="attrs%E3%81%AB%E3%82%88%E3%82%8B%E9%AB%98%E6%A9%9F%E8%83%BD%E3%82%AF%E3%83%A9%E3%82%B9%E5%AE%9A%E7%BE%A9">attrsによる高機能クラス定義</h3>
 <ul>
-<li><strong>従来の例外処理の問題</strong>
+<li><strong>dataclassesの限界</strong>
 <ul>
-<li><code>try-except</code>を書き忘れても、コンパイル時にエラーにならない</li>
-<li>どの関数が例外を投げるか、コードを読まないと分からない</li>
-<li>「例外を握りつぶす」バグが発生しやすい</li>
+<li>バリデーション機能がない</li>
+<li>型変換（コンバーター）がない</li>
+<li>イミュータブル設定が限定的</li>
 </ul>
 </li>
-<li><strong>Result型とは</strong> - 成功/失敗を返り値で明示する設計パターン
+<li><strong>attrsの主要機能</strong>
 <ul>
-<li><code>Success(value)</code>: 成功時の値を包む</li>
-<li><code>Failure(error)</code>: 失敗時のエラーを包む</li>
-<li>呼び出し側は必ず両方を処理しないとpyrightエラー</li>
+<li><code>@attrs.define</code>: クラス定義のボイラープレート削減</li>
+<li><code>validators</code>: フィールドの値を自動検証</li>
+<li><code>converters</code>: 入力値を自動変換（str→int等）</li>
+<li><code>frozen=True</code>: 完全なイミュータブルオブジェクト</li>
 </ul>
 </li>
-<li><strong>dry-python/returnsの利点</strong>
+<li><strong>attrsの利点</strong>
 <ul>
-<li>型チェックで「エラー処理漏れ」をコンパイル時に検出</li>
-<li>コードを読まなくても「この関数は失敗する可能性がある」と分かる</li>
+<li>dataclassesより高機能で堅牢なコード</li>
+<li>型ヒントとの相性が良い（pyrightと連携）</li>
 </ul>
 </li>
 <li><strong>AIへの指示例</strong>
 <ul>
-<li>「dry-python/returnsを使ってResult型でエラー処理して」</li>
+<li>「attrsを使ってバリデーション付きのデータクラスを作成して」</li>
 </ul>
 </li>
 </ul>
