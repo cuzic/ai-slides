@@ -283,7 +283,7 @@ paginate: true
   - 「システムは〜する」という主語
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### なぜユーザーストーリー形式を使うか
 
@@ -325,7 +325,7 @@ paginate: true
   - 完了条件を客観的に判定できる
 
 ---
-<!-- _class: font-xxsmall -->
+<!-- _class: font-xsmall -->
 
 ### MoSCoW分析 - AIに優先順位を付けてもらう
 
