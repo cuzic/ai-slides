@@ -21,39 +21,76 @@ paginate: true
   }
 
   section[data-class~="font-small"] {
-    font-size: 20px !important;
-    line-height: 1.35 !important;
-    padding: 35px 50px !important;
+    font-size: 19px !important;
+    line-height: 1.3 !important;
+    padding: 30px 45px !important;
   }
-  section[data-class~="font-small"] h2 {
-    font-size: 32px !important;
+  section[data-class~="font-small"] h2, section[data-class~="font-small"] h3 {
+    font-size: 28px !important;
+    margin-bottom: 0.3em !important;
   }
   section[data-class~="font-small"] li {
-    margin-bottom: 0.15em !important;
+    margin-bottom: 0.1em !important;
+  }
+  section[data-class~="font-small"] p {
+    margin-bottom: 0.3em !important;
   }
 
   section[data-class~="font-xsmall"] {
-    font-size: 18px !important;
-    line-height: 1.25 !important;
-    padding: 30px 50px !important;
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+    padding: 25px 40px !important;
   }
-  section[data-class~="font-xsmall"] h2 {
-    font-size: 28px !important;
+  section[data-class~="font-xsmall"] h2, section[data-class~="font-xsmall"] h3 {
+    font-size: 24px !important;
+    margin-bottom: 0.25em !important;
   }
   section[data-class~="font-xsmall"] li {
-    margin-bottom: 0.1em !important;
+    margin-bottom: 0.05em !important;
+  }
+  section[data-class~="font-xsmall"] p {
+    margin-bottom: 0.2em !important;
   }
 
   section[data-class~="font-xxsmall"] {
-    font-size: 16px !important;
-    line-height: 1.2 !important;
-    padding: 25px 45px !important;
+    font-size: 15px !important;
+    line-height: 1.15 !important;
+    padding: 20px 35px !important;
   }
-  section[data-class~="font-xxsmall"] h2 {
-    font-size: 24px !important;
+  section[data-class~="font-xxsmall"] h2, section[data-class~="font-xxsmall"] h3 {
+    font-size: 22px !important;
+    margin-bottom: 0.2em !important;
   }
   section[data-class~="font-xxsmall"] li {
-    margin-bottom: 0.05em !important;
+    margin-bottom: 0.02em !important;
+  }
+  section[data-class~="font-xxsmall"] p {
+    margin-bottom: 0.15em !important;
+  }
+  section[data-class~="font-xxsmall"] pre {
+    margin: 0.3em 0 !important;
+    font-size: 0.85em !important;
+  }
+
+  /* 超コンパクト用 */
+  section[data-class~="font-xxxsmall"] {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+    padding: 15px 30px !important;
+  }
+  section[data-class~="font-xxxsmall"] h2, section[data-class~="font-xxxsmall"] h3 {
+    font-size: 20px !important;
+    margin-bottom: 0.15em !important;
+  }
+  section[data-class~="font-xxxsmall"] li {
+    margin-bottom: 0 !important;
+  }
+  section[data-class~="font-xxxsmall"] p {
+    margin-bottom: 0.1em !important;
+  }
+  section[data-class~="font-xxxsmall"] pre {
+    margin: 0.2em 0 !important;
+    font-size: 0.8em !important;
   }
 
   /* 2カラムレイアウト */
@@ -214,42 +251,37 @@ paginate: true
 - **使い方のトレーニング**と**品質検証プロセス**が必要
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### 失敗例② GitClear社調査（2025年）- コード品質の劣化
 
 **研究概要**
 - **2億1,100万行**のコード変更を分析（2020年1月〜2024年12月）
-- 対象：GitHubのトップ25オープンソースプロジェクト + 商用プロジェクト
-- 史上最大規模のコード品質縦断調査
-- 4つの指標を追跡：Added（新規追加）、Deleted（削除）、Moved（移動）、Copy/Pasted（コピペ）
+- 対象：GitHubトップ25 OSS + 商用プロジェクト、史上最大規模の縦断調査
+- 4指標を追跡：Added、Deleted、Moved、Copy/Pasted
 
 **コード品質の測定方法**
 - **Moved（移動）** = リファクタリングの代理指標
   - コードを適切な場所に移動 = 設計改善の証拠
   - 2020年：全変更の**24.1%**がMoved → 健全なリファクタリング文化
-- **Copy/Pasted** = コード重複の代理指標
-  - 既存コードのコピーで済ませる = 技術的負債の蓄積
+- **Copy/Pasted** = コード重複の代理指標（技術的負債の蓄積）
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### 失敗例② GitClear社調査（続き）- 衝撃のデータ
 
 **Copilot登場後の変化（2022年以降）**
 - Moved比率：24.1%（2020年）→ **9.5%**（2024年）← 60%減少
-- Copy/Pasted：2024年に初めて**MovedをCopy/Pastedが上回った**
+- 2024年：初めて**MovedをCopy/Pastedが上回った**
 - コード重複ブロック（5行以上）：**8倍増加**
-- コードチャーン（2週間以内の修正）：3.1%（2020年）→ **5.7%**（2024年）
+- コードチャーン（2週間以内の修正）：3.1% → **5.7%**
 
 **専門家の警告（Bill Harding, GitClear CEO）**
-- 「リファクタリングは長期的な保守性の鍵」
 - 「AIは既存コードを再利用する代わりに、新しいコードをコピペで生成」
 - 「35年のキャリアで、これほど短期間に技術的負債が蓄積されるのを見たことがない」
 
-**2025年予測**
-- リファクタリング（Moved）は全変更の**3%以下**に
-- 技術的負債の「臨界点」に到達する恐れ
+**2025年予測**：リファクタリングは全変更の**3%以下**に、技術的負債の「臨界点」に到達する恐れ
 
 ---
 <!-- _class: font-small -->
@@ -268,38 +300,31 @@ paginate: true
 - AIを活用するチームほど**プラットフォームエンジニアリング**に投資
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### 失敗例③ Google DORA 2025（続き）- 増幅効果の罠
 
 **ネガティブな発見：安定性の低下**
-- ソフトウェア配信の**安定性は低下**
-- **30%がAI生成コードを「信頼していない」**
+- ソフトウェア配信の**安定性は低下**、**30%がAI生成コードを「信頼していない」**
 - 変更失敗率（Change Failure Rate）が上昇傾向
 
 **重要な発見：AIは「増幅器」**
 - AIは組織の**強みも弱みも増幅する**
-- 自動テスト、バージョン管理、フィードバックループが弱い組織
-  → AI導入で不安定化が加速
+- 自動テスト・CI/CDが弱い組織 → AI導入で不安定化が加速
 - 基盤が強い組織 → AI導入で大幅な生産性向上
 
 **成功の条件（DORA提言）**
-- **プラットフォームエンジニアリング**への投資
-- 自動テスト・CI/CDの整備が先
+- **プラットフォームエンジニアリング**への投資、自動テスト・CI/CDの整備が先
 - AIは「銀の弾丸」ではなく「増幅器」として理解する
 
-**Stack Overflow 2025調査との整合**
-- 66%：「AIの回答は"ほぼ正しい"が完全ではない」が最大の課題
-- 45%：「AI生成コードのデバッグは時間がかかる」
+**Stack Overflow 2025調査**：66%が「AIはほぼ正しいが完全ではない」、45%が「デバッグに時間がかかる」
 
 ---
-<!-- _class: font-small -->
+<!-- _class: font-xsmall -->
 
 ### 失敗例④ エンジニアのバーンアウト（2024年調査）
 
-**調査概要**
-- 604人のソフトウェア開発者・エンジニアを対象
-- AI導入組織（61%）とそうでない組織を比較
+**調査概要**：604人の開発者対象、AI導入組織（61%）と非導入組織を比較
 
 **深刻な結果**
 - **65%がバーンアウトを経験**（AI導入の有無に関わらず）
@@ -338,6 +363,7 @@ paginate: true
 - 本質的対策：CLAUDE.mdに永続ルール記載、**Claude Skills**で再利用可能な知識を定義
 
 ---
+<!-- _class: font-xsmall -->
 
 ### AIが持つ5つの特性（2/2）
 
@@ -350,6 +376,7 @@ paginate: true
 - 本質的対策：自動テスト（pytest, ruff, pyright）、公式ドキュメント確認
 
 ---
+<!-- _class: font-xsmall -->
 
 ### AIの特性への対策まとめ
 
@@ -364,6 +391,7 @@ paginate: true
 **重要**: これらの特性を理解して対策すれば、AIは強力なパートナーになる
 
 ---
+<!-- _class: font-small -->
 
 ## AIとの付き合い方：3つの原則
 
@@ -405,33 +433,26 @@ paginate: true
 - 適切なバランス：効率と品質の両立
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### 原則2: Context is the New Code（コンテキストが全て）
 
-**AIは外部メモリが必要**
-- Claude Codeのコンテキスト上限：200Kトークン（約13万文字）
-- **設計書なしの場合**
-  - 全ソースコード（数万行）を読む → 150Kトークン消費
-  - 残り50Kトークンで思考 → 単純なCRUDしか作れない
-- **設計書ありの場合**
-  - 設計書（数十ページ）を読む → 30Kトークン
-  - 残り170Kトークンで思考 → 複雑なロジックも対応可能（**3.4倍**）
+**AIは外部メモリが必要**（Claude Codeのコンテキスト上限：200Kトークン）
+- **設計書なし**：全コード読込150K → 思考50K → 単純なCRUDしか作れない
+- **設計書あり**：設計書30K → 思考170K → 複雑なロジックも対応可能（**3.4倍**）
 
 **コンテキストの種類**
 - CLAUDE.md：プロジェクトルール（Claudeが最初に読む）
 - README.md：プロジェクト概要
-- 設計書：画面、DB、API仕様
-- Issue：タスク定義
-- 受入基準（AC）：「何ができればOKか」
+- 設計書：画面、DB、API仕様 / Issue：タスク定義 / 受入基準（AC）
 
 **研究データ**
 - TiCoder（Microsoft Research）：テスト駆動で**ユーザー意図との整合性90.4%**達成
-- McKinsey 2024：AIでドキュメント作成時間**45-50%削減**、コード作成**35-45%短縮**
+- McKinsey 2024：ドキュメント作成**45-50%削減**、コード作成**35-45%短縮**
 - PMI調査：プロジェクト失敗の**47%**は要件定義の問題が原因
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### Context is the New Code - 研究データ①
 
@@ -446,30 +467,28 @@ paginate: true
 - LLMの「仕様誤解」を修正するプロンプト技術
 - ChatGPT、DeepSeek-Coderなど6つのベンチマークで検証
 - 仕様理解の改善 → コード生成性能が大幅向上
-- 「フィードバックベースのプロンプティング」と「思考誘発プロンプティング」の相乗効果
 
 ---
-<!-- _class: font-xsmall -->
+<!-- _class: font-xxsmall -->
 
 ### Context is the New Code - 研究データ②
 
 **McKinsey 2024（開発者生産性調査）**
-- ドキュメント作成時間：**45-50%削減**
-- コード作成時間：**35-45%短縮**
-- 高パフォーマーの成果：品質**31-45%向上**、市場投入時間**16-30%短縮**
+- ドキュメント作成：**45-50%削減** / コード作成：**35-45%短縮**
+- 高パフォーマー：品質**31-45%向上**、市場投入**16-30%短縮**
 - ただし「生成コードの大部分は修正が必要」→ レビュー能力が重要
 
 **Harvard/BCG 2023（758人の実験）**
-- GPT-4使用グループ：タスク完了数**12.2%増**、速度**25.1%向上**、品質**40%向上**
-- ただし「凸凹フロンティア」外のタスクでは正解率**19ポイント低下**
-- AIの得意・不得意を見極めることが成功の鍵
+- GPT-4使用：タスク完了**12.2%増**、速度**25.1%向上**、品質**40%向上**
+- 「凸凹フロンティア」外では正解率**19ポイント低下** → 得意・不得意の見極めが鍵
 
 **PMI/業界調査**
 - プロジェクト失敗の**47%**は要件定義の問題が原因
-- 要件エラーは本番で修正すると設計時の**10-100倍**のコスト
-- 「設計2時間投資 → 実装時間70%削減」は実務での一般的な効果
+- 要件エラーは本番修正で設計時の**10-100倍**のコスト
+- 設計2時間投資 → 実装時間70%削減
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 原則3: 段階的に進める
 
@@ -480,14 +499,13 @@ paginate: true
 
 **具体例：ユーザー認証機能**
 
-❌ 悪い例（大きすぎる）:
-「ユーザー認証機能を実装して」
+❌ 悪い例（大きすぎる）:「ユーザー認証機能を実装して」
 
 ✅ 良い例（段階的）:
 1. Userモデルを作成（10分）
 2. パスワードハッシュ化を実装（10分）
 3. ログインエンドポイントを作成（10分）
-4. JWTトークン発行を実装（10分）※JWT = JSON Web Token、認証情報を安全に伝達する標準形式
+4. JWTトークン発行を実装（10分）
 
 **効果**: 各ステップで品質確認、問題の早期発見、進捗が明確
 
@@ -651,26 +669,24 @@ project/
 - tests/: pytest、80%カバレッジ
 
 ---
+<!-- _class: font-xxsmall -->
 
 ### AIにあいまいな点を明確化させる
 
 **問題：AIは推測で進める**
 - 技術スタック未定義 → 勝手にライブラリを選択
 - テスト方法不明 → ハードコードで済ませる
-- 設計方針なし → 独自の判断で実装
 
 **CLAUDE.mdに記載する指示**
 ```markdown
-実装前に、以下について不明・あいまいな点があれば必ず質問してください：
+実装前に、以下について不明点があれば必ず質問してください：
 - 使用する技術スタック・ライブラリ
 - テスト方法とカバレッジ目標
-- エラーハンドリングの方針
 ```
 
 **AIからの質問例**
 - 「Webフレームワークは？（FastAPI / Django / Flask）」
 - 「DBは？（PostgreSQL / SQLite / MySQL）」
-- 「テストカバレッジ目標は何%ですか？」
 
 **効果**: 技術選定のミスマッチ防止、一貫性、手戻り削減
 
@@ -712,14 +728,14 @@ npm install -g @anthropic-ai/claude-code
 **pyright**: 静的型解析でバグを早期発見
 
 ---
+<!-- _class: font-xxsmall -->
 
 ### Pythonプロジェクトの作成
 
 **ステップ1: プロジェクト作成**
 ```bash
 mkdir todo-app && cd todo-app
-python -m venv .venv
-source .venv/bin/activate
+python -m venv .venv && source .venv/bin/activate
 pip install fastapi uvicorn sqlalchemy pytest ruff pyright
 ```
 
@@ -727,44 +743,28 @@ pip install fastapi uvicorn sqlalchemy pytest ruff pyright
 ```bash
 git init
 echo -e ".venv/\n__pycache__/\n.pytest_cache/" >> .gitignore
-git add .
-git commit -m "chore: initial commit"
+git add . && git commit -m "chore: initial commit"
 ```
 
 **重要**: `.gitignore`に仮想環境、キャッシュを追加
 
 ---
+<!-- _class: font-xxxsmall -->
 
 ### CLAUDE.md作成（最重要）
 
-**ステップ3: CLAUDE.md作成**
-
-プロジェクトルートに`CLAUDE.md`を作成：
+**ステップ3: CLAUDE.md作成** - プロジェクトルートに`CLAUDE.md`を作成：
 
 ```markdown
 # TODO管理アプリ
-
 ## プロジェクト概要
 FastAPIによるTODO管理Web API
-
 ## 技術スタック
-- Python 3.12
-- FastAPI
-- SQLAlchemy
-- SQLite（開発用）
-- pytest
-
+- Python 3.12 / FastAPI / SQLAlchemy / SQLite（開発用） / pytest
 ## ディレクトリ構造
-- app/
-  - main.py - エントリーポイント
-  - models.py - SQLAlchemyモデル
-  - schemas.py - Pydanticスキーマ
-  - crud.py - データアクセス
-  - routers/ - APIルーター
-
+- app/: main.py, models.py, schemas.py, crud.py, routers/
 ## コーディング規約
-- ruff でフォーマット・リント
-- pyright で型チェック
+- ruff でフォーマット・リント / pyright で型チェック
 - テストカバレッジ80%以上必須
 - 実装前に不明点があれば必ず質問すること
 ```
@@ -772,6 +772,7 @@ FastAPIによるTODO管理Web API
 **効果**: Claudeが毎回このルールに従う
 
 ---
+<!-- _class: font-xxsmall -->
 
 ### README.md作成
 
@@ -779,19 +780,11 @@ FastAPIによるTODO管理Web API
 
 ```markdown
 # TODO管理アプリ
-
 ## セットアップ
-\`\`\`bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-\`\`\`
-
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt && uvicorn app.main:app --reload
 ## テスト実行
-\`\`\`bash
 pytest
-\`\`\`
 ```
 
 **AIがREADMEを読む**: プロジェクト全体を理解
@@ -835,6 +828,7 @@ git status
 **これで準備完了**: 02以降で使い続ける
 
 ---
+<!-- _class: font-xsmall -->
 
 ### Claude Codeの使い方のコツ
 
@@ -842,7 +836,6 @@ git status
 - **Normalモード**：標準、確認しながら進める
 - **Planモード**：実装前に計画を立てる
 - **Yolomode**：高速・自律的（上級者向け）
-- **Bypass permission**：権限チェックをスキップ
 
 **`/clear`コマンドの重要性**
 - タスク完了ごとに`/clear`でコンテキストをクリア
@@ -851,7 +844,6 @@ git status
 
 **AIに質問させる**
 - 「実装前に不明点があれば必ず質問してください」を習慣化
-- CLAUDE.mdに記載しておくと毎回有効
 
 ---
 <!-- _class: font-xxsmall -->
@@ -859,22 +851,23 @@ git status
 ## AI駆動開発の5-STEPワークフロー
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 5-STEPの全体像と効果
 
 **5つのステップ**
 1. **要件定義**（STEP 1）：誰が、何を、なぜ（ユーザーストーリー、MoSCoW分析）
 2. **設計**（STEP 2）：AIの外部メモリ構築（画面、DB、AC、API仕様）
-3. **タスク分解**（STEP 3）：10分サイズに分割（GitHub Issues、BDD = 振る舞い駆動開発、ユーザー視点でテストを書く手法）
+3. **タスク分解**（STEP 3）：10分サイズに分割（GitHub Issues、BDD）
 4. **実装**（STEP 4）：TDD + 3段階レビュー（Red-Green-Refactor + 検証）
-5. **品質改善**（STEP 5）：AIに任せる（リファクタリング、ドキュメント、8つの質問）
+5. **品質改善**（STEP 5）：AIに任せる（リファクタリング、ドキュメント）
 
 **目的**
 - AIの5つの特性（暴走、手抜き、忘れっぽさ、凸凹知能、虚偽報告）を制御
-- 高品質なコードを効率的に生成
-- 人間とAIの役割分担を明確化
+- 高品質なコードを効率的に生成、人間とAIの役割分担を明確化
 
 ---
+<!-- _class: font-xsmall -->
 
 ### 5-STEPと人間・AIの役割分担
 
@@ -887,7 +880,6 @@ git status
 | 5. 品質改善 | 最終確認 | リファクタリング | - |
 
 **効果**
-- エラー伝播41%削減、改良68%削減、満足度2.6倍向上
 - 設計への投資で実装時間70%削減（10時間→3時間）
 - 5-STEPで、AIの特性を制御し、高品質なコードを効率的に生成
 
@@ -950,6 +942,7 @@ git status
 - 04で全体を通して実践します
 
 ---
+<!-- _class: font-small -->
 
 ## 質問タイム
 
