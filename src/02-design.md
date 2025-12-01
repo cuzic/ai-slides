@@ -735,7 +735,7 @@ paginate: true
   - Python vs TypeScript（チームのスキル、エコシステム）
   - React最新版 vs 安定版（新機能 vs API安定性）
 - **データベース・インフラの選定**
-  - PostgreSQL vs Supabase（自前運用 vs マネージド）
+  - DBのみ（PostgreSQL等）vs BaaS（Supabase、Firebase）
   - サーバー環境 vs サーバーレス（Netlify, Vercel, Cloudflare）
 - **AIに任せると学習量の多い選択肢に偏る**
   - 軽いプロトタイプにNetlify Functionsで十分でも、本格サーバーを推奨しがち
