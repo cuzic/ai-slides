@@ -251,16 +251,178 @@
             to { transform: rotate(360deg); }
         }
 
-        /* レスポンシブ */
+        /* レスポンシブ - タブレット */
         @media (max-width: 768px) {
+            .header {
+                padding: 0.75rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .header-nav button {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                height: calc(100vh - 100px);
+            }
+
             .sidebar {
-                position: absolute;
-                z-index: 100;
-                height: calc(100vh - 60px);
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                height: 100vh;
+                width: 280px;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.visible {
+                transform: translateX(0);
+            }
+
+            .sidebar.hidden {
+                transform: translateX(-100%);
+                width: 280px;
+            }
+
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+
+            .sidebar-overlay.visible {
+                display: block;
+            }
+
+            .viewer {
+                padding: 1rem;
             }
 
             .slide-container {
-                max-height: calc(100vh - 250px);
+                max-height: calc(100vh - 220px);
+            }
+
+            .nav-controls {
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .slide-info {
+                min-width: 120px;
+            }
+
+            .slide-title {
+                font-size: 0.85rem;
+            }
+
+            .slide-counter {
+                font-size: 0.75rem;
+            }
+
+            .keyboard-hint {
+                display: none;
+            }
+        }
+
+        /* レスポンシブ - スマートフォン */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 0.9rem;
+            }
+
+            .header-nav button {
+                padding: 0.35rem 0.5rem;
+                font-size: 0.7rem;
+            }
+
+            .header-nav button#toc-btn {
+                order: -1;
+            }
+
+            .container {
+                height: calc(100vh - 110px);
+            }
+
+            .viewer {
+                padding: 0.5rem;
+            }
+
+            .slide-container {
+                max-height: calc(100vh - 200px);
+                border-radius: 4px;
+            }
+
+            .nav-controls {
+                gap: 0.5rem;
+                margin-top: 0.75rem;
+            }
+
+            .nav-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+
+            .slide-info {
+                min-width: 100px;
+            }
+
+            .slide-title {
+                font-size: 0.75rem;
+                line-height: 1.2;
+            }
+
+            .slide-counter {
+                font-size: 0.65rem;
+            }
+
+            .toc-item {
+                padding: 0.6rem 1rem 0.6rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .toc-section-title {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* タッチデバイス向け */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-btn {
+                min-width: 48px;
+                min-height: 48px;
+            }
+
+            .toc-item {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .toc-section-title {
+                min-height: 48px;
             }
         }
     </style>
@@ -276,6 +438,7 @@
         </nav>
     </header>
 
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
     <div class="container">
         <aside class="sidebar" id="sidebar">
             <div id="toc-content">
@@ -463,7 +626,23 @@
         }
 
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('hidden');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                sidebar.classList.toggle('visible');
+                overlay.classList.toggle('visible');
+            } else {
+                sidebar.classList.toggle('hidden');
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('visible');
+            overlay.classList.remove('visible');
         }
 
         // キーボードナビゲーション
@@ -485,6 +664,49 @@
                 case 'End':
                     goToSlide(allSlides.length - 1);
                     break;
+            }
+        });
+
+        // スワイプ対応
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        const slideContainer = document.getElementById('slide-container');
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            const minSwipeDistance = 50;
+
+            // 横方向のスワイプが縦方向より大きい場合のみ処理
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+                if (deltaX > 0) {
+                    // 右スワイプ: 前のスライド
+                    prevSlide();
+                } else {
+                    // 左スワイプ: 次のスライド
+                    nextSlide();
+                }
+            }
+        }
+
+        // TOCアイテムクリック時にモバイルではサイドバーを閉じる
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('toc-item') && window.innerWidth <= 768) {
+                closeSidebar();
             }
         });
 
