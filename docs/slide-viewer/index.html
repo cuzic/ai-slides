@@ -590,20 +590,36 @@
             bottom: 0;
             display: none;
             z-index: 1000;
+            pointer-events: none;
         }
 
         body.fullscreen-mode .fullscreen-nav {
-            display: flex;
+            display: block;
         }
 
         .fullscreen-nav-area {
-            flex: 1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20%;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: center;
             opacity: 0;
             transition: opacity 0.3s;
+            pointer-events: auto;
+        }
+
+        .fullscreen-nav-area.nav-prev {
+            left: 0;
+            justify-content: flex-start;
+            padding-left: 2rem;
+        }
+
+        .fullscreen-nav-area.nav-next {
+            right: 0;
+            justify-content: flex-end;
+            padding-right: 2rem;
         }
 
         .fullscreen-nav-area:hover {
@@ -720,8 +736,8 @@
 
     <!-- 全画面モード用UI -->
     <div class="fullscreen-nav" id="fullscreen-nav">
-        <div class="fullscreen-nav-area" onclick="prevSlide()"><span>◀</span></div>
-        <div class="fullscreen-nav-area" onclick="nextSlide()"><span>▶</span></div>
+        <div class="fullscreen-nav-area nav-prev" onclick="prevSlide()"><span>◀</span></div>
+        <div class="fullscreen-nav-area nav-next" onclick="nextSlide()"><span>▶</span></div>
     </div>
     <button class="fullscreen-exit" id="fullscreen-exit" onclick="exitFullscreen()">✕ 終了 (Esc)</button>
     <div class="fullscreen-counter" id="fullscreen-counter">1 / 144</div>
