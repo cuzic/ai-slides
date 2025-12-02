@@ -206,36 +206,6 @@
         "title": "5-STEPと人間・AIの役割分担",
         "image": "images/01-intro/slide_034.png",
         "is_section": false
-      },
-      {
-        "index": 35,
-        "title": "今日の学習内容",
-        "image": "images/01-intro/slide_035.png",
-        "is_section": true
-      },
-      {
-        "index": 36,
-        "title": "3つのセッション",
-        "image": "images/01-intro/slide_036.png",
-        "is_section": false
-      },
-      {
-        "index": 37,
-        "title": "AI駆動開発で大切なこと（1/2）",
-        "image": "images/01-intro/slide_037.png",
-        "is_section": false
-      },
-      {
-        "index": 38,
-        "title": "AI駆動開発で大切なこと（2/2）",
-        "image": "images/01-intro/slide_038.png",
-        "is_section": false
-      },
-      {
-        "index": 39,
-        "title": "質問タイム",
-        "image": "images/01-intro/slide_039.png",
-        "is_section": true
       }
     ]
   },
