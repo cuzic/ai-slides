@@ -237,14 +237,14 @@
             right: 0;
             background: #16213e;
             border-top: 2px solid #e94560;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            height: 40vh;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
             z-index: 500;
         }
 
         .notes-panel.visible {
-            max-height: 40vh;
+            transform: translateY(0);
         }
 
         .notes-header {
@@ -278,7 +278,7 @@
         .notes-content {
             padding: 1rem;
             overflow-y: auto;
-            max-height: calc(40vh - 50px);
+            height: calc(40vh - 50px);
             font-size: 0.9rem;
             line-height: 1.6;
             color: #ccc;
@@ -484,23 +484,23 @@
 
         /* スマホ用ノートパネル調整 */
         @media (max-width: 768px) {
-            .notes-panel.visible {
-                max-height: 50vh;
+            .notes-panel {
+                height: 50vh;
             }
 
             .notes-content {
-                max-height: calc(50vh - 50px);
+                height: calc(50vh - 50px);
                 font-size: 0.85rem;
             }
         }
 
         @media (max-width: 480px) {
-            .notes-panel.visible {
-                max-height: 60vh;
+            .notes-panel {
+                height: 60vh;
             }
 
             .notes-content {
-                max-height: calc(60vh - 50px);
+                height: calc(60vh - 50px);
                 font-size: 0.8rem;
                 padding: 0.75rem;
             }
