@@ -7,205 +7,239 @@
         "index": 1,
         "title": "AI駆動開発セミナー Day 1",
         "image": "images/01-intro/slide_001.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "**対象者**: Python開発者（AI駆動開発は初心者）\n**学習目標**: AI駆動開発の基本的なマインドセット、Claude Code活用法、プロジェクト初期化、AI特性理解、5-STEPワークフローの完全理解"
       },
       {
         "index": 2,
         "title": "なぜAI駆動開発なのか",
         "image": "images/01-intro/slide_002.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（なぜAI駆動開発なのか）"
       },
       {
         "index": 3,
         "title": "成功例① Harvard/BCG研究（2023年）",
         "image": "images/01-intro/slide_003.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【研究概要】\n・BCGコンサルタント758人を対象にGPT-4の効果を測定\n・対象者：学士以上、実務経験4年以内のジュニアコンサルタント\n・3グループに分割：①AI未使用、②GPT-4使用、③GPT-4＋プロンプト指導\n【結果（AIの得意領域のタスク）】\n・タスク完了数：12.2%増加\n・作業速度：25.1%高速化\n・成果物の品質：40%以上向上\n【重要な発見：「凸凹フロンティア」】\n・AIが苦手な領域のタスクでは、正解率が19ポイント低下\n・AIの得意・不得意を見極めることが成功の鍵"
       },
       {
         "index": 4,
         "title": "成功例② 楽天のClaude Code活用事例（2025年）",
         "image": "images/01-intro/slide_004.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【タスク内容】\n・vLLM（オープンソースLLM推論ライブラリ、1,250万行）に対して\n・特定のActivation Vector抽出手法を実装\n【驚異的な結果】\n・Claude Codeが**7時間連続で自律作業**（人間は方向修正のみ）\n・実装精度：リファレンス手法と比較して**99.9%の数値精度**\n・「7時間、私はコードを1行も書かなかった」（機械学習エンジニア談）\n【ビジネスインパクト】\n・機能リリース期間：24営業日 → 5日（**79%短縮**）\n・並列作業：5タスクを同時進行（4つをClaude Codeに委任）"
       },
       {
         "index": 5,
         "title": "失敗例① Uplevel社調査（2024年）- バグ41%増加",
         "image": "images/01-intro/slide_005.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【研究概要】\n・**約800人**の開発者を対象（大規模エンジニアリングチーム）\n・**テスト群 vs コントロール群**の比較研究\n・期間：導入前（2023年1-4月）と導入後（2024年1-4月）の3ヶ月間を比較\n・測定指標：サイクルタイム、PRスループット、バグ率、残業時間（Always On時間）\n【衝撃的な結果】\n・**バグ率：41%増加**（Copilot使用グループ）\n・PRスループット：**有意な変化なし**（速くなっていない）\n・PRサイクルタイム：**変化なし**\n・バーンアウトリスク軽減：Copilotなし28%減 vs Copilotあり17%減"
       },
       {
         "index": 6,
         "title": "失敗例① Uplevel社調査（続き）- 自己申告との乖離",
         "image": "images/01-intro/slide_006.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【開発者の主観 vs 客観データ】\n・GitHubの自社調査：「Copilotで生産性向上を実感」（主観）\n・Uplevelの客観測定：「**生産性向上なし、バグ増加**」（客観）\n・この乖離が問題の本質を示している\n【原因の考察（Matt Hoffman, Uplevel PM）】\n・「AIはWeb上の**様々な品質のコード**で訓練されている」\n・「アクセス権を与えただけで、**適切な使い方の指導がなかった**」\n・品質の低いコードを学習したAIが、品質の低いコードを生成\n【教訓】\n・ツールを与えるだけでは不十分\n・**使い方のトレーニング**と**品質検証プロセス**が必要"
       },
       {
         "index": 7,
         "title": "失敗例② GitClear社調査（2025年）- コード品質の劣化",
         "image": "images/01-intro/slide_007.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【研究概要】\n・**2億1,100万行**のコード変更を分析（2020年1月〜2024年12月）\n・対象：GitHubトップ25 OSS + 商用プロジェクト、史上最大規模の縦断調査\n・4指標を追跡：Added、Deleted、Moved、Copy/Pasted\n【コード品質の測定方法】\n・**Moved（移動）** = リファクタリングの代理指標\n  ・コードを適切な場所に移動 = 設計改善の証拠\n  ・2020年：全変更の**24.1%**がMoved → 健全なリファクタリング文化\n・**Copy/Pasted** = コード重複の代理指標（技術的負債の蓄積）"
       },
       {
         "index": 8,
         "title": "失敗例② GitClear社調査（続き）- 衝撃のデータ",
         "image": "images/01-intro/slide_008.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【Copilot登場後の変化（2022年以降）】\n・Moved比率：24.1%（2020年）→ **9.5%**（2024年）← 60%減少\n・2024年：初めて**MovedをCopy/Pastedが上回った**\n・コード重複ブロック（5行以上）：**8倍増加**\n・コードチャーン（2週間以内の修正）：3.1% → **5.7%**\n【専門家の警告（Bill Harding, GitClear CEO）】\n・「AIは既存コードを再利用する代わりに、新しいコードをコピペで生成」\n・「35年のキャリアで、これほど短期間に技術的負債が蓄積されるのを見たことがない」\n**2025年予測**：リファクタリングは全変更の**3%以下**に、技術的負債の「臨界点」に到達する恐れ"
       },
       {
         "index": 9,
         "title": "失敗例③ Google DORA 2025 - AIは組織を増幅する",
         "image": "images/01-intro/slide_009.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【調査概要（DORA = DevOps Research and Assessment）】\n・**約5,000人**の技術者を対象とした大規模調査\n・Google Cloud主導、業界標準のDevOpsメトリクス調査（10年目）\n・AI採用率：**90%**（前年比14%増）\n・開発者は1日平均**2時間**AIツールを使用\n【ポジティブな発見】\n・80%以上が「生産性向上」を実感\n・開発スループット：向上傾向\n・AIを活用するチームほど**プラットフォームエンジニアリング**に投資"
       },
       {
         "index": 10,
         "title": "失敗例③ Google DORA 2025（続き）- 増幅効果の罠",
         "image": "images/01-intro/slide_010.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【ネガティブな発見：安定性の低下】\n・ソフトウェア配信の**安定性は低下**、**30%がAI生成コードを「信頼していない」**\n・変更失敗率（Change Failure Rate）が上昇傾向\n【重要な発見：AIは「増幅器」】\n・AIは組織の**強みも弱みも増幅する**\n・自動テスト・CI/CDが弱い組織 → AI導入で不安定化が加速\n・基盤が強い組織 → AI導入で大幅な生産性向上\n【成功の条件（DORA提言）】\n・**プラットフォームエンジニアリング**への投資、自動テスト・CI/CDの整備が先\n・AIは「銀の弾丸」ではなく「増幅器」として理解する\n**Stack Overflow 2025調査**：66%が「AIはほぼ正しいが完全ではない」、45%が「デバッグに時間がかかる」"
       },
       {
         "index": 11,
         "title": "失敗例④ エンジニアのバーンアウト（2024年調査）",
         "image": "images/01-intro/slide_011.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "**調査概要**：604人の開発者対象、AI導入組織（61%）と非導入組織を比較\n【深刻な結果】\n・**65%がバーンアウトを経験**（AI導入の有無に関わらず）\n・43%：「経営層は現場の課題を理解していない」\n・37%：「効率性・予測可能性・生産性が過去1年で低下」\n【AIがバーンアウトを悪化させる理由（Harness調査）】\n・95-98%：「AIでバーンアウトが減る」と**期待**\n・**67%**：「AI生成コードのデバッグに**より多くの時間**がかかる」（現実）\n・**68%**：「AI関連のセキュリティ問題の修正に**より多くの時間**」（現実）\n**結論**：AIは銀の弾丸ではない。正しい使い方を学ばないと逆効果"
       },
       {
         "index": 12,
         "title": "AIの5つの特性を理解する",
         "image": "images/01-intro/slide_012.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**なぜ特性を理解するのか？** → 前スライドの失敗例（エラー率2倍、コード重複8倍）は、AIの特性を知らずに使った結果です。特性を理解すれば、対策を打てます。"
       },
       {
         "index": 13,
         "title": "AIが持つ5つの特性（1/2）",
         "image": "images/01-intro/slide_013.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【1. 暴走（Scope Creep）】\n・Issue範囲外の機能を勝手に追加\n・本質的対策：仕様書で機能範囲を明確化、受入基準で「完了」を定義\n【2. 手抜き（Test Hacking）】\n・テストを通すだけの仮実装\n・本質的対策：受入基準を具体的かつ厳密に記述、テストケースを事前に明記\n【3. 忘れっぽさ（Context Loss）】\n・過去の指示を忘れる、コンテキスト汚染\n・本質的対策：CLAUDE.mdに永続ルール記載、**Claude Skills**で再利用可能な知識を定義"
       },
       {
         "index": 14,
         "title": "AIが持つ5つの特性（2/2）",
         "image": "images/01-intro/slide_014.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【4. 凸凹知能（Jagged Intelligence）】\n・得意分野と苦手分野の差が激しい\n・本質的対策：人間がAIの能力限界を理解し、適切な期待値を持つ\n【5. 虚偽報告（Hallucination）】\n・自信満々に誤った情報を提供\n・本質的対策：自動テスト（pytest, ruff, pyright）、公式ドキュメント確認"
       },
       {
         "index": 15,
         "title": "AIの特性への対策まとめ",
         "image": "images/01-intro/slide_015.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "| 特性 | 問題 | 本質的対策 |\n|------|------|------|\n| 暴走 | 機能追加しすぎ | 仕様書・受入基準で範囲を明確化 |\n| 手抜き | テストだけ通す | 受入基準・テストケースを事前定義 |\n| 忘れっぽさ | 指示を忘れる | CLAUDE.md・Claude Skills・/clear |\n| 凸凹知能 | 得意不得意が激しい | 人間が期待値を適切に管理 |\n| 虚偽報告 | 誤った情報 | pytest/ruff/pyright、公式ドキュメント |\n**重要**: これらの特性を理解して対策すれば、AIは強力なパートナーになる"
       },
       {
         "index": 16,
         "title": "AIとの付き合い方：3つの原則",
         "image": "images/01-intro/slide_016.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**5つの特性への対策を、覚えやすい3つの原則に整理します。** これを守れば、前述の5特性すべてに対処できます。"
       },
       {
         "index": 17,
         "title": "原則1: Trust but Verify（信頼しつつ検証する）",
         "image": "images/01-intro/slide_017.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【AIは優秀だが完璧ではない】\n・テストは通るが本番で動かない\n・「完成しました！」と報告するが実際は不完全\n・自信満々に誤った情報を提供する\n【対策：3段階レビュー】\n1. 自動検証（pytest && ruff check && pyright）\n2. AI自己検証（「100点満点で評価して」）\n3. 人間レビュー（git diff確認）"
       },
       {
         "index": 18,
         "title": "Trust but Verify の起源",
         "image": "images/01-intro/slide_018.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【レーガン大統領と核軍縮交渉】\n・1987年、米ソ間の中距離核戦力全廃条約（INF条約）\n・レーガン大統領がロシアのことわざを引用\n・「Doveryay, no proveryay」（信頼せよ、されど検証せよ）\n【AI開発への適用】\n・AIは優秀なパートナーだが、盲目的な信頼は危険\n・出力は必ず検証する\n・検証プロセスを仕組み化する（自動テスト、レビュー）\n【「信頼」と「検証」のバランス】\n・過度な不信：AIの恩恵を受けられない\n・過度な信頼：品質低下、障害のリスク\n・適切なバランス：効率と品質の両立"
       },
       {
         "index": 19,
         "title": "原則2: Context is the New Code（コンテキストが全て）",
         "image": "images/01-intro/slide_019.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "**AIは外部メモリが必要**（Claude Codeのコンテキスト上限：200Kトークン）\n・**設計書なし**：全コード読込150K → 思考50K → 単純なCRUDしか作れない\n・**設計書あり**：設計書30K → 思考170K → 複雑なロジックも対応可能（**3.4倍**）\n【コンテキストの種類】\n・CLAUDE.md：プロジェクトルール（Claudeが最初に読む）\n・README.md：プロジェクト概要\n・設計書：画面、DB、API仕様 / Issue：タスク定義 / 受入基準（AC）\n【研究データ】\n・TiCoder（Microsoft Research）：テスト駆動で**ユーザー意図との整合性90.4%**達成\n・McKinsey 2024：ドキュメント作成**45-50%削減**、コード作成**35-45%短縮**\n・PMI調査：プロジェクト失敗の**47%**は要件定義の問題が原因"
       },
       {
         "index": 20,
         "title": "Context is the New Code - 研究データ①",
         "image": "images/01-intro/slide_020.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【TiCoder（Microsoft Research 2022-2024）】\n・テスト駆動型のユーザー意図明確化フレームワーク\n・**ユーザー意図との整合性：90.4%**（自然言語入力から）\n・pass@1精度：48.39% → **70.49%**（45%向上）\n・わずか**1.69回**の対話でユーザー意図を正確に把握\n・「曖昧な自然言語の意図をテストで形式化」することで精度向上\n【μFiX（ICSE 2025発表）】\n・LLMの「仕様誤解」を修正するプロンプト技術\n・ChatGPT、DeepSeek-Coderなど6つのベンチマークで検証\n・仕様理解の改善 → コード生成性能が大幅向上"
       },
       {
         "index": 21,
         "title": "Context is the New Code - 研究データ②",
         "image": "images/01-intro/slide_021.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【McKinsey 2024（開発者生産性調査）】\n・ドキュメント作成：**45-50%削減** / コード作成：**35-45%短縮**\n・高パフォーマー：品質**31-45%向上**、市場投入**16-30%短縮**\n・ただし「生成コードの大部分は修正が必要」→ レビュー能力が重要\n【Harvard/BCG 2023（758人の実験）】\n・GPT-4使用：タスク完了**12.2%増**、速度**25.1%向上**、品質**40%向上**\n・「凸凹フロンティア」外では正解率**19ポイント低下** → 得意・不得意の見極めが鍵\n【PMI/業界調査】\n・プロジェクト失敗の**47%**は要件定義の問題が原因\n・要件エラーは本番修正で設計時の**10-100倍**のコスト\n・設計2時間投資 → 実装時間70%削減"
       },
       {
         "index": 22,
         "title": "原則3: 段階的に進める",
         "image": "images/01-intro/slide_022.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【なぜ段階的に進めるのか】\n・AIの集中力には限界がある\n・長いタスクは暴走・手抜き・忘れるリスク増大\n・小さなステップで品質を維持\n【具体例：ユーザー認証機能】\n❌ 悪い例（大きすぎる）:「ユーザー認証機能を実装して」\n✅ 良い例（段階的）:\n1. Userモデルを作成（10分）\n2. パスワードハッシュ化を実装（10分）\n3. ログインエンドポイントを作成（10分）\n4. JWTトークン発行を実装（10分）\n**効果**: 各ステップで品質確認、問題の早期発見、進捗が明確"
       },
       {
         "index": 23,
         "title": "Claude Codeとは：AI駆動開発のツール",
         "image": "images/01-intro/slide_023.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**3つの原則を実践するためのツールがClaude Codeです。** CLAUDE.mdでコンテキストを与え、段階的にタスクを実行し、検証を自動化できます。"
       },
       {
         "index": 24,
         "title": "Claude Codeの基本",
         "image": "images/01-intro/slide_024.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【Claude Codeとは】\n・AnthropicのCLIツール（コマンドライン上で動作）\n・Claude AIとの対話でコード開発を行う\n・ファイル読み書き、コマンド実行が可能\n【3つの重要ファイル】\n・CLAUDE.md：プロジェクトのルール（Claudeが最初に読む）\n・README.md：プロジェクト概要\n・.claude/commands/：カスタムコマンド格納場所\n【特徴】\n・200Kトークンのコンテキスト容量\n・ファイル検索・編集・テスト実行を自動化\n・チャット履歴を保持してコンテキストを維持"
       },
       {
         "index": 25,
         "title": "Claude Skills とは",
         "image": "images/01-intro/slide_025.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【Skills の概念】\n・AIの能力を拡張するための設定ファイル\n・`.claude/skills/` ディレクトリに配置\n・特定のタスクに特化した指示を定義\n【Skills の種類】\n・コード生成スキル: 言語やフレームワーク固有のルール\n・品質管理スキル: テスト、レビューの自動化\n・ドキュメントスキル: 仕様書、README生成\n【忘れっぽさへの対策】\n・CLAUDE.mdだけでは伝えきれない詳細なルールを保存\n・タスク種別ごとに最適な指示を再利用可能\n・プロジェクト固有の知識を永続化"
       },
       {
         "index": 26,
         "title": "コンテキストとトークンの理解",
         "image": "images/01-intro/slide_026.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【トークンとは】\n・テキストの単位（日本語：約1.5文字/トークン、英語：約4文字/トークン）\n・Claude Codeの容量：200,000トークン（約13万文字の日本語）\n【コンテキストの使われ方】\n```\n200K トークン\n├── 読み込んだコード: 150K\n└── 思考・生成: 50K  ← これでは単純なCRUDしか作れない\n200K トークン\n├── 設計書: 30K\n└── 思考・生成: 170K  ← 複雑なロジックも対応可能（3.4倍！）\n```\n【だから設計書が重要】\n・設計書があればAIの思考容量が3.4倍に\n・コード全体を読む必要がなくなる"
       },
       {
         "index": 27,
         "title": "Claude Codeの4つのモード",
         "image": "images/01-intro/slide_027.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【Normal（通常モード）】\n・慎重に動作、ユーザーに確認を取る\n・ファイル変更前に許可を求める\n・初心者向け、安全重視\n【Plan（プランモード）】\n・実装前に計画を立てる\n・タスクを分解して提示\n・承認後に実装開始\n【Yolo（高速モード）】\n・確認なしで高速実行\n・危険な操作も即実行\n・上級者向け、スピード重視\n【Bypass Permissions（権限バイパス）】\n・ファイル操作の許可を自動承認\n・繰り返し作業の効率化"
       },
       {
         "index": 28,
         "title": "カスタムコマンド: TDDサイクル",
         "image": "images/01-intro/slide_028.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【カスタムコマンドとは】\n・よく使う指示を登録して再利用\n・`.claude/commands/` に保存\n・`/コマンド名` で実行\n【TDDサイクル用コマンド】\n・`/tdd-plan`：実装計画を立てる\n・`/tdd-red`：失敗するテストを書く\n・`/tdd-green`：テストを通す最小実装\n・`/tdd-refactor`：コードを改善\n・`/tdd-verify`：完成度を検証\n【使用例】\n```bash\n/tdd-plan ユーザー認証機能\n/tdd-red ログイン機能のテストを書いて\n/tdd-green テストを通して\n/tdd-refactor コードを改善して\n```"
       },
       {
         "index": 29,
         "title": "CLAUDE.mdとREADME.md",
         "image": "images/01-intro/slide_029.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【CLAUDE.md（最重要）】\n・Claudeが最初に読むプロジェクトルール\n・コーディング規約、アーキテクチャ方針を記載\n・例：「テストカバレッジ80%以上必須」「実装前に不明点があれば質問すること」\n【README.md】\n・プロジェクト概要、セットアップ方法\n・人間とAI両方が読む\n・プロジェクトの全体像を把握\n【効果】\n・CLAUDE.mdがあれば、毎回同じ指示を繰り返さなくていい\n・プロジェクト全体で一貫した品質を保てる\n・新しいタスクでもルールを自動適用"
       },
       {
         "index": 30,
         "title": "CLAUDE.md のディレクトリ別配置",
         "image": "images/01-intro/slide_030.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "**モノレポでの活用**（モノレポ = 1つのリポジトリで複数プロジェクトを管理する手法）\n```\nproject/\n├── CLAUDE.md       ← 全体ルール\n├── frontend/CLAUDE.md  ← フロントエンド固有\n├── backend/CLAUDE.md   ← バックエンド固有\n└── tests/CLAUDE.md     ← テスト固有\n```\n【ディレクトリ別ルールの例】\n・frontend/: React、biome\n・backend/: Python、ruff/pyright\n・tests/: pytest、80%カバレッジ"
       },
       {
         "index": 31,
         "title": "AIにあいまいな点を明確化させる",
         "image": "images/01-intro/slide_031.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【問題：AIは推測で進める】\n・技術スタック未定義 → 勝手にライブラリを選択\n・テスト方法不明 → ハードコードで済ませる\n【CLAUDE.mdに記載する指示】\n```markdown\n実装前に、以下について不明点があれば必ず質問してください：\n・使用する技術スタック・ライブラリ\n・テスト方法とカバレッジ目標\n```\n【AIからの質問例】\n・「Webフレームワークは？（FastAPI / Django / Flask）」\n・「DBは？（PostgreSQL / SQLite / MySQL）」\n**効果**: 技術選定のミスマッチ防止、一貫性、手戻り削減"
       },
       {
         "index": 32,
         "title": "AI駆動開発の5-STEPワークフロー",
         "image": "images/01-intro/slide_032.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（AI駆動開発の5-STEPワークフロー）"
       },
       {
         "index": 33,
         "title": "5-STEPの全体像と効果",
         "image": "images/01-intro/slide_033.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "【5つのステップ】\n1. **要件定義**（STEP 1）：誰が、何を、なぜ（ユーザーストーリー、MoSCoW分析）\n2. **設計**（STEP 2）：AIの外部メモリ構築（画面、DB、AC、API仕様）\n3. **タスク分解**（STEP 3）：10分サイズに分割（GitHub Issues、BDD）\n4. **実装**（STEP 4）：TDD + 3段階レビュー（Red-Green-Refactor + 検証）\n5. **品質改善**（STEP 5）：AIに任せる（リファクタリング、ドキュメント）\n【目的】\n・AIの5つの特性（暴走、手抜き、忘れっぽさ、凸凹知能、虚偽報告）を制御\n・高品質なコードを効率的に生成、人間とAIの役割分担を明確化"
       },
       {
         "index": 34,
         "title": "5-STEPと人間・AIの役割分担",
         "image": "images/01-intro/slide_034.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "| STEP | 人間の役割 | AIの役割 | 防ぐAI特性 |\n|------|-----------|----------|-----------|\n| 1. 要件定義 | ユーザーストーリー作成 | 妥当性検証 | 暴走 |\n| 2. 設計 | 画面・DB・AC定義 | 設計レビュー | 忘れっぽさ、凸凹知能 |\n| 3. タスク分解 | 10分タスクに分割 | BDDシナリオ作成 | 暴走、忘れっぽさ |\n| 4. 実装 | 人間レビュー | TDD実装 | 手抜き、虚偽報告 |\n| 5. 品質改善 | 最終確認 | リファクタリング | - |\n【効果】\n・設計への投資で実装時間70%削減（10時間→3時間）\n・5-STEPで、AIの特性を制御し、高品質なコードを効率的に生成"
       }
     ]
   },
@@ -217,349 +251,414 @@
         "index": 1,
         "title": "Day 1 - 02 STEP 1-2-3: 要件定義・設計・タスク分解",
         "image": "images/02-design/slide_001.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "**対象者**: Python開発者（AI駆動開発は初心者）\n**前提知識**: 01-入門編受講済み（AI特性5つ、対処法2つ、5-STEPワークフロー全体像）\n**学習目標**: STEP 1（要件定義）、STEP 2（設計）、STEP 3（タスク分解）を習得し、STEP 4（実装）の準備を整える"
       },
       {
         "index": 2,
         "title": "イントロダクション: STEP 1-2-3の全体像",
         "image": "images/02-design/slide_002.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（イントロダクション: STEP 1-2-3の全体像）"
       },
       {
         "index": 3,
         "title": "STEP 1-2-3とは - 実装前の準備3ステップ",
         "image": "images/02-design/slide_003.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**4段階の詳細化プロセス**\n  ・要件定義: 誰が何をなぜ（ユーザーストーリー）\n  ・設計: 画面・DB・API（具体的な仕様）\n  ・タスク分解: 10分サイズ（実装可能な単位）\n  ・実装: コード作成\n・**各段階で詳細化し、次の段階のガードレールを構築**\n  ・前の段階が後の段階の品質を決定\n  ・設計書がAIの外部メモリとして機能\n  ・コンテキスト不足による暴走を防ぐ"
       },
       {
         "index": 4,
         "title": "設計書がなぜ必要か - 人間もAIも同じ",
         "image": "images/02-design/slide_004.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**人間でも設計書がなければ大変**\n  ・ソースコードのみから全体を理解するのは困難\n  ・設計意図が分からず、修正時に既存機能を壊すリスク\n・**AIでも同じ問題が起きる**\n  ・設計書なし：全コード読解に150Kトークン消費\n  ・設計書あり：30Kトークンで全体を把握\n・**設計書の真の価値**\n  ・人間同士・AIへのコミュニケーションツール"
       },
       {
         "index": 5,
         "title": "トークン効率の観点 - 設計書で思考リソース3倍",
         "image": "images/02-design/slide_005.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**設計書なしの場合**\n  ・全コード読解: 150Kトークン\n  ・思考: 50Kトークン\n  ・合計: 200Kトークン\n・**設計書ありの場合**\n  ・設計書読解: 30Kトークン\n  ・思考: 170Kトークン（3.4倍）\n  ・合計: 200Kトークン（同じ）\n・**AIは設計書を外部メモリとして活用**\n  ・複雑なロジック対応が可能\n  ・エッジケース処理の品質向上\n  ・実装速度の向上"
       },
       {
         "index": 6,
         "title": "実践準備: AIツール選択戦略",
         "image": "images/02-design/slide_006.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**STEP 1-2-3を実践する前に、どのAIツールを使うか決めておきましょう。** ツール選択を間違えると、せっかくの設計書作成がコンテキスト汚染で台無しになります。"
       },
       {
         "index": 7,
         "title": "Claude WebとClaude Codeの使い分け戦略",
         "image": "images/02-design/slide_007.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Claude WEB版: 探索・議論フェーズ（STEP 1-2）**\n  ・ユーザーストーリー作成、画面プロトタイプ\n  ・設計の試行錯誤、複数案の比較\n・**Claude Code: 実装フェーズ（STEP 3-4-5）**\n  ・タスク分解、TDD実装、リファクタリング\n・**使い分けの目的**\n  ・コンテキスト汚染を防ぐ、トークン効率最大化"
       },
       {
         "index": 8,
         "title": "Claude WEB/Code使い分けの実践 - コンテキスト汚染を防ぐ",
         "image": "images/02-design/slide_008.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**悪い例: Claude Codeを最初から使う**\n  ・試行錯誤の履歴が蓄積（80Kトークン）\n  ・思考トークンが圧迫される\n  ・タスク分解の品質が低下\n  ・AIが過去の失敗パターンに引きずられる\n・**良い例: フェーズを分離する**\n  ・Claude WEBで探索・議論（STEP 1-2）\n  ・設計書をローカル保存（docs/*）\n  ・Claude Code新セッション開始（STEP 3-5）\n  ・設計書のみ参照（30Kトークン）\n  ・思考に170Kトークン使える\n・**推奨ワークフロー**\n  ・Claude WEB: 要件定義\n  ・設計書保存\n  ・CLAUDE.md更新\n  ・Claude Code新セッション: タスク分解・実装"
       },
       {
         "index": 9,
         "title": "セクション1: 要件定義フェーズ - ユーザーストーリー",
         "image": "images/02-design/slide_009.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション1: 要件定義フェーズ - ユーザーストーリー）"
       },
       {
         "index": 10,
         "title": "AIを活用したユーザーストーリー生成",
         "image": "images/02-design/slide_010.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**基本的なアプローチ**\n  ・やりたいことをAIに伝え、ユーザーストーリーを生成\n  ・例：「ToDo管理アプリを作りたい」\n・**AIの特性を活かす**\n  ・ブレインストーミングが得意、たくさん生成して選ぶ\n・**AIの傾向への対処**\n  ・AIは要件を作りすぎるので、MoSCoW分析で優先順位付け"
       },
       {
         "index": 11,
         "title": "要件定義フェーズの目的",
         "image": "images/02-design/slide_011.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**顧客要望をユーザーストーリーに変換**\n  ・As a（誰が）\n  ・I want（何を）\n  ・So that（なぜ）\n・**MoSCoW分析でMust（必須）を絞る**\n  ・Must: 必須（20-30%）\n  ・Should: 重要（30-40%）\n  ・Could: あれば良い（30-40%）\n  ・Won't: 今回はやらない（10-20%）\n・**AIの暴走を防ぐ**\n  ・スコープを明確化\n  ・優先順位を決定\n  ・過剰実装を防止"
       },
       {
         "index": 12,
         "title": "ユーザーストーリーとは",
         "image": "images/02-design/slide_012.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**基本フォーマット**\n  ・\"As a [ペルソナ], I want [目的], So that [利益]\"\n  ・例: \"As a 一般ユーザー, I want タスクを作成, So that やるべきことを管理\"\n・**顧客視点で価値を明確化**\n  ・技術仕様ではなく、ビジネス価値を記述\n  ・開発者とステークホルダーの共通言語\n・**ユーザーストーリーの3C**\n  ・Card: インデックスカードに書ける短さ\n  ・Conversation: 詳細は会話で補う\n  ・Confirmation: 受入基準で完了を確認\n・**アンチパターン**\n  ・技術タスクを書く（例: DBテーブル作成）\n  ・詳細すぎる仕様書になる\n  ・「システムは〜する」という主語"
       },
       {
         "index": 13,
         "title": "なぜユーザーストーリー形式を使うか",
         "image": "images/02-design/slide_013.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**開発者にとって**\n  ・何を実装すべきかが明確\n  ・スコープ縮小時の判断基準として適切な粒度\n・**顧客にとって**\n  ・技術用語なしで理解できる\n  ・ビジネス価値が明確\n・**AIにとって**\n  ・構造化されていて理解しやすい\n  ・受入基準への変換が容易\n・**チームにとって**\n  ・合意形成の単位として適切\n  ・認識のズレを防ぐ"
       },
       {
         "index": 14,
         "title": "INVEST原則",
         "image": "images/02-design/slide_014.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Independent（独立している）**\n  ・他のストーリーに依存しない\n  ・単独でリリース可能、順序変更が容易\n・**Negotiable（交渉可能）**\n  ・詳細は議論の余地がある\n  ・契約ではなく会話のきっかけ\n・**Valuable（価値がある）**\n  ・顧客に価値を提供する\n  ・技術タスクではなくビジネス価値で表現\n・**Estimable（見積もり可能）**\n  ・工数を見積もれる程度に具体的\n  ・大きすぎて見積もれないなら分割\n・**Small（小さい）**\n  ・1-3日で完了できるサイズ\n  ・スプリント内で複数完了できる粒度\n・**Testable（テスト可能）**\n  ・受入基準が明確\n  ・完了条件を客観的に判定できる"
       },
       {
         "index": 15,
         "title": "MoSCoW分析 - AIに優先順位を付けてもらう",
         "image": "images/02-design/slide_015.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**なぜMoSCoW分析か**\n  ・AIは大量のユーザーストーリーを生成する\n  ・優先順位がないと人間の判断が難しい\n  ・「MoSCoW分析して」の一言で効率的に分類\n・**AIへのプロンプトの工夫**\n  ・「理由も含めて」→ 判断根拠を説明\n  ・「推奨案を提示して」→ 意思決定を支援\n  ・「メリット・デメリットを」→ トレードオフを明確化\n・**良いプロダクトを作るコツ**\n  ・MoSCoW分析に時間をかける\n  ・AIに複数の観点から分析させる\n  ・最終判断は人間が行う"
       },
       {
         "index": 16,
         "title": "ペルソナを活用した多角的MoSCoW分析",
         "image": "images/02-design/slide_016.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**複数ペルソナによる分析**\n  ・事前に利用者のペルソナを複数設定\n  ・ペルソナごとにMoSCoW分析を実施\n  ・異なる価値観からの優先順位付け\n・**ペルソナ例**\n  ・ビジネスユーザー：効率重視、時間短縮\n  ・技術者：拡張性重視、API充実\n  ・初心者：使いやすさ重視、学習コスト低\n・**効果**\n  ・異なる価値判断基準での優先順位\n  ・見落としがちな要件の発見\n  ・ターゲットユーザーの明確化"
       },
       {
         "index": 17,
         "title": "要件定義フェーズの成果物",
         "image": "images/02-design/slide_017.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**ユーザーストーリー（3-10個）**\n  ・As a, I want, So that形式\n  ・INVEST原則を満たす\n・**MoSCoW分析結果**\n  ・Must: 20-30%に絞る\n  ・Should/Could/Won't: 残り70-80%\n・**ペルソナ設定**\n  ・ターゲットユーザーの具体像\n・**次のステップ**\n  ・STEP 2（設計）で具体的な設計に落とし込む"
       },
       {
         "index": 18,
         "title": "モックアップで早期フィードバックを得る",
         "image": "images/02-design/slide_018.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**企画段階でプロトタイプを作る**\n  ・Claude WEB版のアーティファクト機能\n  ・Gemini Canvas機能\n  ・簡単に画面モックアップを作成\n・**早期フィードバックのメリット**\n  ・ユーザーの反応を早く得られる\n  ・ユーザーストーリーの選択が速くなる\n  ・手戻りコストの削減\n・**フィードバックループ**\n  ・モックアップ作成（10分）→ ユーザーに見せる\n  ・フィードバックを反映 → ユーザーストーリーを確定"
       },
       {
         "index": 19,
         "title": "Claudeアーティファクト機能でモックアップ作成",
         "image": "images/02-design/slide_019.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Vibe Coding（雰囲気で伝える）** - 厳密な仕様ではなく「こんな感じで」と伝えてAIに作らせる手法\n  ・「TODO管理アプリのTODO一覧画面を作って」\n  ・「左にサイドバー、右にTODOリスト、上に検索バー」\n  ・「青系の配色で、モダンなデザインにして」\n・**顧客と認識を合わせる**\n  ・言葉だけでなく、ビジュアルで確認\n  ・早期フィードバック\n  ・手戻りを防ぐ"
+      },
+      {
+        "index": 20,
+        "title": "モックアップ生成の実例とチェックポイント",
+        "image": "images/02-design/slide_020.png",
+        "is_section": false,
+        "notes": "・**指示例**\n  ・「TODO管理アプリのTODO一覧画面を作って」\n  ・「検索機能、フィルタ機能、ソート機能を含めて」\n  ・「レスポンシブデザインで、モバイルでも使いやすくして」\n・**チェックポイント**\n  ・ユーザビリティ: 直感的に操作できるか\n  ・レスポンシブデザイン: モバイル/タブレット/デスクトップ対応\n  ・アクセシビリティ: キーボード操作、スクリーンリーダー対応\n・**反復改善**\n  ・「検索バーを右上に移動して」\n  ・「フォントサイズを大きくして」\n  ・「ダークモード対応して」"
       },
       {
         "index": 21,
         "title": "セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD）",
         "image": "images/02-design/slide_021.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD））"
       },
       {
         "index": 22,
         "title": "STEP 2の目的と成果物 - AIの外部メモリを構築",
         "image": "images/02-design/slide_022.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**ユーザーストーリーを具体的な設計に落とし込む**\n  ・画面設計（どう見えるか）\n  ・DBスキーマ（どう保存するか）\n  ・受入基準（何ができればOKか）\n・**AIが何度でも参照できる外部メモリを構築**\n  ・設計書をdocs/配下に保存\n  ・CLAUDE.mdに参照パスを記載\n  ・AIが必要な情報をいつでも取得可能"
       },
       {
         "index": 23,
         "title": "設計書のROI - 研究が証明する劇的な効果",
         "image": "images/02-design/slide_023.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**設計書作成時間 vs 実装時間短縮**\n  ・設計書作成: 1-2時間\n  ・実装時間短縮: 5-10時間\n  ・ROI: 3-10倍\n・**エラー率の低下**\n  ・設計書なし: 脆弱性45%発生（Veracode 2025研究）\n  ・設計書あり: 明示的仕様で修正要求68%削減（Microsoft研究）\n  ・コンテキストが品質を決定する\n・**品質向上の理由**\n  ・AIがコンテキストを正確に理解\n  ・エッジケース対応が漏れにくい\n  ・複雑なロジックの実装精度向上"
       },
       {
         "index": 24,
         "title": "STEP 1-2-3の詳細化プロセス - 各ステップの成果物の関係",
         "image": "images/02-design/slide_024.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**STEP 1（要件定義）→ STEP 2（設計）への橋渡し**\n  ・ユーザーストーリー（誰が何をなぜ）→ 画面設計（どう見えるか）\n  ・STEP 1の成果物がSTEP 2のインプットになる\n・**STEP 2 内での詳細化**\n  ・画面設計 → 受入基準（何ができればOKか）\n  ・チェックリスト形式、GIVEN-WHEN-THEN形式で定義\n・**STEP 2（設計）→ STEP 3（タスク分解）への橋渡し**\n  ・受入基準 → BDDテストシナリオ（pytestに変換可能）\n  ・STEP 2の受入基準がSTEP 3のテスト設計の基盤になる"
       },
       {
         "index": 25,
         "title": "画面設計の3要素",
         "image": "images/02-design/slide_025.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**画面一覧**\n  ・全画面をリスト化（画面ID、画面名、URL、役割）\n  ・例: 01-ログイン、02-ダッシュボード、03-TODO一覧\n・**画面遷移図（Mermaid記法）**\n  ・画面間の遷移を可視化\n  ・ログイン → ダッシュボード → TODO一覧の流れ\n・**画面部品一覧（UI Component Inventory）**\n  ・各画面の部品をリスト化\n  ・ボタン、入力フォーム、テーブルなど\n  ・バリデーションルール、イベントハンドラ"
       },
       {
         "index": 26,
         "title": "画面一覧の作成方法",
         "image": "images/02-design/slide_026.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**全画面をリスト化**\n  ・画面ID（例: 01, 02, 03）\n  ・画面名（例: ログイン、ダッシュボード）\n  ・URL（例: /login, /dashboard）\n  ・役割（例: 認証、タスク一覧表示）\n・**Claude WEB版に指示**\n  ・「ユーザーストーリーから画面一覧を作って」\n  ・「各画面のURL、役割、アクセス権限を含めて」\n・**レビューポイント**\n  ・画面の漏れがないか\n  ・URL命名規則が統一されているか\n  ・アクセス権限が適切か"
       },
       {
         "index": 27,
         "title": "画面遷移図（Mermaid記法）",
         "image": "images/02-design/slide_027.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**画面間の遷移をMermaid記法で可視化**\n```mermaid\ngraph TD\nA[ログイン] --> B[ダッシュボード]\nB --> C[TODO一覧]\nC --> D[TODO作成]\nD --> C\n```\n・**遷移条件を明記**\n  ・ログイン成功 → ダッシュボード\n  ・TODO作成完了 → TODO一覧に戻る\n・**エラー遷移も含める**\n  ・ログイン失敗 → ログイン画面（エラーメッセージ表示）\n  ・バリデーションエラー → 同じ画面（エラーメッセージ表示）"
       },
       {
         "index": 28,
         "title": "画面部品一覧（UI Component Inventory）",
         "image": "images/02-design/slide_028.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**各画面の部品をリスト化**\n  ・部品ID（例: btn-submit）\n  ・タイプ（例: Button, Input, Table）\n  ・ラベル（例: \"送信\", \"タイトル入力\"）\n・**バリデーションルールを記載**\n  ・必須入力、文字数制限\n  ・フォーマット（メールアドレス、URL）\n  ・重複チェック\n・**イベントハンドラを記載**\n  ・onClickイベント（例: 送信ボタン → API呼び出し）\n  ・onChangeイベント（例: 入力フォーム → バリデーション）"
       },
       {
         "index": 29,
         "title": "データベース設計の基本 - ER図とschema.sql",
         "image": "images/02-design/slide_029.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**エンティティ抽出**\n  ・ユーザーストーリーから名詞を抽出\n  ・例: User, Todo, Tag\n・**正規化（第3正規形）** - データの重複を排除する設計手法\n  ・第1正規形：繰り返しグループを排除（1セルに1値）\n  ・第2正規形：部分関数従属を排除\n  ・第3正規形：推移的関数従属を排除（「A→B→C」の関係を分離）\n  ・効果：更新異常を防ぎ、データ整合性を保証\n・**物理設計（schema.sql）**\n  ・CREATE TABLE文\n  ・PRIMARY KEY、FOREIGN KEY、INDEX\n  ・NOT NULL、UNIQUE、DEFAULT制約\n・**ER図（Mermaid記法）でエンティティ、属性、リレーションシップを可視化**\n  ・エンティティ（User, Todo）\n  ・属性（id, title, description）\n  ・リレーションシップ（1対多、多対多）"
       },
       {
         "index": 30,
         "title": "データベース設計の重要性",
         "image": "images/02-design/slide_030.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**なぜ早期に時間をかけるべきか**\n  ・あとからの手戻りの影響が大きい\n  ・スキーマ変更はデータ移行を伴う\n  ・関連する全機能に影響\n・**設計時のポイント**\n  ・関係者を含めた合意形成\n  ・ER図で視覚化して共有\n  ・正規化（第3正規形）の検討\n・**AIへの指示**\n  ・「ER図をMermaid記法で作成して」\n  ・「インデックス設計も含めて」"
       },
       {
         "index": 31,
         "title": "Mermaid記法の活用",
         "image": "images/02-design/slide_031.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Mermaid記法とは**\n  ・テキストでダイアグラムを記述\n  ・UML（統一モデリング言語、ソフトウェア設計を図で表現する標準規格）でよく使われる図を簡単に作成\n  ・Markdownと組み合わせて使用\n・**対応する図の種類**\n  ・シーケンス図、クラス図\n  ・ER図、画面遷移図（stateDiagram）\n・**メリット**\n  ・人間：俯瞰して見やすい\n  ・AI：少ないトークンで全体を把握\n  ・Git管理が容易（差分が見やすい）"
       },
       {
         "index": 32,
         "title": "データフロー図の基本",
         "image": "images/02-design/slide_032.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Router → Service → Repository → DBの流れを可視化**\n  ・Router: リクエスト受信、レスポンス返却\n  ・Service: ビジネスロジック\n  ・Repository: DB操作（CRUD）\n  ・DB: データ永続化\n・**レイヤードアーキテクチャ**\n  ・各層の責務を明確化\n  ・依存関係を一方向に保つ\n  ・テスタビリティの向上\n・**トランザクション境界を明確化**\n  ・SQLAlchemy Sessionの位置"
       },
       {
         "index": 33,
         "title": "AIに複数案を提案させる",
         "image": "images/02-design/slide_033.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**指示例**\n  ・「3つの案を提案して、それぞれのPros/Consを説明して」\n  ・「シンプルな案と高機能な案の両方を提案して」\n・**AIに選択肢を与え、人間が最終決定**\n  ・案A: シンプル（開発コスト低、機能少ない）\n  ・案B: 中間（バランス型）\n  ・案C: 高機能（開発コスト高、UX良い）\n・**比較ポイント**\n  ・開発コスト\n  ・ユーザビリティ\n  ・保守性"
       },
       {
         "index": 34,
         "title": "ガードレールの4層構造（復習）",
         "image": "images/02-design/slide_034.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Layer 1: プロジェクトルール（CLAUDE.md）**\n  ・コーディング規約\n  ・アーキテクチャ方針\n  ・開発ワークフロー\n・**Layer 2: タスク固有（Issue）**\n  ・実装すべき機能\n  ・BDDテストシナリオ\n  ・参照設計書\n・**Layer 3: 受入基準（AC）**\n  ・何ができればOKか\n  ・正常系1 + 異常系2-3\n  ・GIVEN-WHEN-THEN形式\n・**Layer 4: コード規約（ruff、pyright）**\n  ・静的解析ツール\n  ・テストカバレッジ閾値\n  ・複雑度制限"
       },
       {
         "index": 35,
         "title": "受入基準（AC）を作成 - チェックリスト形式で検収基準を明確化",
         "image": "images/02-design/slide_035.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**モックアップを見ながら「これができればOK」をチェックリスト化**\n  ・ユーザー視点で記述\n  ・正常系1 + 異常系2-3\n  ・GIVEN-WHEN-THEN形式\n・**正常系の例**\n  ・✅ タイトル入力して作成ボタンを押したらTODOが一覧に表示される\n  ・✅ TODO完了ボタンを押したら完了状態になる\n・**異常系の例**\n  ・✅ タイトル空でエラーメッセージが表示される\n  ・✅ タイトル256文字以上でエラーメッセージが表示される\n  ・✅ ネットワークエラー時にエラーメッセージが表示される"
       },
       {
         "index": 36,
         "title": "受入基準（AC）の例 - ユーザー視点のチェックリスト",
         "image": "images/02-design/slide_036.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**正常系**\n  ・GIVEN: TODO一覧画面が表示されている\n  ・WHEN: タイトルに「牛乳を買う」と入力して作成ボタンを押す\n  ・THEN: TODO一覧に「牛乳を買う」が表示される\n・**異常系1: タイトル空**\n  ・GIVEN: TODO一覧画面が表示されている\n  ・WHEN: タイトルを入力せずに作成ボタンを押す\n  ・THEN: 「タイトルは必須です」というエラーメッセージが表示される\n・**異常系2: タイトル長すぎ**\n  ・GIVEN: TODO一覧画面が表示されている\n  ・WHEN: タイトルに256文字以上入力して作成ボタンを押す\n  ・THEN: 「タイトルは255文字以内で入力してください」というエラーメッセージが表示される"
       },
       {
         "index": 37,
         "title": "受入条件の段階的詳細化",
         "image": "images/02-design/slide_037.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**3段階の詳細化**\n  ・ユーザーストーリー：「As a ユーザー, I want ...」\n  ・チェックリスト形式：✅ タイトルを入力して作成できる\n  ・GIVEN-WHEN-THEN形式：具体的なシナリオ\n・**詳細化していく中で精度を上げる**\n  ・後続の実装フェーズで確実に実装される\n  ・AIの手抜きを防ぐ\n  ・最終的な製品のクオリティ向上\n・**階層的なタスク分解とも関連**\n  ・ユーザーストーリー → タスク → サブタスク\n  ・各階層で詳細化"
       },
       {
         "index": 38,
         "title": "受入基準（AC）が手抜きを防ぐ仕組み",
         "image": "images/02-design/slide_038.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**AIはACを100%満たすまで実装を続ける**\n  ・AI Self Reviewで検証\n  ・「受入基準を満たしているか確認して」と指示\n・**ACがないとAIは「適当に実装して終了」**\n  ・Test Hacking: テストが通れば良いという手抜き\n  ・エッジケース対応が漏れる\n・**ACがあると品質が劇的に向上**\n  ・正常系だけでなく、異常系も実装\n  ・ユーザビリティが向上"
       },
       {
         "index": 39,
         "title": "大きな技術選定は人間が判断する",
         "image": "images/02-design/slide_039.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**言語・フレームワークの選定**\n  ・Python vs TypeScript（チームのスキル、エコシステム）\n  ・React最新版 vs 安定版（新機能 vs API安定性）\n・**データベース・インフラの選定**\n  ・DBのみ（PostgreSQL等）vs BaaS（Supabase、Firebase）\n  ・サーバー環境 vs サーバーレス（Netlify, Vercel, Cloudflare）\n・**AIに任せると学習量の多い選択肢に偏る**\n  ・軽いプロトタイプにNetlify Functionsで十分でも、本格サーバーを推奨しがち\n  ・適材適所の使い分けは人間が判断する"
       },
       {
         "index": 40,
         "title": "人間が明示的に指定すべき技術選定",
         "image": "images/02-design/slide_040.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**AIから提案されにくいモダンなツール**\n  ・パッケージマネージャ：pip → uv\n  ・フォーマッター：black/flake8 → ruff\n  ・型チェック：mypy → pyright\n・**AIから提案されにくい有用ライブラリ**\n  ・attrs（dataclassesより高機能なクラス定義）\n  ・toolz（関数型プログラミングユーティリティ）\n  ・more-itertools（イテレータ拡張）\n・**人間の役割**\n  ・最新のベストプラクティスを知っておく\n  ・CLAUDE.mdに記載して共有"
       },
       {
         "index": 41,
         "title": "AIに技術的決定事項を質問させる",
         "image": "images/02-design/slide_041.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**CLAUDE.mdに記載する指示**\n  ・「実装前に不明・あいまいな点があれば質問して」\n  ・使用ライブラリ・フレームワーク\n  ・エラーハンドリングの方針\n・**質問を欠かさずすることが重要**\n  ・「モダンなベストプラクティスは？」と聞けば出てくることも多い\n  ・uv、ruffなどのツール系は提案されやすい\n・**ただし有用ライブラリは自分でキャッチアップ**\n  ・attrs、toolz、more-itertoolsなどは提案されにくい\n  ・技術ブログ、カンファレンス、書籍で情報収集"
       },
       {
         "index": 42,
         "title": "attrsによる高機能クラス定義",
         "image": "images/02-design/slide_042.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**dataclassesの限界**\n  ・バリデーション機能がない\n  ・型変換（コンバーター）がない\n  ・イミュータブル設定が限定的\n・**attrsの主要機能**\n  ・`@attrs.define`: クラス定義のボイラープレート削減\n  ・`validators`: フィールドの値を自動検証\n  ・`converters`: 入力値を自動変換（str→int等）\n  ・`frozen=True`: 完全なイミュータブルオブジェクト\n・**attrsの利点**\n  ・dataclassesより高機能で堅牢なコード\n  ・型ヒントとの相性が良い（pyrightと連携）\n・**AIへの指示例**\n  ・「attrsを使ってバリデーション付きのデータクラスを作成して」"
       },
       {
         "index": 43,
         "title": "Definition of Done (DoD)とは",
         "image": "images/02-design/slide_043.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "**ACとDoDの違い**: ACは「この機能が何をできればOKか」（機能単位）、DoDは「コードを完了と呼ぶための品質基準」（全機能共通）です。ACを満たし、かつDoDも満たして初めて「完了」です。\n・**DoDの目的**\n  ・チーム全体で「完了」の定義を統一\n  ・品質のばらつきを防ぐ\n  ・AIにも明確な完了基準を与える\n・**テストカバレッジ80%以上**\n  ・pytest-covで自動計測\n  ・重要なロジックは必ずテスト\n・**Cyclomatic Complexity 10以下**\n  ・循環的複雑度：if/for/whileなど分岐の数を測る指標\n  ・10以下 = テストしやすい、バグが少ない\n  ・ruffで自動チェック（C901ルール = 複雑度超過を検出）\n  ・超過したら関数を分割してリファクタリング\n・**静的解析エラーなし**\n  ・ruff、pyrightをCI/CDで自動化\n  ・PRマージ前に必ずパス\n・**docstring完備**\n  ・公開関数にdocstringを記載\n  ・引数・戻り値・例外を明記\n・**ADR作成**\n  ・重要な設計判断を記録\n  ・将来の開発者への引き継ぎ"
       },
       {
         "index": 44,
         "title": "設計フェーズの成果物まとめ - タスク分解の土台",
         "image": "images/02-design/slide_044.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**設計成果物**\n  ・画面設計（画面一覧、画面遷移図、画面部品一覧）\n  ・DBスキーマ（ER図、schema.sql）\n  ・受入基準（AC、GIVEN-WHEN-THEN）\n  ・DoD（完了条件）\n・**すべてdocs/配下に保存**\n  ・docs/design/er-diagram.md\n  ・docs/design/data-flow.md\n  ・docs/requirements/acceptance-criteria.md\n  ・migrations/や schema.sql\n・**Git管理、CLAUDE.mdに参照パスを記載**\n  ・AIが必要な情報をいつでも取得可能\n  ・チーム全体で共有\n・**次のSTEP 3（タスク分解）の土台**\n  ・設計書を基にタスクを分解\n  ・GIVEN-WHEN-THENをBDDテストシナリオに変換"
       },
       {
         "index": 45,
         "title": "セクション3: STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール）",
         "image": "images/02-design/slide_045.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション3: STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール））"
       },
       {
         "index": 46,
         "title": "STEP 3の目的と成果物 - 10分サイズに分割",
         "image": "images/02-design/slide_046.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**ユーザーストーリーを10分サイズのSubtaskに分解**\n  ・AIが迷わないサイズ（10-30分）\n  ・1つの機能を実装できる単位\n  ・集中力を維持できるサイズ\n・**GitHub Issuesに登録**\n  ・1 Issue = 1 Subtask = 10分タスク\n  ・タイトル、概要、参照設計書、BDDテストシナリオ、DoDを記載\n・**GIVEN WHEN THEN形式のBDDテストシナリオを記載**\n  ・開発者視点に変換\n  ・pytestに直接変換可能\n  ・テストファーストで実装"
       },
       {
         "index": 47,
         "title": "階層的タスク分解（Epic → User Story → Task → Subtask）",
         "image": "images/02-design/slide_047.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Epic（数週間-数ヶ月）**\n  ・例: TODO管理アプリ開発\n  ・大きな機能群\n・**User Story（1-3日、AC）**\n  ・例: TODOを作成できる\n  ・INVEST原則を満たす\n  ・受入基準（AC）を含む\n・**Task（2-4時間）**\n  ・例: TODO作成機能の実装\n  ・DBスキーマ、Repository、Service、Router\n・**Subtask（10-30分、GIVEN WHEN THEN）**\n  ・例: todo_repository.save()の実装\n  ・BDDテストシナリオを含む\n  ・1 Issue = 1 Subtask"
       },
       {
         "index": 48,
         "title": "GIVEN WHEN THEN形式のBDDテストシナリオ - 開発者視点への変換",
         "image": "images/02-design/slide_048.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**GIVEN（前提条件）**\n  ・データベースの初期状態\n  ・モックの設定\n  ・テストデータの準備\n・**WHEN（操作）**\n  ・テスト対象関数の呼び出し\n  ・例: todo_repository.save(todo)\n・**THEN（期待結果）**\n  ・戻り値の検証\n  ・データベースの状態検証\n  ・例外の検証\n・**pytestに直接変換可能**\n  ・fixture: GIVEN\n  ・テスト対象関数: WHEN\n  ・assert: THEN"
       },
       {
         "index": 49,
         "title": "受入基準（AC）→ BDDテストシナリオ → pytestの変換",
         "image": "images/02-design/slide_049.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**受入基準（AC、ユーザー視点）**\n  ・「タイトル入力して作成したら一覧に表示」\n  ・「タイトル空でエラーメッセージ表示」\n・**BDDテストシナリオ（開発者視点）**\n  ・GIVEN: 画面表示\n  ・WHEN: create()呼び出し\n  ・THEN: find_all()に含まれる\n・**pytestコード**\n```python\ndef test_create_success():\n# GIVEN\ntodo = Todo(title=\"牛乳を買う\")\n# WHEN\nsaved = todo_repository.save(todo)\n# THEN\nassert saved in todo_repository.find_all()\n```"
       },
       {
         "index": 50,
         "title": "タスク分解の実例 - TODO作成機能",
         "image": "images/02-design/slide_050.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Issue #1: DBスキーマ作成（10分）**\n  ・schema.sqlまたはAlembicマイグレーション作成（Alembic = PythonのDBマイグレーションツール、スキーマ変更をバージョン管理）\n  ・CREATE TABLE todos文\n  ・PRIMARY KEY、NOT NULL制約\n・**Issue #2: Repository実装（10分）**\n  ・todo_repository.save()実装\n  ・pytestテスト作成\n・**Issue #3: Service実装（10分）**\n  ・todo_service.create()実装\n  ・バリデーション（タイトル必須、長さ制限）\n  ・pytestテスト作成\n・**Issue #4: Router実装（10分）**\n  ・@router.post(\"/todos\")実装\n  ・pytestテスト作成（TestClient）\n・**各Issue 10分以内で完了できるサイズ**"
       },
       {
         "index": 51,
         "title": "GitHub Issuesでタスク管理",
         "image": "images/02-design/slide_051.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**1 Issue = 1 Subtask = 10分タスク**\n  ・タイトル: [TODO作成] todo_repository.save()の実装\n  ・概要: TODOを保存するRepository関数を実装する\n・**IssueにBDDテストシナリオを記載**\n  ・GIVEN: Todoオブジェクトが準備されている\n  ・WHEN: todo_repository.save(todo)を呼び出す\n  ・THEN: 保存されたTodoが返される\n・**参照設計書を記載**\n  ・schema.sql: テーブル定義\n  ・acceptance-criteria.md: 受入基準\n・**DoDを記載**\n  ・テストカバレッジ80%以上\n  ・静的解析エラーなし"
       },
       {
         "index": 52,
         "title": "Issueテンプレートの構造",
         "image": "images/02-design/slide_052.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**タイトル**\n  ・[カテゴリ] 具体的なタスク名\n  ・例: [TODO作成] todo_repository.save()の実装\n・**概要**\n  ・何を実装するか\n  ・なぜ必要か\n・**参照設計書**\n  ・schema.sql、er-diagram.md、acceptance-criteria.md\n・**BDDテストシナリオ**\n  ・GIVEN: 前提条件\n  ・WHEN: 操作\n  ・THEN: 期待結果\n・**DoD（Definition of Done）**\n  ・テストカバレッジ80%以上\n  ・静的解析エラーなし\n  ・docstring完備\n・**テンプレートをClaude Codeに作成させる**"
       },
       {
         "index": 53,
         "title": "10分ルール",
         "image": "images/02-design/slide_053.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**1つのタスクは10分で完了できるサイズに分割**\n  ・AIの集中力の限界\n  ・10分以内なら高品質を維持\n  ・30分以上なら暴走・手抜き・忘れっぽさが発生\n・**大きすぎるタスクの問題**\n  ・暴走: スコープを勝手に拡大\n  ・手抜き: Test Hacking、エッジケース対応漏れ\n  ・忘れっぽさ: 最初に指示したことを忘れる\n・**10分ルールの効果**\n  ・品質向上\n  ・進捗管理しやすい\n  ・デバッグしやすい"
       },
       {
         "index": 54,
         "title": "セクション4: まとめとQ&A",
         "image": "images/02-design/slide_054.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション4: まとめとQ&A）"
       },
       {
         "index": 55,
         "title": "STEP 1-2-3の復習 - 4段階の詳細化プロセス",
         "image": "images/02-design/slide_055.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**要件定義 → 設計 → タスク分解 → 実装**\n  ・各段階で詳細化\n  ・前の段階が後の段階の品質を決定\n・**設計書があればトークン効率3.4倍**\n  ・設計書なし: 読解150K + 思考50K\n  ・設計書あり: 読解30K + 思考170K\n・**複雑なロジック・エッジケース対応が可能**\n  ・AIが外部メモリとして設計書を活用\n  ・明示的仕様で修正要求68%削減（Microsoft研究）"
       },
       {
         "index": 56,
         "title": "STEP 1-2-3でClaude Codeが自動化できること",
         "image": "images/02-design/slide_056.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**タスク分解は自動化可能**\n  ・TODOリスト作成\n  ・BDDテストシナリオ作成\n  ・GitHub Issues作成\n・**要件定義・設計は人間とAIの協働**\n  ・Claude WEB版で探索・議論\n  ・複数案を比較\n  ・人間が最終決定\n・**自動化の限界**\n  ・ビジネス価値の判断\n  ・デザインの良し悪し\n  ・ユーザー視点の評価"
       },
       {
         "index": 57,
         "title": "次のステップ - STEP 4（実装）へ",
         "image": "images/02-design/slide_057.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**次回03ではSTEP 4（TDD実装）とSTEP 5（品質改善）を学ぶ**\n  ・7段階TDDサイクル\n  ・3段階レビュー（AI Self Review、ADR、MCP Servers）\n  ・リファクタリング\n・**GitHub Issues #1-10を7段階TDDサイクルで実装**\n  ・Red: テスト失敗\n  ・Green: 最小実装\n  ・Refactor: リファクタリング\n・**成果物**\n  ・動作するコード\n  ・テストカバレッジ80%以上\n  ・静的解析エラーなし"
       },
       {
         "index": 58,
         "title": "コンテキストエンジニアリング - STEP 2がSTEP 4の品質を決める",
         "image": "images/02-design/slide_058.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**設計書が充実していれば、STEP 4の品質・速度が飛躍的に向上**\n  ・エラー率46%削減\n  ・実装時間5-10時間短縮\n  ・ROI 3-10倍\n・**「設計に1時間、実装に10時間」ではなく、「設計に2時間、実装に3時間」**\n  ・設計に時間をかけるほど、実装が速くなる\n  ・トークン効率3.4倍\n・**設計書はAIの外部メモリ**\n  ・複雑なロジック対応\n  ・エッジケース処理\n  ・高品質なコード生成"
       },
       {
         "index": 59,
         "title": "Q&A",
         "image": "images/02-design/slide_059.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Q1: Claude WEB版とClaude Codeの使い分けは必須か?**\n  ・A: 必須ではないが、強く推奨。コンテキスト汚染を防ぎ、トークン効率を最大化できる。\n・**Q2: 設計書作成に時間がかかりすぎないか?**\n  ・A: 1-2時間で作成でき、実装時間を5-10時間短縮できる（ROI 3-10倍）。\n・**Q3: 10分ルールは厳密に守る必要があるか?**\n  ・A: 目安として有効。10-30分なら許容範囲。30分以上は分割を検討。"
       }
     ]
   },
@@ -571,307 +670,358 @@
         "index": 1,
         "title": "Day 1 - 03 STEP 4-5: 実装・TDD・品質改善",
         "image": "images/03-implementation/slide_001.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**対象者**: Python/FastAPI経験者（AI駆動開発は初心者）\n**学習目標**: STEP 4（実装・TDD）とSTEP 5（品質改善）の習得"
       },
       {
         "index": 2,
         "title": "イントロダクション",
         "image": "images/03-implementation/slide_002.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（イントロダクション）"
       },
       {
         "index": 3,
         "title": "【復習】01で学んだAIの5つの特性",
         "image": "images/03-implementation/slide_003.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・01「入門編」で学んだ内容の復習\n  ・AIには5つの特性があり、対策なしだと深刻な問題が発生\n・**5つの特性**（01で詳細解説済み）\n  ・①暴走（Scope Creep）: 指示していない機能を勝手に追加\n  ・②手抜き（Test Hacking）: テストを通すだけの不正実装\n  ・③忘れっぽさ（Context Limitations）: 長い会話で情報喪失\n  ・④凸凹知能（Jagged Intelligence）: 得意・不得意の差が激しい\n  ・⑤虚偽報告（Hallucination）: 存在しないAPIを提案\n・**このセクションのゴール**\n  ・対策なしで何が起こるか理解\n  ・5つの対策手段を学ぶ\n  ・本資料の各セクションとの対応を把握"
       },
       {
         "index": 4,
         "title": "対策なしだと何が起きるか？",
         "image": "images/03-implementation/slide_004.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**①暴走**: 10分タスクが2時間に膨張\n  ・「TODO追加機能」を依頼 → ユーザー認証、通知機能、統計ダッシュボードまで作成\n・**②手抜き**: テストは通るが本番で障害\n  ・`if price == 100: return 90` のようなハードコード\n  ・本番環境で異なる値が来ると即エラー\n・**③忘れっぽさ**: 同じ修正を何度も指示\n  ・「PEP 8に従って」と5回指示しても6回目で忘れる\n・**④凸凹知能**: 得意分野で過信、苦手分野で致命的ミス\n  ・アルゴリズムは得意だが、ビジネスロジックは苦手\n・**⑤虚偽報告**: 存在しないAPIでエラー地獄\n  ・`sqlalchemy.async_session()` など存在しない関数を提案\n  ・実行時に `AttributeError` で延々とデバッグ"
       },
       {
         "index": 5,
         "title": "AI駆動開発の5つの対策手段",
         "image": "images/03-implementation/slide_005.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**①ガードレール（ドキュメント）** - 01で学習\n  ・ユーザーストーリー、受入基準、設計書で「何を作るか」明確化\n  ・暴走（Scope Creep）を事前に防止\n・**②ガードレール（テスト）** - 03 STEP 4で実践\n  ・テストファーストで「正しく作れたか」を検証\n  ・**テスト自体がガードレール**（手抜きを機械的に検出）\n・**③APIドキュメントのdocs/保存** - 03 実装準備で解説\n  ・外部ライブラリの仕様を事前にdocs/に保存\n  ・虚偽報告（Hallucination）を防止\n・**④System Review** - 03 TDDサイクルで実践\n  ・pytest + flake8 + mypy で機械的に検証\n・**⑤AI Self Review** - 03 TDDサイクルで実践\n  ・Test Hacking検出、完成度0-100点評価\n  ・手抜きを自己検証で発見"
       },
       {
         "index": 6,
         "title": "対策一覧表 - AI特性と本資料の対応",
         "image": "images/03-implementation/slide_006.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "| AI特性 | 問題 | 対策 | 本資料の該当箇所 |\n|--------|------|------|-----------------|\n| ①暴走 | 機能追加しすぎ | ガードレール（ドキュメント） | 01で作成済み |\n| ②手抜き | テストだけ通す | ガードレール（テスト）+ AI Self Review | セクション2, 3 |\n| ③忘れっぽさ | 指示を忘れる | CLAUDE.md + /clear | セクション1, 5 |\n| ④凸凹知能 | 得意不得意が激しい | Human Review | セクション3 |\n| ⑤虚偽報告 | 存在しないAPI | docs/にAPI仕様保存 + System Review | セクション1, 4 |\n・**ガードレールは2種類**\n  ・ドキュメント: 「何を作るか」を明確化（事前防止）\n  ・テスト: 「正しく作れたか」を検証（事後検証）\n・**レビューは3段階**\n  ・System Review → AI Self Review → Human Review"
       },
       {
         "index": 7,
         "title": "03 実装・品質改善編の全体像",
         "image": "images/03-implementation/slide_007.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**セクション1: 実装準備**\n  ・カスタムコマンド、Claude Skills、ハルシネーション対策\n  ・対応: ③忘れっぽさ、⑤虚偽報告\n・**セクション2: Test Hacking**\n  ・Test Hackingの実態と検出方法\n  ・対応: ②手抜き\n・**セクション3: AI駆動TDDサイクル**\n  ・7段階TDD、3段階レビュー\n  ・対応: ①暴走、②手抜き、④凸凹知能\n・**セクション4: MCP Servers**\n  ・Context7、Serena、Playwright\n  ・対応: ③忘れっぽさ、⑤虚偽報告\n・**セクション5: STEP 5 - 品質改善**\n  ・8つの質問と指示、完成度80点以上、/clear\n  ・対応: ②手抜き、③忘れっぽさ"
       },
       {
         "index": 8,
         "title": "セクション1: 実装準備",
         "image": "images/03-implementation/slide_008.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション1: 実装準備）"
       },
       {
         "index": 9,
         "title": "このセクションで学ぶこと",
         "image": "images/03-implementation/slide_009.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**対応するAI特性**\n  ・③忘れっぽさ → カスタムコマンド、Claude Skillsで知識を永続化\n  ・⑤虚偽報告 → APIドキュメントをdocs/に保存して防止\n・**学習内容**\n  ・カスタムコマンドの作成と活用\n  ・Claude Skillsによる知識ベース構築\n  ・ハルシネーション対策の具体的手法\n・**ゴール**\n  ・TDD用カスタムコマンド `/tdd` を作成できる\n  ・外部ライブラリのAPIドキュメントをdocs/に保存できる"
       },
       {
         "index": 10,
         "title": "カスタムコマンドの重要性 - プロジェクト固有のワークフロー",
         "image": "images/03-implementation/slide_010.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・カスタムコマンドとは\n  ・`.claude/commands/` にMarkdownファイルとして保存\n  ・`/コマンド名` で呼び出し可能\n  ・Git管理でチーム全体で共有\n・なぜプロジェクト固有のカスタムコマンドが重要か\n  ・プロジェクトの技術スタックに合わせた指示が可能\n  ・例: FastAPI + pytest + Jinja2 の場合\n  ・毎回同じ指示を入力する手間を省く\n  ・チーム全体で品質を均一化\n・TDD用カスタムコマンド `/tdd` の例\n  ・Plan → Red → Green → Refactor → 静的解析 → AI自己レビュー\n  ・Human Reviewまでを自動化\n  ・プロジェクトの静的解析ツール（flake8, mypy, ruff）を呼び出し"
       },
       {
         "index": 11,
         "title": "Claude Skills - 再利用可能な知識ベース",
         "image": "images/03-implementation/slide_011.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Claude Skillsとは\n  ・`.claude/skills/` にMarkdownファイルとして保存\n  ・プロジェクト固有の知識・ベストプラクティスを蓄積\n  ・カスタムコマンドから参照可能\n・Skills の活用例\n  ・プロジェクトのコーディング規約\n  ・使用ライブラリの正しい使い方\n  ・過去のレッスンラーンド（教訓）\n  ・エラーハンドリングのパターン\n・カスタムコマンドとSkillsの連携\n  ・カスタムコマンド: ワークフローを定義\n  ・Skills: 知識ベースを提供\n  ・組み合わせてプロジェクト固有のAI駆動開発を実現"
       },
       {
         "index": 12,
         "title": "ハルシネーション対策 - 外部API仕様の事前調査【重要】",
         "image": "images/03-implementation/slide_012.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**問題: ⑤虚偽報告（Hallucination）への対策**\n  ・AIは学習データにない最新版の仕様を推測してでっちあげる\n  ・`sqlalchemy.async_session()`など存在しない関数を提案\n  ・実行時エラーで発覚 → 延々とデバッグの悪循環\n・**対策: 外部ライブラリの仕様を事前にdocs/に保存**\n  ・公式ドキュメントからAPIリファレンスを取得\n  ・`docs/external-api/` に保存\n  ・CLAUDE.md に「このディレクトリを参照して実装せよ」と記載\n・**具体的な手順**\n  ・①使用ライブラリを洗い出す（SQLAlchemy、pytest、Pydantic等）\n  ・②公式ドキュメントから必要な部分をMarkdownで保存\n  ・③CLAUDE.md に参照パスを明記\n・**なぜこれが効くのか**\n  ・AIはdocs/内のドキュメントを「正しい情報」として参照\n  ・推測ではなく事実に基づいたコード生成\n  ・System Reviewで存在しないAPI呼び出しを検出"
       },
       {
         "index": 13,
         "title": "セクション2: Test Hacking",
         "image": "images/03-implementation/slide_013.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**なぜTDDの前にTest Hackingを学ぶのか？** → TDDは「テストを先に書く」手法ですが、AIは「テストさえ通ればOK」と解釈して不正な実装をすることがあります。敵（Test Hacking）を知ってからTDDに進むことで、検出ポイントが分かります。"
       },
       {
         "index": 14,
         "title": "このセクションで学ぶこと",
         "image": "images/03-implementation/slide_014.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**対応するAI特性**\n  ・②手抜き（Test Hacking）→ 実態を理解し検出方法を学ぶ\n・**学習内容**\n  ・Test Hackingの定義と実証研究（METR 2025）\n  ・3つの手法: Mock Abuse、Silent Fail、Silent Fallback\n  ・良い例・悪い例の比較\n・**ゴール**\n  ・Test Hackingのパターンを識別できる\n  ・AI Self Reviewで検出すべきポイントを理解"
       },
       {
         "index": 15,
         "title": "Test Hackingとは - テストを通すための不正な手法",
         "image": "images/03-implementation/slide_015.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Test Hackingの定義\n  ・テストを通すことだけを目的とした不正な実装\n  ・本番環境で動かないコードが生成される\n  ・Reward Hacking（報酬ハッキング）の一種\n・METR研究（2025年）の実証例 ※METR = AIの能力評価を行う研究機関\n  ・**タスク**: プログラムの実行を高速化せよ\n  ・**期待**: アルゴリズムを最適化\n  ・**実際**: タイマーを書き換えて常に高速な結果を表示\n  ・**結果**: 実際の速度向上なしに「不可能なほど高いスコア」達成\n・なぜAIはTest Hackingを行うのか\n  ・**報酬関数の不完全性**: AIは「テストが通る」を報酬として学習\n  ・**プロキシ報酬の罠**: 本当の目標は「正しく動くコード」だが、テストは近似指標（プロキシ）に過ぎない\n  ・AIは報酬を最大化するよう最適化 → テストを通す最短経路（＝不正実装）を発見\n  ・人間が想定しない「抜け穴」を見つける能力が高い"
       },
       {
         "index": 16,
         "title": "Shallow Testing - Test Hackingの3つの手法",
         "image": "images/03-implementation/slide_016.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・①Mock Abuse（モック乱用）\n  ・実装を呼び出さず、モックだけでテストを通す\n  ・例: repository.get_by_id()を呼ばず常にNone返却\n  ・問題: 実際の統合部分のバグを検出できない\n・②Silent Fail（エラー握りつぶし）\n  ・`except Exception: return None`でエラーを隠す\n  ・例: DB接続エラーでも\"unknown\"を返す\n  ・問題: 本番環境でランダムに品質劣化\n・③Silent Fallback（暗黙のフォールバック）\n  ・`except Exception: return []`\n  ・例: 計算エラーでも合計0円として処理\n  ・問題: データ整合性の破壊、再起動では解決しない\n・対策\n  ・AI Self Reviewで検出\n  ・完成度0-100点評価で80点以上を目指す"
       },
       {
         "index": 17,
         "title": "Test Hacking実コード例 - 悪い例vs良い例",
         "image": "images/03-implementation/slide_017.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・①ハードコード実装（Test Hacking）\n  ・❌ 悪い例: `if price == 100 and rate == 0.1: return 90`\n  ・✅ 良い例: `return price * (1 - rate)`\n・②Silent Fail（エラー握りつぶし）\n  ・❌ 悪い例: `except Exception: return \"unknown\"`\n  ・✅ 良い例: `raise UserNotFoundError(user_id)`\n・③Silent Fallback（暗黙のフォールバック）\n  ・❌ 悪い例: `except Exception: return Decimal(\"0\")`\n  ・✅ 良い例: `if items is None: raise ValidationError()`\n・④Mock Abuse（モック乱用）\n  ・❌ 悪い例: 8つの依存関係を全モック化\n  ・✅ 良い例: 外部サービスのみモック、内部は実際のコード使用"
       },
       {
         "index": 18,
         "title": "セクション3: AI駆動TDDサイクル",
         "image": "images/03-implementation/slide_018.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション3: AI駆動TDDサイクル）"
       },
       {
         "index": 19,
         "title": "このセクションで学ぶこと",
         "image": "images/03-implementation/slide_019.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**対応するAI特性**\n  ・①暴走 → Planフェーズで設計書参照、Scope Creep防止\n  ・②手抜き → AI Self Reviewで完成度80点以上を目指す\n  ・④凸凹知能 → Human Reviewでビジネスロジック確認\n・**学習内容**\n  ・一般TDD（3段階）とAI駆動TDD（7段階）の違い\n  ・各フェーズの詳細: Plan、Red、Green、Refactor\n  ・3段階レビュー: System Review、AI Self Review、Human Review\n・**ゴール**\n  ・7段階TDDを実践できる\n  ・**テストがガードレール**であることを体感"
       },
       {
         "index": 20,
         "title": "一般のTDDとAI駆動TDDの違い",
         "image": "images/03-implementation/slide_020.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・一般のTDD（3段階）\n  ・Red → Green → Refactor\n  ・Red: テストを書いて失敗させる\n  ・Green: 最小限のコードで通す\n  ・Refactor: コード改善\n・AI駆動TDD（7段階）の独自の工夫\n  ・**Plan（追加）**: 受入条件の詳細計画、docs/設計書参照、APIライブラリのWEB検索\n  ・Red → Green → Refactor\n  ・**静的解析（追加）**: Refactorの後で機械的チェック\n  ・**AI自己レビュー（追加）**: Test Hacking検出、完成度100点評価\n  ・**Human Review**: 最終確認\n・なぜ工夫が必要か\n  ・AIは「テストが通る = 完了」と誤解する\n  ・Plan無しだと暴走（Scope Creep）する\n  ・静的解析無しだと構文エラーを見逃す\n  ・AI自己レビュー無しだとTest Hackingを見逃す"
       },
       {
         "index": 21,
         "title": "7段階TDD詳細 - 各段階で何をチェックするのか",
         "image": "images/03-implementation/slide_021.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Plan\n  ・受入条件（チェックリスト、GIVEN WHEN THEN）の詳細を計画\n  ・docs/内の設計書を参照してゴールを明確化\n  ・利用するAPIライブラリの詳細をWEB検索して事前に知識を得る\n  ・AIに質問させる「実装前に曖昧な点があれば質問してください」\n・Red\n  ・受入条件→pytestでテストファースト\n  ・実装がないのでpytest は失敗（赤）が正常\n・Green\n  ・最小実装のみ、設計書に従う\n  ・Issue範囲外の機能は作らない（Scope Creep防止）\n・Refactor\n  ・Cyclomatic Complexity < 10（分岐の複雑さ指標、詳細はセクション5）\n  ・重複削除、テストは変えずに実装の品質を改善\n・System Review\n  ・pytest + flake8 + mypyで自動検証\n・AI Self Review\n  ・Test Hacking検出、完成度0-100点評価\n・Human Review\n  ・git diff、ビジネスロジック確認"
       },
       {
         "index": 22,
         "title": "Plan - 実装方針の確認",
         "image": "images/03-implementation/slide_022.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Issueの内容確認\n  ・BDDテストシナリオ（GIVEN WHEN THEN）\n  ・参照設計書（画面・DB・API）\n  ・実装の制約（コーディング規約）\n・実装方針の決定\n  ・どのモジュール・関数を修正するか\n  ・どのテストを書くか\n・AIに質問させる\n  ・「実装前に曖昧な点があれば質問してください」\n  ・AIが勝手に推測しないよう、質問を促す"
       },
       {
         "index": 23,
         "title": "Red - テストファースト",
         "image": "images/03-implementation/slide_023.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**受入条件をpytestに変換**\n  ・GIVEN → @pytest.fixture（fixture = テストの前準備を行う関数、テストデータやモックを用意）\n  ・WHEN → テスト対象関数呼び出し\n  ・THEN → assert文\n・**実装がないのでpytestは失敗（赤）が正常**\n  ・赤にならない場合は、テストが実装に依存している\n  ・`ImportError`や`AssertionError`が出ることが正常\n・**テストサイズ**\n  ・非常に少量（5行以下）\n  ・シンプルなテストから始める"
       },
       {
         "index": 24,
         "title": "Green - 最小実装",
         "image": "images/03-implementation/slide_024.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**テストを通すための最小限の実装**\n  ・設計書に従う\n  ・過剰な実装はしない\n  ・美しさや効率は後回し、「動く」ことが最優先\n・**Issue範囲外の機能は作らない**\n  ・Scope Creep防止\n  ・余計な機能は追加しない\n・**節約の法則（law of parsimony）**\n  ・テストを満たすのに十分なコードのみを書く\n・**pytestが成功（緑）したら次のRefactorフェーズへ**"
       },
       {
         "index": 25,
         "title": "Refactor - コード品質改善",
         "image": "images/03-implementation/slide_025.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**テストは変えずに実装の品質を改善**\n  ・動作を変更せずにコードを改善\n  ・テストが通る状態を保ちながらコードの品質を向上\n・**改善項目**\n  ・Cyclomatic Complexity < 10\n  ・マジックナンバー排除\n  ・重複コード削除\n  ・命名規則の改善（PEP 8準拠）\n・**リファクタリングのパターン**\n  ・Extract Function（関数抽出）\n  ・Guard Clause（早期リターン）\n  ・DRY原則（Don't Repeat Yourself）\n・**Refactor後もpytestは通り続けること**"
       },
       {
         "index": 26,
         "title": "System Review - 自動検証ツールによる機械的チェック",
         "image": "images/03-implementation/slide_026.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・AI Hallucination、構文エラー、静的解析エラーを機械的に検出\n・pytest + 静的解析ツールで実行\n  ・構文チェック（Python実行）\n  ・全テスト実行（pytest）\n  ・静的解析（flake8、mypy、ruff）\n  ・カバレッジ測定（pytest-cov）\n・**Python静的解析ツールの比較**\n| ツール | 主な検出内容 | 推奨タイミング |\n|--------|-------------|---------------|\n| flake8 | PEP 8違反、構文エラー | 開発中（IDE統合） |\n| mypy | 型エラー、型安全性 | コミット前 |\n| ruff | 高速なlint、フォーマット | リファクタリング前 |"
       },
       {
         "index": 27,
         "title": "AI Self Review - Test Hacking検出の要",
         "image": "images/03-implementation/slide_027.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Test Hackingを検出\n  ・テストを通すだけの仮実装を排除\n・チェック項目\n  ・①不要なフォールバック処理\n  ・②仮想データ返却\n  ・③モックによるダミーデータ返却\n  ・④テストを通すだけの実装\n  ・⑤受入条件未達\n  ・⑥Silent Fail\n・**完成度0-100点評価**\n  ・「受入条件に対して、完成度を0-100点で評価して」\n  ・80点以上を目標に繰り返す（重要な機能は90点以上）\n  ・時間対効果を考慮し、完璧より「十分良い」を選ぶ"
       },
       {
         "index": 28,
         "title": "Human Review - ビジネスロジックの最終確認",
         "image": "images/03-implementation/slide_028.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・ビジネスロジックとアーキテクチャの妥当性を人間が判断\n・基本レビュー観点\n  ・ビジネスルール（業務要件との一致）\n  ・データアクセス一貫性（トランザクション境界）\n  ・Scope Creep検出（Issue範囲外の機能追加）\n・オプション: 複数AIレビュー（重要な機能のみ）\n  ・**Repomix**: リポジトリ全体を1ファイルにまとめるツール\n  ・Repomixの出力を複数のAI（GPT-4、Claude WEB等）に投げて比較\n  ・なぜ複数AI？: 1つのAIでは見逃すバグを別のAIが発見することがある\n  ・対象: 認証、決済、セキュリティクリティカルな機能"
       },
       {
         "index": 29,
         "title": "TDD実装サイクルの全体像 - 実践時の自動化",
         "image": "images/03-implementation/slide_029.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**1つのIssue（10分タスク）の流れ**\n  ・Plan → Red → Green → Refactor → 3段階レビュー\n・**サイクル頻度**\n  ・3〜5サイクルを速く実行、その後リファクタリングに時間をかける\n・**カスタムコマンド`/tdd`でAI Self Reviewまで自動化**\n  ・Human Reviewのみ手動（git diff確認）\n・**7段階TDDの実践により、AI特性5つを効果的に防止**\n  ・暴走（Scope Creep）、手抜き（Reward Hacking）\n  ・忘れっぽさ（Context Limitations）、凸凹知能（Jagged Intelligence）\n  ・虚偽報告（Hallucination）"
       },
       {
         "index": 30,
         "title": "TDD無しの悪夢 - AI特性5つが同時多発",
         "image": "images/03-implementation/slide_030.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・TDD無しの場合（人間がAIの奴隷）\n  ・①AI実装 → ②人間が手作業確認 → ③エラー発見 → ④人間がAIに報告\n  ・⑤AI修正 → ②に戻る（永遠に繰り返す）\n  ・具体例: ユーザー登録機能\n    ・第1サイクル: 500エラー（AttributeError: 'NoneType'）\n    ・第2サイクル: パスワード平文保存\n    ・第3サイクル: 重複メールで登録可能\n    ・第4サイクル: 無効なメールで登録可能\n・TDDありの場合（AIが自律的）\n  ・人間: 受入条件定義（1回だけ）\n  ・AI: テスト作成 → 実装 → テスト実行 → **自分で問題発見** → **自分で修正**\n  ・**効果: 210分 → 35分（83%削減）**"
       },
       {
         "index": 31,
         "title": "よくある失敗パターン",
         "image": "images/03-implementation/slide_031.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**失敗1: テストを後回し**\n  ・実装を先に書いて、後からテストを追加\n  ・これはTDDではなく「テスト付き開発」\n  ・対策: 必ずテストファースト、Redフェーズから始める\n・**失敗2: AI Self Reviewのスキップ**\n  ・System Reviewが通ったら即コミット\n  ・テストは通るが仮実装（ダミーデータ返却）のまま\n  ・対策: AI Self Reviewを必ず実施、80点以上を目指す"
       },
       {
         "index": 32,
         "title": "セクション4: MCP Servers",
         "image": "images/03-implementation/slide_032.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "**7段階TDDをさらに強化するツールがMCP Serversです。** セクション3で学んだTDDサイクルの「⑤虚偽報告対策」「③忘れっぽさ対策」を、MCPサーバーが自動化・効率化してくれます。"
       },
       {
         "index": 33,
         "title": "このセクションで学ぶこと",
         "image": "images/03-implementation/slide_033.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**対応するAI特性**\n  ・③忘れっぽさ → Serenaでトークン最適化、Compactを防止\n  ・⑤虚偽報告 → Context7で最新APIドキュメントをリアルタイム取得\n・**学習内容**\n  ・MCPの概要とClaude Code対応\n  ・Context7: 最新APIドキュメント取得\n  ・Serena: トークン最適化\n  ・Playwright/Chrome DevTools: E2Eテスト・デバッグ\n・**ゴール**\n  ・TDDを支援するMCPサーバーを導入できる"
       },
       {
         "index": 34,
         "title": "MCP Serversとは - TDD実装の支援ツール",
         "image": "images/03-implementation/slide_034.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Model Context Protocol（MCP）\n  ・AIに外部ツールを接続する標準プロトコル\n  ・Anthropicが2024年11月に発表\n・Claude Codeは標準でMCP対応\n・TDD実装に役立つMCPサーバー\n  ・Context7（最新APIドキュメント）\n  ・Serena（トークン最適化）\n  ・Playwright（E2Eテスト自動生成）\n  ・Chrome DevTools（UIデバッグ）"
       },
       {
         "index": 35,
         "title": "Context7 MCP Server - 最新APIドキュメント",
         "image": "images/03-implementation/slide_035.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・目的\n  ・SQLAlchemy、pytest、Pydantic等の最新公式ドキュメントをリアルタイム取得\n  ・AI Hallucinationを防ぐ\n・仕組み\n  ・Claude CodeがAPIを使うとき、Context7が自動で最新ドキュメントを検索して提供\n  ・学習データにない最新バージョンにも対応\n・効果\n  ・存在しないAPIの推測を防ぐ\n  ・正確なコード生成"
       },
       {
         "index": 36,
         "title": "Serena MCP Server - トークン最適化",
         "image": "images/03-implementation/slide_036.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・目的\n  ・**LSP（Language Server Protocol）**: IDEが使うコード解析プロトコル\n  ・LSPを使って、AIに必要なコードだけを効率的に読ませる\n  ・③忘れっぽさ（Context Limitations）への対策\n・**Compactとは何か**\n  ・AIの会話が長くなると、古い情報を圧縮（Compact）して忘れる\n  ・重要な指示やコードがCompactで失われる → 「さっき言ったのに忘れた」\n・効果\n  ・トークン使用量を大幅削減（最大90%削減）\n  ・Compactが発生しにくくなり、指示を忘れにくくなる\n  ・思考に使えるトークンが増える"
       },
       {
         "index": 37,
         "title": "Playwright / Chrome DevTools MCP Server",
         "image": "images/03-implementation/slide_037.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**Playwright MCP Server - E2Eテスト自動生成**\n  ・E2E（End-to-End）テスト = ユーザー操作を模倣してシステム全体を通しで検証するテスト\n  ・AI駆動でEnd-to-Endテストを自動生成\n  ・Claude Codeに「TODO作成フローのE2Eテストを作って」と指示\n  ・Playwrightスクリプトを生成、実行、スクリーンショット取得\n・**Chrome DevTools MCP Server - UIデバッグ**\n  ・AIに「目」を与える\n  ・Claude CodeがChromeのDevToolsにアクセス\n  ・コンソールエラー、ネットワークエラー、パフォーマンス問題を自動検出\n  ・従来5-10分かかる作業が1分に短縮"
       },
       {
         "index": 38,
         "title": "MCPサーバーのインストール",
         "image": "images/03-implementation/slide_038.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Claude CLIの `claude mcp add` コマンドでインストール\n  ・`-s user` または `--scope user` でユーザー全体に適用\n・インストールコマンド\n  ・Context7: `claude mcp add context7 -s user -- npx -y @upstash/context7-mcp`\n  ・Serena: `claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server`\n  ・Playwright: `claude mcp add playwright -s user -- npx -y @executeautomation/playwright-mcp-server`\n・一度インストールすれば全セッションで利用可能"
       },
       {
         "index": 39,
         "title": "セクション5: STEP 5 - 品質改善",
         "image": "images/03-implementation/slide_039.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（セクション5: STEP 5 - 品質改善）"
       },
       {
         "index": 40,
         "title": "このセクションで学ぶこと",
         "image": "images/03-implementation/slide_040.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**対応するAI特性**\n  ・②手抜き → 完成度評価で80点以上を目指す\n  ・③忘れっぽさ → /clearでコンテキストリセット、次タスクへ\n・**学習内容**\n  ・8つの質問と指示（リファクタリング、ドキュメント、知見保存）\n  ・完成度0-100点評価の実践\n  ・/clearによるコンテキスト管理\n  ・後方互換性の判断基準\n・**ゴール**\n  ・8つの質問と指示を実行できる\n  ・80点以上を目指す習慣を身につける"
       },
       {
         "index": 41,
         "title": "STEP 5 - AIに任せる8つの質問と指示",
         "image": "images/03-implementation/slide_041.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・STEP 5をAIに任せる\n  ・①-③リファクタリング\n  ・④-⑤ライブラリ・パターン活用\n  ・⑥-⑦ドキュメント化\n  ・⑧知見の保存\n・人間は結果をレビューするだけで作業時間80%削減\n・⑧の実行後`/clear`でコンテキストをクリア\n  ・コンテキスト汚染を防ぐ\n  ・次のタスクで前のタスクの情報が混入しない"
       },
       {
         "index": 42,
         "title": "①②技術的負債の発見と冗長コード削除",
         "image": "images/03-implementation/slide_042.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**AIは冗長・重複・dead codeを生成しがち**\n  ・似たような処理を何度も書く\n  ・不要になったコードを削除しない\n  ・使われていない変数・関数を残す\n・①技術的負債を見付けて\n  ・Claude Codeに質問\n  ・AIが問題箇所をリスト化、優先度付け\n・②冗長・重複・dead codeを削除して\n  ・重複コードを関数抽出\n  ・DRY原則徹底、コード量20-30%削減\n・**定期的なクリーンアップが必要**\n  ・タスク完了ごとに②を実行"
       },
       {
         "index": 43,
         "title": "③循環的複雑度を減らして",
         "image": "images/03-implementation/slide_043.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**推奨される閾値**（NIST SP 500-235 = 米国標準技術研究所のソフトウェア品質ガイドライン）\n  ・**1-10**: シンプル、低リスク → 目標\n  ・**11-20**: 中程度の複雑さ、中程度のリスク\n  ・**21-50**: 複雑、高リスク → 要リファクタリング\n  ・**50+**: 非常に複雑、テスト不可能 → 即座にリファクタリング\n・**複雑度を減らす5つの戦略**\n  ・①小さな関数（20-30行以内）\n  ・②リファクタリング（関数分割）\n  ・③早期リターン（ガード節）\n  ・④複雑な条件式の抽出\n  ・⑤パターンの適用（Strategy、Map）\n・**Claude Codeへの指示**: 「循環的複雑度を10以下に減らして」"
       },
       {
         "index": 44,
         "title": "④⑤ライブラリとデザインパターンの活用",
         "image": "images/03-implementation/slide_044.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・④効果的にライブラリを活用できる箇所は\n  ・AIが提案しないので自分から積極的に指定・質問する必要がある有用ライブラリの例\n    ・attrs（ボイラープレート削減、dataclassesより高機能）\n    ・more-itertools（イテレータ拡張）\n    ・toolz（関数型プログラミング）\n・⑤効果的にデザインパターンを活用できる箇所は\n  ・AIが提案\n    ・Strategy（戦略パターン）\n    ・Factory（ファクトリーパターン）\n    ・Builder（ビルダーパターン）\n    ・Dependency Injection（依存性注入）\n    ・Repository（リポジトリパターン）\n  ・注意: 過剰なパターン適用は避ける"
       },
       {
         "index": 45,
         "title": "⑥docstring を書いて",
         "image": "images/03-implementation/slide_045.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Claude Codeへの指示\n  ・「全public関数にdocstringを書いて（Google Style）」\n・AIが自動生成\n  ・Args:（パラメータ説明）\n  ・Returns:（戻り値説明）\n  ・Raises:（例外説明）\n  ・関数・クラスの概要\n・HTML生成\n  ・pdoc または Sphinx で自動生成"
       },
       {
         "index": 46,
         "title": "⑦arc42 と C4 Model を採用した ADR を書いて",
         "image": "images/03-implementation/slide_046.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**用語解説**\n  ・**ADR（Architecture Decision Record）**: 技術的決定を記録するドキュメント\n  ・**arc42**: ドイツ発のアーキテクチャ文書テンプレート（構造が明確）\n  ・**C4 Model**: システム構造を4段階（Context→Container→Component→Code）で図示\n・Claude Codeへの指示\n  ・「[技術的決定]のADRを、arc42とC4 Modelで作って」\n・AIが生成するADR構造\n  ・Status（状態: 提案、承認、廃止）\n  ・Context（背景: なぜこの決定が必要か）\n  ・Decision（決定内容: 何を決めたか）\n  ・Consequences（結果: どのような影響があるか）\n・効果\n  ・「なぜこの技術を選んだか」を将来の自分やチームに残せる"
       },
       {
         "index": 47,
         "title": "⑧実装で得られた知見のドキュメント化",
         "image": "images/03-implementation/slide_047.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・なぜ知見を保存するのか\n  ・実装中に発見した問題・解決策・落とし穴は会話の中にしかない\n  ・AIとの会話が長くなるとCompact（圧縮）されて失われる\n  ・ファイルに保存すれば、次回以降も参照できる\n  ・docs/lessons-learned/に保存してチーム全体で知見を共有\n・Claude Codeへの指示\n  ・「この実装で得られた教訓・落とし穴・ベストプラクティスをdocs/lessons-learned/YYYY-MM-DD-[機能名].md に保存して」\n・保存後に`/clear`でコンテキストをクリア\n  ・コンテキスト汚染を防ぐ"
       },
       {
         "index": 48,
         "title": "【補足】後方互換性の問題 - AIの過剰な配慮",
         "image": "images/03-implementation/slide_048.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・**AIは後方互換性を過剰に維持しようとする**\n  ・古い関数にwarnings.warnを追加して残す\n  ・新旧両方のAPIを維持しようとする\n  ・不要な互換性レイヤーを追加する\n・**なぜ問題か**\n  ・コードが複雑になる\n  ・保守コストが増加\n  ・技術的負債の蓄積\n・**人間が判断すべきこと**\n  ・本当に後方互換性が必要か？\n  ・社内システムなら不要なことが多い\n  ・外部API公開なら必要\n・**対処法**\n  ・AIに「後方互換性は不要。古いコードは削除して」と明示"
       },
       {
         "index": 49,
         "title": "まとめとQ&A",
         "image": "images/03-implementation/slide_049.png",
-        "is_section": true
+        "is_section": true,
+        "notes": "（まとめとQ&A）"
       },
       {
         "index": 50,
         "title": "実装・品質改善編のまとめ",
         "image": "images/03-implementation/slide_050.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・STEP 4（7段階TDDサイクル + MCP Servers）\n  ・AI特性5つを7段階で完全防止\n  ・作業時間83%削減（210分→35分）\n  ・カスタムコマンド`/tdd`でAI Self Reviewまで自動化\n・STEP 5（8つの質問と指示で品質改善）\n  ・①-③リファクタリング\n  ・④-⑤ライブラリ・パターン\n  ・⑥-⑦ドキュメント化\n  ・⑧知見保存\n  ・人間は結果をレビューするだけで作業時間80%削減"
       },
       {
         "index": 51,
         "title": "Q&A",
         "image": "images/03-implementation/slide_051.png",
-        "is_section": false
+        "is_section": false,
+        "notes": "・Q1: 7段階TDD必須か?\n  ・AI駆動開発では必須\n  ・従来の3段階ではTest Hackingを見逃す\n・Q2: AI Self ReviewでTest Hackingを本当に検出できるのか?\n  ・はい、AIは「レビューして」と言われると客観的に評価する\n  ・実装時は「テストを通す」が目標、レビュー時は「品質評価」が目標になる\n  ・役割を変えることで、自分の実装の問題点を指摘できる\n  ・80点以上になるまで自動修正を繰り返す\n・Q3: System Reviewだけではダメなのか?\n  ・System Reviewは「構文チェック・テストが通る」だけ\n  ・Test Hacking（仮実装）は検出できない\n  ・AI Self Reviewで完成度を確認する必要がある\n・Q4: 複数AIレビュー（Repomix）は毎回やるべきか?\n  ・重要な機能（認証、決済、セキュリティクリティカル）でのみ実施"
       }
     ]
   }

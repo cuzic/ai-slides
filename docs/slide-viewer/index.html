@@ -229,6 +229,80 @@
             color: #666;
         }
 
+        /* スピーカーノート */
+        .notes-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #16213e;
+            border-top: 2px solid #e94560;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            z-index: 500;
+        }
+
+        .notes-panel.visible {
+            max-height: 40vh;
+        }
+
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: #0f3460;
+            border-bottom: 1px solid #1a4a7a;
+        }
+
+        .notes-header h3 {
+            font-size: 0.9rem;
+            color: #e94560;
+            margin: 0;
+        }
+
+        .notes-close {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .notes-close:hover {
+            color: #fff;
+        }
+
+        .notes-content {
+            padding: 1rem;
+            overflow-y: auto;
+            max-height: calc(40vh - 50px);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #ccc;
+            white-space: pre-wrap;
+        }
+
+        .notes-btn {
+            background: #0f3460;
+            border: none;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .notes-btn:hover {
+            background: #e94560;
+        }
+
+        .notes-btn.active {
+            background: #e94560;
+        }
+
         /* ローディング */
         .loading {
             display: flex;
@@ -408,6 +482,38 @@
             }
         }
 
+        /* スマホ用ノートパネル調整 */
+        @media (max-width: 768px) {
+            .notes-panel.visible {
+                max-height: 50vh;
+            }
+
+            .notes-content {
+                max-height: calc(50vh - 50px);
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .notes-panel.visible {
+                max-height: 60vh;
+            }
+
+            .notes-content {
+                max-height: calc(60vh - 50px);
+                font-size: 0.8rem;
+                padding: 0.75rem;
+            }
+
+            .notes-header {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .notes-header h3 {
+                font-size: 0.8rem;
+            }
+        }
+
         /* タッチデバイス向け */
         @media (hover: none) and (pointer: coarse) {
             .nav-btn {
@@ -432,6 +538,7 @@
         <h1>AI駆動開発セミナー</h1>
         <nav class="header-nav">
             <button onclick="toggleSidebar()" id="toc-btn">📑 目次</button>
+            <button onclick="toggleNotes()" id="notes-btn" class="notes-btn">📝 ノート</button>
             <button onclick="selectSection(0)" data-section="0">01 入門編</button>
             <button onclick="selectSection(1)" data-section="1">02 設計編</button>
             <button onclick="selectSection(2)" data-section="2">03 実装編</button>
@@ -474,6 +581,17 @@
                 ← → キーまたはスペースでページ送り
             </div>
         </main>
+    </div>
+
+    <!-- スピーカーノートパネル -->
+    <div class="notes-panel" id="notes-panel">
+        <div class="notes-header">
+            <h3>📝 スピーカーノート</h3>
+            <button class="notes-close" onclick="toggleNotes()">✕</button>
+        </div>
+        <div class="notes-content" id="notes-content">
+            ノートを読み込み中...
+        </div>
     </div>
 
     <script>
@@ -615,6 +733,9 @@
             });
             const sectionBtn = document.querySelector(`.header-nav button[data-section="${slide.sectionIndex}"]`);
             if (sectionBtn) sectionBtn.classList.add('active');
+
+            // スピーカーノートを更新
+            updateNotes(slide);
         }
 
         function prevSlide() {
@@ -645,6 +766,26 @@
             overlay.classList.remove('visible');
         }
 
+        // スピーカーノート機能
+        let notesVisible = false;
+
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            const btn = document.getElementById('notes-btn');
+            notesVisible = !notesVisible;
+            panel.classList.toggle('visible', notesVisible);
+            btn.classList.toggle('active', notesVisible);
+        }
+
+        function updateNotes(slide) {
+            const content = document.getElementById('notes-content');
+            if (slide && slide.notes) {
+                content.textContent = slide.notes;
+            } else {
+                content.textContent = '（このスライドにはノートがありません）';
+            }
+        }
+
         // キーボードナビゲーション
         document.addEventListener('keydown', (e) => {
             switch(e.key) {
@@ -663,6 +804,10 @@
                     break;
                 case 'End':
                     goToSlide(allSlides.length - 1);
+                    break;
+                case 'n':
+                case 'N':
+                    toggleNotes();
                     break;
             }
         });
