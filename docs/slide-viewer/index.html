@@ -531,6 +531,140 @@
                 min-height: 48px;
             }
         }
+
+        /* 全画面モード */
+        body.fullscreen-mode {
+            overflow: hidden;
+        }
+
+        body.fullscreen-mode .header {
+            display: none;
+        }
+
+        body.fullscreen-mode .sidebar {
+            display: none;
+        }
+
+        body.fullscreen-mode .sidebar-overlay {
+            display: none !important;
+        }
+
+        body.fullscreen-mode .container {
+            height: 100vh;
+        }
+
+        body.fullscreen-mode .viewer {
+            padding: 0;
+            background: #000;
+        }
+
+        body.fullscreen-mode .slide-container {
+            max-width: 100vw;
+            max-height: 100vh;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        body.fullscreen-mode .nav-controls {
+            display: none;
+        }
+
+        body.fullscreen-mode .progress-bar {
+            display: none;
+        }
+
+        body.fullscreen-mode .keyboard-hint {
+            display: none;
+        }
+
+        body.fullscreen-mode .notes-panel {
+            display: none;
+        }
+
+        /* 全画面モードでのナビゲーションオーバーレイ */
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            z-index: 1000;
+        }
+
+        body.fullscreen-mode .fullscreen-nav {
+            display: flex;
+        }
+
+        .fullscreen-nav-area {
+            flex: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .fullscreen-nav-area:hover {
+            opacity: 1;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .fullscreen-nav-area span {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .fullscreen-exit {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            border: none;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: none;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        body.fullscreen-mode .fullscreen-exit {
+            display: block;
+        }
+
+        body.fullscreen-mode:hover .fullscreen-exit {
+            opacity: 1;
+        }
+
+        .fullscreen-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: none;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        body.fullscreen-mode .fullscreen-counter {
+            display: block;
+        }
+
+        body.fullscreen-mode:hover .fullscreen-counter {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -539,6 +673,7 @@
         <nav class="header-nav">
             <button onclick="toggleSidebar()" id="toc-btn">📑 目次</button>
             <button onclick="toggleNotes()" id="notes-btn" class="notes-btn">📝 ノート</button>
+            <button onclick="toggleFullscreen()" id="fullscreen-btn">🖥️ 全画面</button>
             <button onclick="selectSection(0)" data-section="0">01 入門編</button>
             <button onclick="selectSection(1)" data-section="1">02 設計編</button>
             <button onclick="selectSection(2)" data-section="2">03 実装編</button>
@@ -578,10 +713,18 @@
             </div>
 
             <div class="keyboard-hint">
-                ← → キーまたはスペースでページ送り
+                ← → キーでページ送り / F: 全画面 / N: ノート
             </div>
         </main>
     </div>
+
+    <!-- 全画面モード用UI -->
+    <div class="fullscreen-nav" id="fullscreen-nav">
+        <div class="fullscreen-nav-area" onclick="prevSlide()"><span>◀</span></div>
+        <div class="fullscreen-nav-area" onclick="nextSlide()"><span>▶</span></div>
+    </div>
+    <button class="fullscreen-exit" id="fullscreen-exit" onclick="exitFullscreen()">✕ 終了 (Esc)</button>
+    <div class="fullscreen-counter" id="fullscreen-counter">1 / 144</div>
 
     <!-- スピーカーノートパネル -->
     <div class="notes-panel" id="notes-panel">
@@ -736,6 +879,11 @@
 
             // スピーカーノートを更新
             updateNotes(slide);
+
+            // 全画面モードのカウンターを更新
+            if (isFullscreen) {
+                updateFullscreenCounter();
+            }
         }
 
         function prevSlide() {
@@ -786,6 +934,63 @@
             }
         }
 
+        // 全画面モード機能
+        let isFullscreen = false;
+
+        function toggleFullscreen() {
+            if (isFullscreen) {
+                exitFullscreen();
+            } else {
+                enterFullscreen();
+            }
+        }
+
+        function enterFullscreen() {
+            isFullscreen = true;
+            document.body.classList.add('fullscreen-mode');
+            document.getElementById('fullscreen-btn').classList.add('active');
+            updateFullscreenCounter();
+
+            // ブラウザの全画面APIを使用
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        function exitFullscreen() {
+            isFullscreen = false;
+            document.body.classList.remove('fullscreen-mode');
+            document.getElementById('fullscreen-btn').classList.remove('active');
+
+            // ブラウザの全画面を解除
+            if (document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+
+        function updateFullscreenCounter() {
+            const counter = document.getElementById('fullscreen-counter');
+            counter.textContent = `${currentSlide + 1} / ${allSlides.length}`;
+        }
+
+        // ブラウザの全画面解除を検知
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement && isFullscreen) {
+                isFullscreen = false;
+                document.body.classList.remove('fullscreen-mode');
+                document.getElementById('fullscreen-btn').classList.remove('active');
+            }
+        });
+
         // キーボードナビゲーション
         document.addEventListener('keydown', (e) => {
             switch(e.key) {
@@ -808,6 +1013,15 @@
                 case 'n':
                 case 'N':
                     toggleNotes();
+                    break;
+                case 'f':
+                case 'F':
+                    toggleFullscreen();
+                    break;
+                case 'Escape':
+                    if (isFullscreen) {
+                        exitFullscreen();
+                    }
                     break;
             }
         });
