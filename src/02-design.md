@@ -226,7 +226,7 @@ paginate: true
 
 ---
 
-## セクション1: 要件定義フェーズ - ユーザーストーリー
+## STEP 1 - 要件定義（ユーザーストーリー）
 
 ---
 <!-- _class: font-xsmall -->
@@ -425,7 +425,7 @@ paginate: true
 
 ---
 
-## セクション2: STEP 2 - 設計（画面・DB・API・受入基準・DoD）
+## STEP 2 - 設計（画面・DB・API・受入基準・DoD）
 
 ---
 <!-- _class: font-xsmall -->
@@ -845,7 +845,7 @@ paginate: true
 
 ---
 
-## セクション3: STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール）
+## STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール）
 
 ---
 <!-- _class: font-xsmall -->
@@ -1011,7 +1011,7 @@ paginate: true
 
 ---
 
-## セクション4: まとめとQ&A
+## まとめとQ&A
 
 ---
 <!-- _class: font-xsmall -->

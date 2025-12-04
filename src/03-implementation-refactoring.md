@@ -112,10 +112,10 @@ paginate: true
 | AI特性 | 問題 | 対策 | 本資料の該当箇所 |
 |--------|------|------|-----------------|
 | ①暴走 | 機能追加しすぎ | ガードレール（ドキュメント） | 01で作成済み |
-| ②手抜き | テストだけ通す | ガードレール（テスト）+ AI Self Review | セクション2, 3 |
-| ③忘れっぽさ | 指示を忘れる | CLAUDE.md + /clear | セクション1, 5 |
-| ④凸凹知能 | 得意不得意が激しい | Human Review | セクション3 |
-| ⑤虚偽報告 | 存在しないAPI | docs/にAPI仕様保存 + System Review | セクション1, 4 |
+| ②手抜き | テストだけ通す | ガードレール（テスト）+ AI Self Review | Test Hacking, TDDサイクル |
+| ③忘れっぽさ | 指示を忘れる | CLAUDE.md + /clear | 実装準備, STEP 5 |
+| ④凸凹知能 | 得意不得意が激しい | Human Review | TDDサイクル |
+| ⑤虚偽報告 | 存在しないAPI | docs/にAPI仕様保存 + System Review | 実装準備, MCP Servers |
 
 - **ガードレールは2種類**
   - ドキュメント: 「何を作るか」を明確化（事前防止）
@@ -127,25 +127,25 @@ paginate: true
 <!-- _class: font-xsmall -->
 
 ### 03 実装・品質改善編の全体像
-- **セクション1: 実装準備**
+- **実装準備**
   - カスタムコマンド、Claude Skills、ハルシネーション対策
   - 対応: ③忘れっぽさ、⑤虚偽報告
-- **セクション2: Test Hacking**
+- **Test Hacking**
   - Test Hackingの実態と検出方法
   - 対応: ②手抜き
-- **セクション3: AI駆動TDDサイクル**
+- **AI駆動TDDサイクル**
   - 7段階TDD、3段階レビュー
   - 対応: ①暴走、②手抜き、④凸凹知能
-- **セクション4: MCP Servers**
+- **MCP Servers**
   - Context7、Serena、Playwright
   - 対応: ③忘れっぽさ、⑤虚偽報告
-- **セクション5: STEP 5 - 品質改善**
+- **STEP 5 - 品質改善**
   - 8つの質問と指示、完成度80点以上、/clear
   - 対応: ②手抜き、③忘れっぽさ
 
 ---
 
-## セクション1: 実装準備
+## 実装準備
 
 ---
 <!-- _class: font-xsmall -->
@@ -221,7 +221,7 @@ paginate: true
 
 ---
 
-## セクション2: Test Hacking
+## Test Hacking
 
 **なぜTDDの前にTest Hackingを学ぶのか？** → TDDは「テストを先に書く」手法ですが、AIは「テストさえ通ればOK」と解釈して不正な実装をすることがあります。敵（Test Hacking）を知ってからTDDに進むことで、検出ポイントが分かります。
 
@@ -297,7 +297,7 @@ paginate: true
 
 ---
 
-## セクション3: AI駆動TDDサイクル
+## AI駆動TDDサイクル
 
 ---
 <!-- _class: font-xsmall -->
@@ -352,7 +352,7 @@ paginate: true
   - 最小実装のみ、設計書に従う
   - Issue範囲外の機能は作らない（Scope Creep防止）
 - Refactor
-  - Cyclomatic Complexity < 10（分岐の複雑さ指標、詳細はセクション5）
+  - Cyclomatic Complexity < 10（分岐の複雑さ指標、詳細はSTEP 5）
   - 重複削除、テストは変えずに実装の品質を改善
 - System Review
   - pytest + flake8 + mypyで自動検証
@@ -522,9 +522,9 @@ paginate: true
 
 ---
 
-## セクション4: MCP Servers
+## MCP Servers
 
-**7段階TDDをさらに強化するツールがMCP Serversです。** セクション3で学んだTDDサイクルの「⑤虚偽報告対策」「③忘れっぽさ対策」を、MCPサーバーが自動化・効率化してくれます。
+**7段階TDDをさらに強化するツールがMCP Serversです。** TDDサイクルで学んだ「⑤虚偽報告対策」「③忘れっぽさ対策」を、MCPサーバーが自動化・効率化してくれます。
 
 ---
 <!-- _class: font-xsmall -->
@@ -614,7 +614,7 @@ paginate: true
 
 ---
 
-## セクション5: STEP 5 - 品質改善
+## STEP 5 - 品質改善
 
 ---
 <!-- _class: font-xsmall -->
