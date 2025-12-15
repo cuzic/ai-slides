@@ -300,6 +300,8 @@ paginate: true
 
 ## AI駆動TDDサイクル
 
+**TDD（テスト駆動開発）** = テストを先に書いてから実装する開発手法。Red（テスト失敗）→ Green（テスト成功）→ Refactor（改善）のサイクルを繰り返す。
+
 ---
 <!-- _class: font-xsmall -->
 

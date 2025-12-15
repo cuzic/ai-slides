@@ -301,7 +301,9 @@ paginate: true
 ---
 <!-- _class: font-xxxsmall -->
 
-### INVEST原則
+### INVEST原則 - 良いユーザーストーリーの6条件
+
+**INVEST** = 良いユーザーストーリーを書くための6つの基準の頭文字
 
 - **Independent（独立している）**
   - 他のストーリーに依存しない
@@ -326,6 +328,8 @@ paginate: true
 <!-- _class: font-xsmall -->
 
 ### MoSCoW分析 - AIに優先順位を付けてもらう
+
+**MoSCoW** = Must（必須）/ Should（重要）/ Could（あれば良い）/ Won't（今回は見送り）の頭文字。機能の優先順位付けに使う。
 
 - **なぜMoSCoW分析か**
   - AIは大量のユーザーストーリーを生成する
@@ -880,6 +884,8 @@ paginate: true
 
 ## STEP 3 - タスク分解（GitHub Issues・BDDテストシナリオ・10分ルール）
 
+**BDD（振る舞い駆動開発）** = ユーザーの振る舞い（何をしたら何が起きるか）をテストとして記述する手法
+
 ---
 <!-- _class: font-xsmall -->
 
@@ -921,6 +927,8 @@ paginate: true
 <!-- _class: font-xsmall -->
 
 ### GIVEN WHEN THEN形式のBDDテストシナリオ - 開発者視点への変換
+
+**GIVEN-WHEN-THEN** = 「〇〇の状態で、△△したら、□□になる」というテストシナリオの書き方
 
 - **GIVEN（前提条件）**
   - データベースの初期状態
